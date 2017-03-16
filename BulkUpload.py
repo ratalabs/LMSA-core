@@ -56,7 +56,7 @@ def upload(x,y,i):
     x.find_element_by_id("edit-field-item-count-und-0-value").send_keys(int(y[i]['Quantity'])) #Joe made this line work
     x.find_element_by_id("wysiwyg-toggle-edit-body-und-0-value").click()
     x.find_element_by_id("edit-body-und-0-value").send_keys(y[i]['Description'])
-    #Only Uncomment this when your actually ready to submit
+    #Only Uncomment this when you're actually ready to submit
     #x.find_element_by_id("edit-submit").click()
     time.sleep(4)
 
