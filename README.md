@@ -10,4 +10,4 @@
 * description: id = tinymce
 
 ### Current Tasks
-* Convert Applications into executable applications using cx_Freeze package
+* Convert Applications into executables using cx_Freeze package
