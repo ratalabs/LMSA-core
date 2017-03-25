@@ -1,4 +1,6 @@
-'''Python 2.7 required'''
+### Python 2.7 required
+### Author: Sam McCaffrey
+### Purpose: Bulk upload of new inventory items
 
 import selenium
 import getpass
@@ -12,11 +14,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-driver = wbd.Chrome('/Users/smccaffrey/Desktop/PIRT_uploader/chromedriver')
+driver = wbd.Chrome('lib/chromedriver')
 
 ### Parses an XLSX workbook into an Ordered Dictionary
 def parser():
-    wb = xlrd.open_workbook('/Users/smccaffrey/Desktop/PIRT_uploader/test.xlsx')
+    wb = xlrd.open_workbook('testing/test.xlsx')
     sh = wb.sheet_by_index(0)
 
     inventory_list = []
@@ -28,9 +30,9 @@ def parser():
 	   inventory['Location'] = row_values[1]
 	   inventory['Quantity'] = row_values[2]
 	   inventory['Description'] = row_values[3]
-	
+
 	   inventory_list.append(inventory)
-    
+
     return inventory_list
 
 def authorization():
@@ -42,11 +44,11 @@ def authorization():
     driver.find_element_by_id("username").send_keys(username)
     driver.find_element_by_id("password").send_keys(password)
     driver.find_element_by_class_name('submit').click()
-    
+
     time.sleep(15) #Gives you time for 2-Step Authentication
-    
-    return driver
-    
+
+    return
+
 def upload(x,y,i):
     x.get("https://dev-pirt-16.ws.asu.edu/node/add/inventory-item")
     x.find_element_by_id("edit-title").send_keys(y[i]['Item'])
@@ -67,17 +69,3 @@ i = 0
 while i <= len(parser()):
     upload(driver,parser(),i)
     i += 1
-    
-    
-        
-
-
-
-		
-	
-
-	
-
-	
-
-
