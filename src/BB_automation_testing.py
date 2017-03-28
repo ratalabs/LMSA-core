@@ -70,10 +70,15 @@ def authorization():
 
 ### Update Prelabs information ###
 def prelab_update(d,y,i):
+    d.find_element_by_id("paletteItem:_3292345_1").click()
+    #cycle through assingments
+    #d.find_element_by_id("edit-submit").click()
     return
 
 ### Update Lab Report information ###
 def lab_update(d,y,i):
+    d.find_element_by_id("paletteItem:_3292345_1").click()
+    #d.find_element_by_id("edit-submit").click()
     return
 
 ### Cycle through all sections ###
