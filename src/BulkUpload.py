@@ -35,36 +35,36 @@ def parser():
 
     return inventory_list
 
-def authorization():
+def authorization(d):
     username = raw_input("Enter ASURITE username: ")
     password = getpass.getpass("Enter ASURITE password: ")
 
-    driver.get('https://weblogin.asu.edu/cas/login?service=https%3A%2F%2Fdev-pirt-16.ws.asu.edu%2Fcas%3Fdestination%3Dnode%2F3')
+    d.get('https://weblogin.asu.edu/cas/login?service=https%3A%2F%2Fdev-pirt-16.ws.asu.edu%2Fcas%3Fdestination%3Dnode%2F3')
 
-    driver.find_element_by_id("username").send_keys(username)
-    driver.find_element_by_id("password").send_keys(password)
-    driver.find_element_by_class_name('submit').click()
+    d.find_element_by_id("username").send_keys(username)
+    d.find_element_by_id("password").send_keys(password)
+    d.find_element_by_class_name('submit').click()
 
     time.sleep(15) #Gives you time for 2-Step Authentication
 
     return
 
-def upload(x,y,i):
-    x.get("https://dev-pirt-16.ws.asu.edu/node/add/inventory-item")
-    x.find_element_by_id("edit-title").send_keys(y[i]['Item'])
-    x.find_element_by_id("edit-field-activity-type-und-lab").click()
-    x.find_element_by_class_name("fieldset-title").click()
-    x.find_element_by_id("edit-field-room-number-und-0-value").send_keys(y[i]['Location'])
-    x.find_element_by_id("edit-field-item-count-und-0-value").send_keys(int(y[i]['Quantity'])) #Joe made this line work
-    x.find_element_by_id("wysiwyg-toggle-edit-body-und-0-value").click()
-    x.find_element_by_id("edit-body-und-0-value").send_keys(y[i]['Description'])
+def upload(d,y,i):
+    d.get("https://dev-pirt-16.ws.asu.edu/node/add/inventory-item")
+    d.find_element_by_id("edit-title").send_keys(y[i]['Item'])
+    d.find_element_by_id("edit-field-activity-type-und-lab").click()
+    d.find_element_by_class_name("fieldset-title").click()
+    d.find_element_by_id("edit-field-room-number-und-0-value").send_keys(y[i]['Location'])
+    d.find_element_by_id("edit-field-item-count-und-0-value").send_keys(int(y[i]['Quantity'])) #Joe made this line work
+    d.find_element_by_id("wysiwyg-toggle-edit-body-und-0-value").click()
+    d.find_element_by_id("edit-body-und-0-value").send_keys(y[i]['Description'])
     #Only Uncomment this when you're actually ready to submit
-    #x.find_element_by_id("edit-submit").click()
+    #d.find_element_by_id("edit-submit").click()
     time.sleep(4)
 
 
 ### Run Program ###
-authorization()
+authorization(driver)
 i = 0
 while i <= len(parser()):
     upload(driver,parser(),i)

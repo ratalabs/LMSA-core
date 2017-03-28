@@ -62,3 +62,18 @@ def authorization():
     time.sleep(15) #Gives you time for 2-Step Authentication
 
     return
+
+def prelab_update(d,y,i):
+    return
+
+def lab_update(d,y,i):
+    return
+
+i = 0
+while i <= len(parser()):
+    driver.find_elements_by_xpath('//*[contains(text(), "' + section + '")]') # to locate each section number on myASU
+    #click each section
+    #iterate through prelabs
+    #Edit each prelab
+    #then iterate through each lab
+    #Edit each lab
