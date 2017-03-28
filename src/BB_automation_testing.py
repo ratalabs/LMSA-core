@@ -1,4 +1,6 @@
-'''Python 2.7 required'''
+### Python 2.7 required
+### Author: Sam McCaffrey
+### Purpose: Automate BB Tasks
 
 import selenium
 import getpass
@@ -12,8 +14,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+### Creates the browser instance in which all operations take place ###
 driver = wbd.Chrome('~/Desktop/git/lib/chromedriver')
 
+### Parsers excel workbook ###
 def parser():
     wb = xlrd.open_workbook('testing/Workbook1.xlsx')
     sh = wb.sheet_by_index(0)
@@ -49,6 +53,7 @@ def parser():
 
     return due_dates
 
+### Authenticates MyASU credentials ###
 def authorization():
     username = raw_input("Enter ASURITE username: ")
     password = getpass.getpass("Enter ASURITE password: ")
@@ -63,15 +68,24 @@ def authorization():
 
     return
 
+### Update Prelabs information ###
 def prelab_update(d,y,i):
     return
 
+### Update Lab Report information ###
 def lab_update(d,y,i):
     return
 
+### Cycle through all sections ###
+def section_cycler(d,y,i):
+    section = due_dates[i]['Section']
+    d.find_elements_by_xpath('//*[contains(text(), "' + section + '")]')
+    #need to click href within item
+    pass
+
 i = 0
 while i <= len(parser()):
-    driver.find_elements_by_xpath('//*[contains(text(), "' + section + '")]') # to locate each section number on myASU
+
     #click each section
     #iterate through prelabs
     #Edit each prelab
