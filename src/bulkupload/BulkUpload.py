@@ -6,17 +6,30 @@ import selenium
 import getpass
 import time
 import xlrd
-import numpy as np
-import simplejson as json
 from collections import OrderedDict
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-driver = wbd.Chrome('lib/chromedriver')
+#driver = wbd.Chrome('lib/chromedriver')
 
-### Parses an XLSX workbook into an Ordered Dictionary
+def get_driver(path, driver_type='chrome'):
+    """Returns driver object
+
+    Parameters
+    ----------
+    path : str
+        Path to driver
+    Returns
+    -------
+    Driver
+    """
+    drivers = {'chrome': wbd.Chrome,
+               'firefox': wbd.FireFox}
+
+    return drivers[driver_type.lower()](path)
+
 def parse(filename):
     """Parses an XLSX workbook into an Ordered Dictionary
     
