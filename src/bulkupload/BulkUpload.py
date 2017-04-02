@@ -90,6 +90,22 @@ def authorization(d, username=None, time=15):
 
 def upload(inventory_list, d, indices=None, dryrun=True):
     """Adds data from array to all respective fields
+
+    Parameters
+    ----------
+    invetory_list : [OrderedDict]
+        Array-like of OrderedDicts containing item information
+
+    d : Driver
+        Selenium driver object
+
+    Keyword Args
+    ------------
+    indices : [int]
+        List of indices to iterate through
+
+    dryrun : bool
+        ``True`` to not submit the changes
     """
 
     top_URL = "https://dev-pirt-16.ws.asu.edu/node/add/inventory-item"
