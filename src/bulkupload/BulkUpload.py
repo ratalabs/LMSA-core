@@ -59,7 +59,7 @@ def parse(filename):
 
     return inventory_list
 
-def authorization(d=driver, username=None, time=15):
+def authorization(d, username=None, time=15):
     """Handles dual factor authentication.
 
     Parameters
@@ -88,7 +88,7 @@ def authorization(d=driver, username=None, time=15):
     time.sleep(time)
 
 
-def upload(inventory_list, indices=None, d=driver, dryrun=True):
+def upload(inventory_list, d, indices=None, dryrun=True):
     """Adds data from array to all respective fields
     """
 
