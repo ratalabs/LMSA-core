@@ -83,10 +83,12 @@ def lab_update(d,y,i):
 
 ### Cycle through all sections ###
 def section_cycler(d,y,i):
+    section_list = d.find_elements_by_id('portletList-img courseListing coursefakeclass')
+
     section = due_dates[i]['Section']
     d.find_elements_by_xpath('//*[contains(text(), "' + section + '")]')
     #need to click href within item
-    pass
+    #int(string.split('-')[-1]) building section list
 
 i = 0
 while i <= len(parser()):
