@@ -32,7 +32,7 @@ def get_driver(path, driver_type='chrome'):
 
 def parse(filename):
     """Parses an XLSX workbook into an Ordered Dictionary
-    
+
     Parameters
     ----------
     filename : str
@@ -41,7 +41,7 @@ def parse(filename):
     -------
     list
         Inventory list
-    
+
     """
     wb = xlrd.open_workbook(filename)
     sh = wb.sheet_by_index(0)
@@ -68,7 +68,6 @@ def authorization(d, username=None, time=15):
         Path to driver binary (defaults to packaged chrome)
     username : str
         Username to log in with
-
     time : int
         number of seconds to wait for authentication (default 15)
     """
