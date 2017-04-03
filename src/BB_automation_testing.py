@@ -6,8 +6,6 @@ import selenium
 import getpass
 import time
 import xlrd
-import numpy as np
-import simplejson as json
 from collections import OrderedDict
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
@@ -18,8 +16,20 @@ from selenium.webdriver.support import expected_conditions as EC
 driver = wbd.Chrome('~/Desktop/git/lib/chromedriver')
 
 ### Parsers excel workbook ###
-def parser():
-    wb = xlrd.open_workbook('testing/Workbook1.xlsx')
+def parse(filename):
+    """Parses an XLSX workbook into an Ordered Dictionary
+
+    Parameters
+    ----------
+    filename : str
+        Path to filename
+    Returns
+    -------
+    list
+        Inventory list
+
+    """
+    wb = xlrd.open_workbook(filename)
     sh = wb.sheet_by_index(0)
 
     due_dates = []
@@ -54,19 +64,30 @@ def parser():
     return due_dates
 
 ### Authenticates MyASU credentials ###
-def authorization():
-    username = raw_input("Enter ASURITE username: ")
+def authorization(d, username=None, time=15):
+    """Handles dual factor authentication.
+
+    Parameters
+    ----------
+    d : str
+        Path to driver binary (defaults to packaged chrome)
+    username : str
+        Username to log in with
+    time : int
+        number of seconds to wait for authentication (default 15)
+    """
+    if not username:
+        username = raw_input("Enter ASURITE username: ")
     password = getpass.getpass("Enter ASURITE password: ")
 
-    driver.get('https://weblogin.asu.edu/cas/login?service=https%3A%2F%2Fdev-pirt-16.ws.asu.edu%2Fcas%3Fdestination%3Dnode%2F3')
+    URL = 'https://weblogin.asu.edu/cas/login?service=https%3A%2F%2Fdev-pirt-16.ws.asu.edu%2Fcas%3Fdestination%3Dnode%2F3'
 
-    driver.find_element_by_id("username").send_keys(username)
-    driver.find_element_by_id("password").send_keys(password)
-    driver.find_element_by_class_name('submit').click()
+    d.get(URL)
+    d.find_element_by_id("username").send_keys(username)
+    d.find_element_by_id("password").send_keys(password)
+    d.find_element_by_class_name('submit').click()
 
-    time.sleep(15) #Gives you time for 2-Step Authentication
-
-    return
+    time.sleep(time) #Gives you time for 2-Step Authentication
 
 ### Update Prelabs information ###
 def prelab_update(d,y,i):
