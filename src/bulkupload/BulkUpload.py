@@ -55,6 +55,7 @@ def parse(filename):
 	   inventory['Location'] = row_values[1]
 	   inventory['Quantity'] = row_values[2]
 	   inventory['Description'] = row_values[3]
+       inventory['Vendor'] = row_values[4]
 	   inventory_list.append(inventory)
 
     return inventory_list
@@ -118,6 +119,7 @@ def upload(inventory_list, d, indices=None, dryrun=True):
         d.find_element_by_id("edit-field-item-count-und-0-value").send_keys(int(inventory_list[i]['Quantity'])) #Joe made this line work
         d.find_element_by_id("wysiwyg-toggle-edit-body-und-0-value").click()
         d.find_element_by_id("edit-body-und-0-value").send_keys(inventory_list[i]['Description'])
+        d.find_element_by_id("edit-field-add-new-vendor-und").send_keys(inventory_list[i]['Vendor'])
         if not dryrun:
             d.find_element_by_id("edit-submit").click()
         time.sleep(4)
