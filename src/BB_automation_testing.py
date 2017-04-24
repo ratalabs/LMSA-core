@@ -11,14 +11,14 @@ from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import pandas as pd
 
 ### Creates the browser instance in which all operations take place ###
-driver = wbd.Chrome('Users/smccaffrey/Desktop/git/PIRT_ASU/lib/chromedriver')
-
+driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/PIRT_ASU/lib/chromedriver')
+filename = '/Users/smccaffrey/Desktop/git/PIRT_ASU/testing/Workbook1.csv'
 ### Parsers excel workbook ###
 def parse(filename):
     """Parses an XLSX workbook into an Ordered Dictionary
-
     Parameters
     ----------
     filename : str
@@ -27,7 +27,6 @@ def parse(filename):
     -------
     list
         Inventory list
-
     """
     wb = xlrd.open_workbook(filename)
     sh = wb.sheet_by_index(0)
@@ -63,6 +62,10 @@ def parse(filename):
 
     return due_dates
 
+def parser(filename):
+    df1 = pd.read_csv(filename, header=0)
+    return df1
+
 ### Authenticates MyASU credentials ###
 def authorization(d, username=None, t=15):
     """Handles dual factor authentication.
@@ -80,7 +83,7 @@ def authorization(d, username=None, t=15):
         username = raw_input("Enter ASURITE username: ")
     password = getpass.getpass("Enter ASURITE password: ")
 
-    URL = 'https://weblogin.asu.edu/cas/login?service=https%3A%2F%2Fdev-pirt-16.ws.asu.edu%2Fcas%3Fdestination%3Dnode%2F3'
+    URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 
     d.get(URL)
     d.find_element_by_id("username").send_keys(username)
@@ -90,7 +93,27 @@ def authorization(d, username=None, t=15):
     time.sleep(t) #Gives you time for 2-Step Authentication
 
 ### Update Prelabs information ###
+def updater(d, array, dryrun=True):
+    p = 'PHY 114: General Physics Laboratory (2016 Fall)-'
+    s = '72628'
+    d.find_element_by_link_text(p+s).click()
+    time.sleep(5)
+    d.find_element_by_link_text('PRELABS').click()
+    time.sleep(5)
+    d.find_element_by_xpath('//a[@title="Prelab: Absorption of Nuclear Radiation item options"]').click()
+    time.sleep(5)
+    d.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
 
+
+def test_func(d, filename, dryrun=True):
+    parser(filename)
+    d.quit()
+    if not dryrun:
+        authorization(d)
+        updater(d, parser(filename))
+        d.quit()
+
+test_func(driver, filename)
 
 #need to click href within item
 #int(string.split('-')[-1]) building section list
