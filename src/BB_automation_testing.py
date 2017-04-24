@@ -90,32 +90,7 @@ def authorization(d, username=None, time=15):
     time.sleep(time) #Gives you time for 2-Step Authentication
 
 ### Update Prelabs information ###
-def prelab_update(d,y,i):
-    d.find_element_by_id("paletteItem:_3292345_1").click()
-    #cycle through assingments
-    #d.find_element_by_id("edit-submit").click()
-    return
 
-### Update Lab Report information ###
-def lab_update(d,y,i):
-    d.find_element_by_id("paletteItem:_3292345_1").click()
-    #d.find_element_by_id("edit-submit").click()
-    return
 
-### Cycle through all sections ###
-def section_cycler(d,y,i):
-    section_list = d.find_elements_by_id('portletList-img courseListing coursefakeclass')
-
-    section = due_dates[i]['Section']
-    d.find_elements_by_xpath('//*[contains(text(), "' + section + '")]')
-    #need to click href within item
-    #int(string.split('-')[-1]) building section list
-
-i = 0
-while i <= len(parser()):
-
-    #click each section
-    #iterate through prelabs
-    #Edit each prelab
-    #then iterate through each lab
-    #Edit each lab
+#need to click href within item
+#int(string.split('-')[-1]) building section list
