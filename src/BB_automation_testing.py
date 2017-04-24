@@ -13,7 +13,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 ### Creates the browser instance in which all operations take place ###
-driver = wbd.Chrome('~/Desktop/git/lib/chromedriver')
+driver = wbd.Chrome('Users/smccaffrey/Desktop/git/PIRT_ASU/lib/chromedriver')
 
 ### Parsers excel workbook ###
 def parse(filename):
@@ -64,7 +64,7 @@ def parse(filename):
     return due_dates
 
 ### Authenticates MyASU credentials ###
-def authorization(d, username=None, time=15):
+def authorization(d, username=None, t=15):
     """Handles dual factor authentication.
 
     Parameters
@@ -87,7 +87,7 @@ def authorization(d, username=None, time=15):
     d.find_element_by_id("password").send_keys(password)
     d.find_element_by_class_name('submit').click()
 
-    time.sleep(time) #Gives you time for 2-Step Authentication
+    time.sleep(t) #Gives you time for 2-Step Authentication
 
 ### Update Prelabs information ###
 
