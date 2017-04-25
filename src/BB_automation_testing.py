@@ -16,6 +16,9 @@ import pandas as pd
 ### Creates the browser instance in which all operations take place ###
 driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/PIRT_ASU/lib/chromedriver')
 filename = '/Users/smccaffrey/Desktop/git/PIRT_ASU/testing/Workbook1.csv'
+
+p = 'PHY 114: General Physics Laboratory (2016 Fall)-'
+
 ### Parsers excel workbook ###
 def parse(filename):
     """Parses an XLSX workbook into an Ordered Dictionary
@@ -63,7 +66,10 @@ def parse(filename):
     return due_dates
 
 def parser(filename):
-    df1 = pd.read_csv(filename, header=0)
+    df1 = pd.read_csv(filename, dtype=object, header=0)
+    print df1.shape
+    print['Prelab_Due_Time'][0]
+    print df1
     return df1
 
 ### Authenticates MyASU credentials ###
@@ -93,16 +99,17 @@ def authorization(d, username=None, t=15):
     time.sleep(t) #Gives you time for 2-Step Authentication
 
 ### Update Prelabs information ###
-def updater(d, array, dryrun=True):
-    p = 'PHY 114: General Physics Laboratory (2016 Fall)-'
-    s = '72628'
-    d.find_element_by_link_text(p+s).click()
-    time.sleep(5)
-    d.find_element_by_link_text('PRELABS').click()
-    time.sleep(5)
-    d.find_element_by_xpath('//a[@title="Prelab: Absorption of Nuclear Radiation item options"]').click()
-    time.sleep(5)
-    d.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
+def updater(d, p, arr, dryrun=True):
+    i = 0
+    for i in range(1, len(arr['Section'])):
+        d.find_element_by_link_text(p+str(arr['Section'][i])).click()
+        time.sleep(5)
+        d.find_element_by_link_text('PRELABS').click()
+        time.sleep(5)
+
+        d.find_element_by_xpath('//a[@title="Prelab: Absorption of Nuclear Radiation item options"]').click()
+        time.sleep(5)
+        d.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
 
 
 def test_func(d, filename, dryrun=True):
@@ -110,7 +117,7 @@ def test_func(d, filename, dryrun=True):
     d.quit()
     if not dryrun:
         authorization(d)
-        updater(d, parser(filename))
+        updater(d, p, parser(filename))
         d.quit()
 
 test_func(driver, filename)
