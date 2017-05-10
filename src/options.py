@@ -13,6 +13,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 def assignmentPicker(d, prelab, n):
     try:
         d.find_element_by_xpath('//a[@title=' + "\"" + prelab + " item options" + "\"" ']').click()
