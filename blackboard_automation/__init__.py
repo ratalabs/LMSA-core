@@ -1,1 +1,1 @@
-from .blackboard_automation import *
+from . import *

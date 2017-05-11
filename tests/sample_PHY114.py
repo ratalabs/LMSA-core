@@ -5,16 +5,13 @@
 import selenium
 import getpass
 import time
-import xlrd
 import pandas as pd
-from collections import OrderedDict
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-import options as op
-
+from blackboard_automation import tests as op
 
 ### Creates the browser instance in which all operations take place ###
 driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/PIRT_ASU/lib/chromedriver')
