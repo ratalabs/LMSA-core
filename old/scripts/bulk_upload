@@ -22,4 +22,4 @@ except:
 d = BU.get_driver(args.driver)
 
 BU.authorization(d) # defaults to chrome
-BU.upload(inventory_list, d)
+BU.upload(inventory_list, d) 
