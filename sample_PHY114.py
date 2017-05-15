@@ -68,13 +68,14 @@ def updater(d, p, URL, arr, module, dryrun=True):
         time.sleep(5)
         n = 1
         for n in range (1, len(arr.columns)-13):
-            op.assignmentPicker(d, arr[n+2][0], n)
+            op.assignmentPicker(driver = d, module = module, test = arr[n+2][0])
             time.sleep(5)
             op.edit_test_options(d)
             op.start_restrict(d, False)
             op.end_restrict(d, False)
-            op._dueDate(d, True)
-            op.dp_dueDate_date(d, arr[n+2][i])
+            op._dueDate(d, False)
+            pause = raw_input("Press <ENTER> to continue: ")
+            #op.dp_dueDate_date(d, arr[n+2][i])
             op._lateSubmission(d, True)
             op.cancel(d)
             time.sleep(7)
