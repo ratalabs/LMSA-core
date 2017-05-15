@@ -25,10 +25,6 @@ URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_ta
 ### Parsers excel workbook (must be .csv file) ###
 def parser(filename):
     df1 = pd.read_csv(filename, dtype=object, delimiter=',', header=None)
-    #print(len(df1.columns)-3)
-    #print(len(df1['Section']))
-    #print(df1[3][3])
-    print(df1[3][0])
     return df1
 
 ### Authenticates MyASU credentials ###
@@ -71,9 +67,10 @@ def updater(d, p, URL, arr, module, dryrun=True):
             op.assignmentPicker(driver = d, module = module, test = arr[n+2][0])
             time.sleep(5)
             op.edit_test_options(d)
+            time.sleep(3)
             op.start_restrict(d, False)
             op.end_restrict(d, False)
-            op._dueDate(d, False)
+            op._dueDate(d, True)
             pause = raw_input("Press <ENTER> to continue: ")
             #op.dp_dueDate_date(d, arr[n+2][i])
             op._lateSubmission(d, True)

@@ -27,16 +27,21 @@ def edit_test_options(driver):
 
 def start_restrict(driver, state):
     try:
-        bl = driver.find_element_by_id('start_restrict').is_selected()
-        print("other: " + str(bl))
+        bl = is_checked(driver, start_restrict)
+        print (bl)
+        print("other: " + bl)
+        driver.find_element_by_id('start_restrict').click()
 
-        if not state: # remove not before final compile
-            driver.find_element_by_id('start_restrict').clear()
-            driver.find_element_by_id('start_restrict').click()
-        else:
-            driver.find_element_by_id('start_restrict').clear()
+        #if not state: # remove 'not' before final compile
+        #    driver.find_element_by_id('start_restrict').click()
+        #else:
+        #    pass
     except Exception as e:
         pass
+
+def is_checked(self, driver, item):
+  checked = driver.execute_script(("return document.getElementById('%s').checked") % item)
+  return checked
 
 def end_restrict(driver, state):
     try:
@@ -52,7 +57,7 @@ def _dueDate(driver, state):
     try:
         bl = driver.find_element_by_id('_dueDate').is_selected()
         print(str(bl))
-        if str(bl) == "True":
+        if bl:
             driver.find_element_by_id('_dueDate').double_click()
         #if state is True and str(bl) == 'False':
         #    driver.find_element_by_id('_dueDate').click()
