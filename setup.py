@@ -1,17 +1,20 @@
-from setuptools import setup, find_packages
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-version = '0.1.0'
 
-setup(name="PIRT ASU",
-      version=version,
-      author="Sam McCaffrey",
-      author_email="samccaff@asu.edu",
-      license="Apache-2.0",
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
-      scripts=['scripts/bulk_upload'],
-      install_requires=['selenium',
-                        'xlrd',
-                        ],
-      zip_safe=True,
-)
+config = {
+    'description': 'Blackboard Automation Framework',
+    'author': 'Sam McCaffrey',
+    'url': 'URL to get it at.',
+    'download_url': 'Where to download it.',
+    'author_email': 'samccaff@asu.edu',
+    'version': '0.1.0',
+    'install_requires': ['selenium','pandas'],
+    'packages': ['blackboard_automation'],
+    'scripts': [],
+    'name': 'blackboard automation'
+}
+
+setup(**config)

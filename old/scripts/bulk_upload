@@ -1,0 +1,25 @@
+#!/usr/bin/python
+
+import sys
+import bulkupload as BU
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('workbook', metavar='W', type=str, nargs=1,
+                            help='path to workbook')
+parser.add_argument('driver', metavar='DRIVER', type=str, nargs=1,
+                            help='path to driver')
+
+args = parser.parse_args()
+
+try:
+    inventory_list = BU.parse(args.workbook)
+except:
+    msg = 'Encountered an error parsing workbook \'{0}\''.format(args.workbook)
+    raise IOError(msg)
+
+d = BU.get_driver(args.driver)
+
+BU.authorization(d) # defaults to chrome
+BU.upload(inventory_list, d)

@@ -1,15 +1,12 @@
-# PIRT_ASU
+# Blackboard Automation
+### *A general skeleton for creating ad hoc automation scripts for Blackboard*
+==============================================================
 
-##### This repository is for developing and maintaining automation tasks for the PIRT team
+## About
+* The goal of this framework is to reduce time spent editing tedious blackboard information. The inspiration for this project was that we had instructors with nearly 50 individual section sites each with over 24 assignments, and each of those had their own due dates. For us personally this framework can complete tasks in less than an hour, whereas without it we'd be spending weeks manually updating course information.
 
-
-#### PIRT Inventory html element IDs
-* item: id = edit-title
-* location: id = edit-field-room-number-und-0-value
-* quantity: id = edit-field-item-count-und-0-value
-* description: id = tinymce
-
-### Current Tasks
+### Current Repository Tasks
+* Structure
+* Build out Blackboard Framework
 * debug bulkupload
 * build BB automation script
-

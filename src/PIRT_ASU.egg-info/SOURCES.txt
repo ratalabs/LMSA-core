@@ -1,9 +1,0 @@
-scripts/bulk_upload
-src/PIRT_ASU.egg-info/PKG-INFO
-src/PIRT_ASU.egg-info/SOURCES.txt
-src/PIRT_ASU.egg-info/dependency_links.txt
-src/PIRT_ASU.egg-info/requires.txt
-src/PIRT_ASU.egg-info/top_level.txt
-src/PIRT_ASU.egg-info/zip-safe
-src/bulkupload/BulkUpload.py
-src/bulkupload/__init__.py
