@@ -13,14 +13,14 @@ from blackboard_automation import tests as prelabs
 driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/PIRT_ASU/lib/chromedriver')
 filename = '/Users/smccaffrey/Desktop/git/PIRT_ASU/PHY132_Fall2017.csv'
 
-p = 'PHY 132: University Physics Lab II (2017 Fall) '
+p = 'PHY 132: University Physics Lab II (2017 Fall)-'
 
 URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 
 
 ### Parsers excel workbook (must be .csv file) ###
 def parser(filename):
-    df1 = pd.read_csv(filename, dtype=object, delimiter=',', header=None)
+    df1 = pd.read_csv(filename, dtype=object, delimiter='\t', header=None)
     return df1
 
 ### Authenticates MyASU credentials ###
@@ -43,23 +43,24 @@ def updater(d, p, URL, arr, module, dryrun=True):
     i = 1
     for i in range(1, len(arr[0])):
         time.sleep(5)
-        d.find_element_by_link_text(p + "(" + str(arr[0][i]) + ")").click()
+        d.find_element_by_link_text(p + str(arr[0][i])).click()
         time.sleep(5)
         d.find_element_by_link_text(module).click()
         time.sleep(5)
         n = 1
         for n in range (1, len(arr.columns)-13):
-            op.assignmentSelector(driver = d, module = module, test = arr[n+2][0])
+            prelabs.assignmentSelector(driver = d, module = module, test = arr[n+2][0])
             time.sleep(5)
-            op.edit_test_options(d)
+            prelabs.edit_test_options(d)
             time.sleep(3)
-            op.start_restrict(d, False)
-            op.end_restrict(d, False)
-            op._dueDate(d, True)
+            prelabs.start_restrict(d, False)
+            prelabs.end_restrict(d, False)
+            prelabs._dueDate(d, True)
+            prelabs.dp_dueDate_date(d, arr[n+2][i])
+            prelabs.tp_dueDate_time(d, arr[1][i])
+            prelabs._lateSubmission(d, True)
             pause = raw_input("Press <ENTER> to continue: ")
-            #op.dp_dueDate_date(d, arr[n+2][i])
-            op._lateSubmission(d, True)
-            op.cancel(d)
+            prelabs.cancel(d)
             time.sleep(7)
         d.get(URL)
 

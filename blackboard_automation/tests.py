@@ -57,14 +57,20 @@ def end_restrict(driver, state, **kwargs):
 def _dueDate(driver, state, **kwargs):
     try:
         if state:
-            driver.find_element_by_id('_dueDate').click()
+            element = driver.find_element_by_name('due_date_in_use')
+            #element = driver.find_element_by_id('_dueDate')
+            element.click()
     except Exception as e:
         pass
 
 def _lateSubmission(driver, state, **kwargs):
     try:
         if state:
-            driver.find_element_by_id('doNotAllowLateSubmission').click()
+            element = driver.find_element_by_name('doNotAllowLateSubmission')
+            element.click()
+            #while str(driver.execute_script("return document.getElementById('doNotAllowLateSubmission').checked")) == 'False':
+            #    element = driver.find_element_by_name('doNotAllowLateSubmission')
+            #    element.click()
         else:
             pass
     except Exception as e:
