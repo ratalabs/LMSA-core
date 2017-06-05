@@ -10,8 +10,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from blackboard_automation import tests as prelabs
 
 ### Creates the browser instance in which all operations take place ###
-driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/PIRT_ASU/lib/chromedriver')
-filename = '/Users/smccaffrey/Desktop/git/PIRT_ASU/PHY132_Fall2017.csv'
+#driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/blackboard_automation/lib/chromedriver')
+driver = wbd.FirefoxProfile('/Users/smccaffrey/Desktop/git/blackboard_automation/lib/geckodriver')
+
+filename = '/Users/smccaffrey/Desktop/git/blackboard_automation/PHY132_Fall2017.csv'
 
 p = 'PHY 132: University Physics Lab II (2017 Fall)-'
 
