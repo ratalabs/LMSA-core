@@ -1,17 +1,20 @@
 import selenium
 import getpass
 import time
+import logging as log
 import pandas as pd
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+#from selenium.webdriver.support.ui import WebDriverWait
+#from selenium.webdriver.support import expected_conditions as EC
 
 from blackboard_automation import tests as prelabs
 
 ### Creates the browser instance in which all operations take place ###
-#driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/blackboard_automation/lib/chromedriver')
-driver = wbd.FirefoxProfile('/Users/smccaffrey/Desktop/git/blackboard_automation/lib/geckodriver')
+driver = wbd.Chrome('/Users/smccaffrey/Desktop/git/blackboard_automation/lib/chromedriver2.26')
+#driver = wbd.FirefoxProfile('/Users/smccaffrey/Desktop/git/blackboard_automation/lib/geckodriver')
+#driver = wbd.Firefox()
+#driver = wbd.something('/usr/bin/safaridriver')
 
 filename = '/Users/smccaffrey/Desktop/git/blackboard_automation/PHY132_Fall2017.csv'
 
@@ -50,6 +53,10 @@ def updater(d, p, URL, arr, module, dryrun=True):
         d.find_element_by_link_text(module).click()
         time.sleep(5)
         n = 1
+
+        log.basicConfig(format = '%(message)s', filename='Desktop/Prelabs.log')
+        log.info('SECTION: ' + arr[0][i] + '\n')
+
         for n in range (1, len(arr.columns)-13):
             prelabs.assignmentSelector(driver = d, module = module, test = arr[n+2][0])
             time.sleep(5)
@@ -57,7 +64,11 @@ def updater(d, p, URL, arr, module, dryrun=True):
             time.sleep(3)
             prelabs.start_restrict(d, False)
             prelabs.end_restrict(d, False)
-            prelabs._dueDate(d, True)
+
+            for x in range(0, 2):
+                prelabs._dueDate(d, True)
+                prelabs._lateSubmission(d, True)
+
             prelabs.dp_dueDate_date(d, arr[n+2][i])
             prelabs.tp_dueDate_time(d, arr[1][i])
             prelabs._lateSubmission(d, True)

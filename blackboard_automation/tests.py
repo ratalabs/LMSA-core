@@ -11,6 +11,7 @@ __status__ = "Production"
 import selenium
 import getpass
 import time
+import logging
 import pandas as pd
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
@@ -21,7 +22,9 @@ from selenium.webdriver.support import expected_conditions as EC
 def assignmentSelector(driver, test, module, **kwargs):
     try:
         driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
+        logging.info('\t' + test + '\t\t\t\tPASSED')
     except Exception as e:
+        logging.info('\t' + test + '\t\t\t\tFAILED')
         print("Error with " + module + " : " + test + "...skipping")
         pass
 
@@ -57,17 +60,16 @@ def end_restrict(driver, state, **kwargs):
 def _dueDate(driver, state, **kwargs):
     try:
         if state:
-            element = driver.find_element_by_name('due_date_in_use')
-            #element = driver.find_element_by_id('_dueDate')
-            element.click()
+            #element = driver.find_element_by_name('due_date_in_use')
+            driver.find_element_by_id('_dueDate').click()
     except Exception as e:
         pass
 
 def _lateSubmission(driver, state, **kwargs):
     try:
         if state:
-            element = driver.find_element_by_name('doNotAllowLateSubmission')
-            element.click()
+            element = driver.find_element_by_id('doNotAllowLateSubmission').click()
+            element.perform()
             #while str(driver.execute_script("return document.getElementById('doNotAllowLateSubmission').checked")) == 'False':
             #    element = driver.find_element_by_name('doNotAllowLateSubmission')
             #    element.click()
