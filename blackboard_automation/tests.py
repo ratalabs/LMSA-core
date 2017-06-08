@@ -68,8 +68,7 @@ def _dueDate(driver, state, **kwargs):
 def _lateSubmission(driver, state, **kwargs):
     try:
         if state:
-            element = driver.find_element_by_id('doNotAllowLateSubmission').click()
-            element.perform()
+            driver.find_element_by_id('doNotAllowLateSubmission').click()
             #while str(driver.execute_script("return document.getElementById('doNotAllowLateSubmission').checked")) == 'False':
             #    element = driver.find_element_by_name('doNotAllowLateSubmission')
             #    element.click()

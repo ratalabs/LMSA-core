@@ -65,13 +65,18 @@ def updater(d, p, URL, arr, module, dryrun=True):
             prelabs.start_restrict(d, False)
             prelabs.end_restrict(d, False)
 
-            for x in range(0, 2):
-                prelabs._dueDate(d, True)
-                prelabs._lateSubmission(d, True)
-
             prelabs.dp_dueDate_date(d, arr[n+2][i])
             prelabs.tp_dueDate_time(d, arr[1][i])
-            prelabs._lateSubmission(d, True)
+
+            for x in range(0, 2):
+                prelabs._dueDate(d, True)
+
+            for x in range(0, 2):
+                prelabs._dueDate(d, True)
+
+            for x in range(0, 1):
+                prelabs._lateSubmission(d, True)
+
             pause = raw_input("Press <ENTER> to continue: ")
             prelabs.cancel(d)
             time.sleep(7)
