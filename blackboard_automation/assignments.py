@@ -11,9 +11,8 @@ __status__ = "Production"
 import selenium
 import getpass
 import time
-import 
+import logging
 import pandas as pd
-from collections import OrderedDict
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
