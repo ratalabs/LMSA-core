@@ -1,78 +1,96 @@
-### Python 2.7 required
-### Author: Sam McCaffrey
-### Purpose: Automate BB Tasks
+#!/usr/bin/env python
+
+__author__ = "Sam McCaffrey"
+__copyright__ = "Copyright 2017, Sam McCaffrey"
+__license__ = "Apache-2.0"
+__version__ = "1.0.1"
+__maintainer__ = "Sam McCaffrey"
+__email__ = "samccaff@asu.edu"
+__status__ = "Production"
 
 import selenium
 import getpass
 import time
-import xlrd
+import logging
 import pandas as pd
-from collections import OrderedDict
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def assignmentPicker(d, prelab, n):
+def assignmentSelector(driver, assignment, module, **kwargs):
     try:
-        d.find_element_by_xpath('//a[@title=' + "\"" + prelab + " item options" + "\"" ']').click()
+        driver.find_element_by_xpath('//a[@title=' + "\"" + assignment + " item options" + "\"" ']').click()
     except Exception as e:
-        print("Error with " + prelab + "...skipping")
+        print("Error with " + module + " : " + assignment + "...skipping")
         pass
 
-def edit_test_options(d):
+def edit_test_options(driver, **kwargs):
     try:
-        d.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
+        driver.find_element_by_xpath('//a[@title="Edit"]').click()
     except Exception as e:
         pass
 
-def start_restrict(d,state):
+def start_restrict(driver,state):
     try:
         if state:
-            d.find_element_by_id('start_restrict').click()
+            driver.find_element_by_id('start_restrict').click()
         else:
             pass
     except Exception as e:
         pass
 
-def end_restrict(d,state):
+def end_restrict(driver,state):
     try:
         if state:
-            d.find_element_by_id('end_restrict').click()
+            driver.find_element_by_id('end_restrict').click()
         else:
             pass
     except Exception as e:
         pass
 
-def _dueDate(d,state):
+def _dueDate(driver,state):
     try:
         if not state:
-            d.find_element_by_id('_dueDate').click()
+            driver.find_element_by_id('_dueDate').click()
         else:
             pass
     except Exception as e:
         pass
 
-def _lateSubmission(d,state):
+def _lateSubmission(driver,state):
     try:
         if not state:
-            d.find_element_by_id('doNotAllowLateSubmission').click()
+            driver.find_element_by_id('doNotAllowLateSubmission').click()
         else:
             pass
     except Exception as e:
         pass
 
-def dp_dueDate_date(d, date):
+def dp_dueDate_date(driver, date, **kwargs):
     try:
-        d.find_element_by_id('dp_dueDate_date').clear()
-        d.find_element_by_id('dp_dueDate_date').send_keys(date)
+        driver.find_element_by_id('dp_dueDate_date').clear()
+        driver.find_element_by_id('dp_dueDate_date').send_keys(date)
     except Exception as e:
         pass
 
-def cancel(d):
+def tp_dueDate_time(driver, time, **kwargs):
     try:
-        d.find_element_by_name('bottom_Cancel').click()
+        driver.find_element_by_id('tp_dueDate_time').clear()
+        driver.find_element_by_id('tp_dueDate_time').send_keys(time)
+    except Exception as e:
+        pass
+
+def submit(driver, **kwargs):
+    try:
+        driver.find_element_by_name('bottom_submit').click()
+    except Exception as e:
+        pass
+
+def cancel(driver, **kwargs):
+    try:
+        driver.find_element_by_name('bottom_Cancel').click()
     except Exception as e:
         pass
 
