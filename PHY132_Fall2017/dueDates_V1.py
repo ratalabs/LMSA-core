@@ -48,8 +48,8 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
         time.sleep(5)
         n = 1
 
-        log.basicConfig(format = '%(message)s', filename='Desktop/DueDates.log')
-        log.info('SECTION: ' + arr[0][i] + '\n')
+        #log.basicConfig(format = '%(message)s', filename='Desktop/DueDates.log')
+        #log.info('SECTION: ' + arr[0][i] + '\n')
 
         #len(arr.columns)
         for n in range (1, 10):
