@@ -54,6 +54,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
         #len(arr.columns)
         for n in range (1, 10):
             prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0])
+            print(arr[n+2][0])
             time.sleep(5)
             prelabs.edit_test_options(d)
             time.sleep(3)
@@ -88,6 +89,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             lab_reports._dueDate(d, True)
             lab_reports.dp_dueDate_date(d, arr[n+12][i])
             lab_reports.tp_dueDate_time(d, arr[2][i])
+            pause = raw_input("Press <ENTER> to continue: ")
             lab_reports.cancel(d)
         d.get(URL)
 

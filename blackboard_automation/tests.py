@@ -22,9 +22,13 @@ from selenium.webdriver.support import expected_conditions as EC
 def assignmentSelector(driver, test, module, **kwargs):
     try:
         driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
-        logging.info('\t' + test + '\t\t\t\tPASSED')
+        #logging.info('\t' + test + '\t\t\t\tPASSED')
     except Exception as e:
-        logging.info('\t' + test + '\t\t\t\tFAILED')
+        try:
+            driver.find_element_by_xpath('//a[@title="Prelab: Kirchoff" + "\'" + "s Rules item options"]')
+        except:
+            
+        #logging.info('\t' + test + '\t\t\t\tFAILED')
         print("Error with " + module + " : " + test + "...skipping")
         pass
 
