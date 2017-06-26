@@ -25,9 +25,11 @@ def assignmentSelector(driver, test, module, **kwargs):
         #logging.info('\t' + test + '\t\t\t\tPASSED')
     except Exception as e:
         try:
-            driver.find_element_by_xpath('//a[@title="Prelab: Kirchoff" + "\'" + "s Rules item options"]')
+            test1 = "Prelab: Kirchhoff's Rules item options"
+            test2 = "test2"
+            driver.find_element_by_xpath('//a[@title=' + "\"" + test1 + "\"" ']').click()
         except:
-            
+            pass
         #logging.info('\t' + test + '\t\t\t\tFAILED')
         print("Error with " + module + " : " + test + "...skipping")
         pass
