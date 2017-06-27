@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 __author__ = "Sam McCaffrey"
 __copyright__ = "Copyright 2017, Sam McCaffrey"
@@ -19,20 +20,22 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def assignmentSelector(driver, test, module, **kwargs):
+def assignmentSelector(driver, test, module, n, **kwargs):
     try:
         driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
-        #logging.info('\t' + test + '\t\t\t\tPASSED')
-    except Exception as e:
-        try:
-            test1 = "Prelab: Kirchhoff's Rules item options"
-            test2 = "test2"
-            driver.find_element_by_xpath('//a[@title=' + "\"" + test1 + "\"" ']').click()
-        except:
-            pass
-        #logging.info('\t' + test + '\t\t\t\tFAILED')
-        print("Error with " + module + " : " + test + "...skipping")
-        pass
+    except :
+        if n == 6:
+            try:
+                driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Kirchhoff’s Rules item options']").click()
+            except:
+                print("Error with " + module + " : " + test + "...skipping")
+                pass
+        if n == 10:
+            try:
+                driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday’s Law of Induction item options']").click()
+            except:
+                print("Error with " + module + " : " + test + "...skipping")
+                pass
 
 def edit_test_options(driver, **kwargs):
     try:

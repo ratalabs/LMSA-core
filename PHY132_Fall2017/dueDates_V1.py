@@ -23,7 +23,7 @@ def parser(filename):
     return df1
 
 ### Authenticates MyASU credentials ###
-def authorization(d, URL, username=None, t=15):
+def authorization(d, URL, username=None, t=8):
     if not username:
         username = raw_input("Enter ASURITE username: ")
     password = getpass.getpass("Enter ASURITE password: ")
@@ -47,6 +47,12 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
         time.sleep(5)
         d.find_element_by_link_text(module1).click()
         time.sleep(5)
+
+        ### Test, REMOVE BEFORE MERGE ###
+        #elems = d.find_elements_by_xpath("//a[@title]")
+        #for elem in elems:
+        #    print elem.get_attribute("title")
+
         n = 1
 
         #log.basicConfig(format = '%(message)s', filename='Desktop/DueDates.log')
@@ -54,7 +60,8 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
 
         #len(arr.columns)
         for n in range (1, 10):
-            prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0])
+            prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], n = n)
+            #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+6][0])
             print(arr[n+2][0])
             time.sleep(5)
             prelabs.edit_test_options(d)
@@ -71,7 +78,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             for x in range(0, 1):
                 prelabs._lateSubmission(d, True)
 
-            pause = raw_input("Press <ENTER> to continue: ")
+            #pause = raw_input("Press <ENTER> to continue: ")
             if not dryrun:
                 prelabs.submit(d)
             prelabs.cancel(d)
@@ -82,6 +89,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
 
         for n in range(1, 10):
             lab_reports.assignmentSelector(driver = d, module = module2, assignment = arr[n+12][0])
+            print(arr[n+12][0])
             time.sleep(5)
             lab_reports.edit_test_options(d)
             time.sleep(3)
@@ -90,7 +98,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             lab_reports._dueDate(d, True)
             lab_reports.dp_dueDate_date(d, arr[n+12][i])
             lab_reports.tp_dueDate_time(d, arr[2][i])
-            pause = raw_input("Press <ENTER> to continue: ")
+            #pause = raw_input("Press <ENTER> to continue: ")
             lab_reports.cancel(d)
         d.get(URL)
 
