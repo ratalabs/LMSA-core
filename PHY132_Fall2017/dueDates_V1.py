@@ -48,19 +48,13 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
         d.find_element_by_link_text(module1).click()
         time.sleep(5)
 
-        ### Test, REMOVE BEFORE MERGE ###
-        #elems = d.find_elements_by_xpath("//a[@title]")
-        #for elem in elems:
-        #    print elem.get_attribute("title")
-
-        n = 1
 
         #log.basicConfig(format = '%(message)s', filename='Desktop/DueDates.log')
         #log.info('SECTION: ' + arr[0][i] + '\n')
 
-        #len(arr.columns)
-        for n in range (1, 10):
-            prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], n = n)
+        n = 1
+        for n in range (1, 11):
+            prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
             #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+6][0])
             print(arr[n+2][0])
             time.sleep(5)

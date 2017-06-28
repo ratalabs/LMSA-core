@@ -20,17 +20,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def assignmentSelector(driver, test, module, n, **kwargs):
+def assignmentSelector(driver, test, module, index, **kwargs):
     try:
         driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
     except :
-        if n == 6:
+        if index == 6:
             try:
                 driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Kirchhoff’s Rules item options']").click()
             except:
                 print("Error with " + module + " : " + test + "...skipping")
                 pass
-        if n == 10:
+        if index == 10:
             try:
                 driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday’s Law of Induction item options']").click()
             except:
