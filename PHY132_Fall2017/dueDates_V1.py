@@ -19,8 +19,12 @@ URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_ta
 
 ### Parsers excel workbook (must be .csv file) ###
 def parser(filename):
-    df1 = pd.read_csv(filename, dtype=object, delimiter=',', header=None)
+    df1 = pd.read_csv(filename, dtype=str, delimiter=',', header=None)
     return df1
+
+#def parser(filename):
+#    df1 = pd.read_csv(filename, sep=" ", header=None)
+#    return df1
 
 ### Authenticates MyASU credentials ###
 def authorization(d, URL, username=None, t=8):
@@ -55,7 +59,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
         n = 1
         for n in range (1, 11):
             prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
-            #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+6][0])
+            #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+6][0], index = n)
             print(arr[n+2][0])
             time.sleep(5)
             prelabs.edit_test_options(d)

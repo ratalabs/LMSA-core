@@ -1,14 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-__author__ = "Sam McCaffrey"
-__copyright__ = "Copyright 2017, Sam McCaffrey"
-__license__ = "Apache-2.0"
-__version__ = "1.0.1"
-__maintainer__ = "Sam McCaffrey"
-__email__ = "samccaff@asu.edu"
-__status__ = "Production"
-
 import selenium
 import getpass
 import time
@@ -24,18 +16,19 @@ def assignmentSelector(driver, test, module, index, **kwargs):
     try:
         driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
     except :
-        if index == 6:
-            try:
-                driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Kirchhoff’s Rules item options']").click()
-            except:
-                print("Error with " + module + " : " + test + "...skipping")
-                pass
-        if index == 10:
-            try:
-                driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday’s Law of Induction item options']").click()
-            except:
-                print("Error with " + module + " : " + test + "...skipping")
-                pass
+        #if index == 6:
+        #    try:
+        #        driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Kirchhoff’s Rules item options']").click()
+        #    except:
+        #        driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday’s Law of Induction item options']").click()
+        print("Error with " + module + " : " + test + "...skipping")
+        pass
+        #if index == 10:
+        #    try:
+        #        driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday’s Law of Induction item options']").click()
+        #    except:
+        #        print("Error with " + module + " : " + test + "...skipping")
+        #        pass
 
 def edit_test_options(driver, **kwargs):
     try:
