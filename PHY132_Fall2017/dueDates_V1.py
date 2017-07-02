@@ -44,6 +44,9 @@ def authorization(d, URL, username=None, t=12):
 ### Update Prelabs information ###
 ### test comment ###
 def updater(d, p, URL, arr, module1, module2, dryrun=True):
+
+    runtimeLog = pd.DataFrame()
+
     i = 1
     for i in range(1, len(arr[0])):
         time.sleep(5)
@@ -51,10 +54,6 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
         time.sleep(5)
         d.find_element_by_link_text(module1).click()
         time.sleep(5)
-
-
-        #log.basicConfig(format = '%(message)s', filename='Desktop/DueDates.log')
-        #log.info('SECTION: ' + arr[0][i] + '\n')
 
         n = 1
         for n in range (1, 11):
@@ -82,6 +81,12 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             if not dryrun:
                 prelabs.submit(d)
             prelabs.cancel(d)
+
+            if not prelabs.assignmentSelector():
+                runtimeLog.append(arr[0][i],arr[n+2][0],"FAILED")
+            else:
+                runtimeLog.append(arr[0][i],arr[n+2][0],"PASSED")
+            print(runtimeLog)
             time.sleep(7)
 
         d.find_element_by_link_text(module2).click()

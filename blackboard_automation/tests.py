@@ -21,6 +21,8 @@ def assignmentSelector(driver, test, module, index, **kwargs):
         #    except:
         #        driver.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday’s Law of Induction item options']").click()
         print("Error with " + module + " : " + test + "...skipping")
+        return False
+    finally:
         pass
         #if index == 10:
         #    try:
