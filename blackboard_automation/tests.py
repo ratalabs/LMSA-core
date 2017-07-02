@@ -11,7 +11,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
 def assignmentSelector(driver, test, module, index, **kwargs):
     try:
         driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()

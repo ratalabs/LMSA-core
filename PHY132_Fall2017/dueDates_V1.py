@@ -13,7 +13,7 @@ from blackboard_automation import assignments as lab_reports
 
 ### Creates the browser instance in which all operations take place ###
 driver = wbd.Chrome('/Users/smccaffrey/Desktop/blackboard_automation/lib/chromedriver2.26')
-filename = '/Users/smccaffrey/Desktop/blackboard_automation/PHY132_Fall2017/PHY132_Fall2017.csv'
+filename = '/Users/smccaffrey/Desktop/blackboard_automation/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
 p = 'PHY 132: University Physics Lab II (2017 Fall)-'
 URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 
@@ -23,11 +23,11 @@ def parser(filename):
     return df1
 
 #def parser(filename):
-#    df1 = pd.read_csv(filename, sep=" ", header=None)
+#    df1 = pd.read_excel(filename, header=None)
 #    return df1
 
 ### Authenticates MyASU credentials ###
-def authorization(d, URL, username=None, t=8):
+def authorization(d, URL, username=None, t=12):
     if not username:
         username = raw_input("Enter ASURITE username: ")
     password = getpass.getpass("Enter ASURITE password: ")
@@ -59,8 +59,10 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
         n = 1
         for n in range (1, 11):
             prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
+            print("Editing SECTION: " + str(arr[0][i]) + " " + arr[n+2][0])
             #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+6][0], index = n)
-            print(arr[n+2][0])
+            #d.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday's Law of Induction item options']").click()
+            #print(arr[n+2][0])
             time.sleep(5)
             prelabs.edit_test_options(d)
             time.sleep(3)
