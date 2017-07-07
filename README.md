@@ -1,12 +1,86 @@
-# Blackboard Automation
-### *A general skeleton for creating ad hoc automation scripts for Blackboard*
-==============================================================
+## Blackboard Automation
 
-## About
-* The goal of this framework is to reduce time spent editing tedious blackboard information. The inspiration for this project was that we had instructors with nearly 50 individual section sites each with over 24 assignments, and each of those had their own due dates. For us personally this framework can complete tasks in less than an hour, whereas without it we'd be spending weeks manually updating course information.
+The purpose of this library is to provide a structured framework for automation the boring
+stuff within the blackboard web portal.
 
-### Current Repository Tasks
-* Structure
-* Build out Blackboard Framework
-* debug bulkupload
-* build BB automation script
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Give examples
+```
+
+### Installing
+
+A step by step series of examples that tell you have to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Selenium](http://selenium-python.readthedocs.io/) - The framework used
+
+## Contributing
+
+
+
+## Versioning
+
+
+
+## Authors
+
+* **Sam McCaffrey** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone who's code was used
+* Inspiration
+* etc
