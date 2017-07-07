@@ -9,4 +9,5 @@ __maintainer__ = "Sam McCaffrey"
 __email__ = "samccaff@asu.edu"
 __status__ = "Production"
 
-from . import *
+
+__all__ = ['assignments', 'tests']
