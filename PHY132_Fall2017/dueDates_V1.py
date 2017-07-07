@@ -81,12 +81,12 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             if not dryrun:
                 prelabs.submit(d)
             prelabs.cancel(d)
-
+            """
             if not prelabs.assignmentSelector():
                 runtimeLog.append(arr[0][i],arr[n+2][0],"FAILED")
             else:
                 runtimeLog.append(arr[0][i],arr[n+2][0],"PASSED")
-            print(runtimeLog)
+            print(runtimeLog)"""
             time.sleep(7)
 
         d.find_element_by_link_text(module2).click()
