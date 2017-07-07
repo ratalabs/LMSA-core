@@ -105,5 +105,16 @@ def submit(driver, **kwargs):
         driver.find_element_by_name('bottom_submit').click()
     except Exception as e:
         pass
+
+def main():
+    try:
+        errorHandler1()
+        return 0
+    except Exception as e:
+        raise
+
 def errorHandler1():
-    return
+    raise RuntimeError('this is the error message')
+
+if __name__ == '__main__':
+    main()
