@@ -71,9 +71,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Sam McCaffrey** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Sam McCaffrey** - *Project Lead* - [smccaffrey](https://github.com/smccaffrey)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/smccaffrey/blackboard_automation/graphs/contributors) who participated in this project.
 
 ## License
 
