@@ -2,10 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import selenium
-import getpass
 import time
-import logging
-import pandas as pd
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
