@@ -10,4 +10,7 @@ __email__ = "samccaff@asu.edu"
 __status__ = "Production"
 
 
-__all__ = ['assignments', 'tests']
+from . import authorization
+from .forms import assignments
+from .forms import tests
+from .navigation.course import sidebar
