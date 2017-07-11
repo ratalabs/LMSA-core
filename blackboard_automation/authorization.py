@@ -4,13 +4,28 @@
 import getpass
 import time
 
-def __init__(self):
-    self.driver = driver
-    self.url = url
+#lass login():
+#    def __init__(self):
+#        self.driver = driver
+#        self.url = url
+#        self.time = time
 
-def login(self, driver = driver, url = url):
+def login(driver, url, wait = None, **kwargs):
+    uname = raw_input("Enter ASURITE username: ")
+    pword = getpass.getpass("Enter ASURITE password: ")
     try:
-        driver.find_element_by_xpath('//*[contains(@id, 'username')]')
+        driver.get(url)
+        driver.find_element_by_id('username').send_keys(uname)
+        driver.find_element_by_id('password').send_keys(pword)
+        driver.find_element_by_class_name('submit').click()
+        time.sleep(wait)
     except Exception as e:
-        print # coding=utf-8
-        raise
+        print e
+        pass
+
+def dual_factor(driver, wait = None, **kwargs):
+    try:
+        driver.find_element_by_class_name('positive auth-button').click()
+        time.sleep(wait)
+    except:
+        pass
