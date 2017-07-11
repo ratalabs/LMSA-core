@@ -10,6 +10,8 @@ from selenium.webdriver.common.by import By
 sys.path.append('/Users/smccaffrey/Desktop/blackboard_automation/')
 from blackboard_automation import tests as prelabs
 from blackboard_automation import assignments as lab_reports
+from blackboard_automation import sidebar
+from blackboard_automation import authorization
 
 ### Creates the browser instance in which all operations take place ###
 driver = wbd.Chrome('/Users/smccaffrey/Desktop/blackboard_automation/lib/chromedriver2.26')
@@ -22,46 +24,20 @@ def parser(filename):
     df1 = pd.read_csv(filename, dtype=str, delimiter=',', header=None)
     return df1
 
-#def parser(filename):
-#    df1 = pd.read_excel(filename, header=None)
-#    return df1
-
-### Authenticates MyASU credentials ###
-def authorization(d, URL, username=None, t=12):
-    if not username:
-        username = raw_input("Enter ASURITE username: ")
-    password = getpass.getpass("Enter ASURITE password: ")
-
-    #URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
-
-    d.get(URL)
-    d.find_element_by_id("username").send_keys(username)
-    d.find_element_by_id("password").send_keys(password)
-    d.find_element_by_class_name('submit').click()
-
-    time.sleep(t) #Gives you time for 2-Step Authentication
-
 ### Update Prelabs information ###
-### test comment ###
 def updater(d, p, URL, arr, module1, module2, dryrun=True):
-
-    runtimeLog = pd.DataFrame()
-
     i = 1
     for i in range(1, len(arr[0])):
-        time.sleep(5)
         d.find_element_by_link_text(p + str(arr[0][i])).click()
         time.sleep(5)
-        d.find_element_by_link_text(module1).click()
-        time.sleep(5)
+        sidebar.navigate(driver = d, module = 'PRELABS', wait = 5)
+        #d.find_element_by_link_text(module1).click()
+        #time.sleep(5)
 
         n = 1
         for n in range (1, 11):
             prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
             print("Editing SECTION: " + str(arr[0][i]) + " " + arr[n+2][0])
-            #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+6][0], index = n)
-            #d.find_element_by_xpath("//img[@src='/images/ci/icons/cmlink_generic.gif'][@alt='Prelab: Faraday's Law of Induction item options']").click()
-            #print(arr[n+2][0])
             time.sleep(5)
             prelabs.edit_test_options(d)
             time.sleep(3)
@@ -81,12 +57,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             if not dryrun:
                 prelabs.submit(d)
             prelabs.cancel(d)
-            """
-            if not prelabs.assignmentSelector():
-                runtimeLog.append(arr[0][i],arr[n+2][0],"FAILED")
-            else:
-                runtimeLog.append(arr[0][i],arr[n+2][0],"PASSED")
-            print(runtimeLog)"""
+
             time.sleep(7)
 
         d.find_element_by_link_text(module2).click()
@@ -111,6 +82,10 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
 def test_func(d, filename, dryrun=False):
     parser(filename)
     if not dryrun:
-        authorization(d, URL)
+        #authorization(d, URL)
+        authorization.login(driver = d, url = URL, wait = 10)
+        authorization.dual_factor(driver = d, wait = 14)
         updater(d, p, URL, parser(filename), module1 = 'PRELABS', module2 = 'Submit Lab Reports')
-test_func(driver, filename)
+
+if __name__ == '__main__':
+    test_func(driver, filename)
