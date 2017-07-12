@@ -65,7 +65,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
 
         for n in range(1, 10):
             lab_reports.assignmentSelector(driver = d, module = module2, assignment = arr[n+12][0])
-            print(arr[n+12][0])
+            print("Editing SECTION: " + str(arr[0][i]) + " " + arr[n+12][0])
             time.sleep(5)
             lab_reports.edit_test_options(d)
             time.sleep(3)
@@ -77,12 +77,12 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             #pause = raw_input("Press <ENTER> to continue: ")
             lab_reports.cancel(d)
         d.get(URL)
+        time.sleep(4)
 
 ### test function ###
 def test_func(d, filename, dryrun=False):
     parser(filename)
     if not dryrun:
-        #authorization(d, URL)
         authorization.login(driver = d, url = URL, wait = 10)
         authorization.dual_factor(driver = d, wait = 14)
         updater(d, p, URL, parser(filename), module1 = 'PRELABS', module2 = 'Submit Lab Reports')
