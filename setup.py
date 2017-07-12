@@ -11,7 +11,7 @@ config = {
     'download_url': 'Where to download it.',
     'author_email': 'samccaff@asu.edu',
     'version': '0.1.0',
-    'install_requires': ['selenium','pandas'],
+    'install_requires': ['selenium','pandas', 'time', 'getpass'],
     'packages': ['blackboard_automation'],
     'scripts': [],
     'name': 'blackboard automation'
