@@ -12,5 +12,5 @@ __status__ = "Production"
 
 from . import authorization
 from .forms import assignments
-from .forms import tests
+from .forms import EditTests
 from .navigation.course import sidebar
