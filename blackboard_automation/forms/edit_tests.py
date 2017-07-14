@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class EditTests():
-    
+
     def __init__(self):
         return
 
@@ -37,9 +37,6 @@ class EditTests():
         except Exception as e:
             pass
 
-    def is_checked(self, driver, item, **kwargs):
-      checked = driver.execute_script(("return document.getElementById('%s').checked") % item)
-      return checked
 
     def end_restrict(driver, state, **kwargs):
         try:
