@@ -8,7 +8,7 @@ from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 
 sys.path.append('/Users/smccaffrey/Desktop/blackboard_automation/')
-from blackboard_automation import tests as prelabs
+from blackboard_automation import EditTests as prelabs
 from blackboard_automation import assignments as lab_reports
 from blackboard_automation import sidebar
 from blackboard_automation import authorization

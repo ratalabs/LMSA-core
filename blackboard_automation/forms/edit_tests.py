@@ -8,11 +8,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class EditTests(self):
+class EditTests():
+    
     def __init__(self):
-        self.driver = driver
+        return
 
-    def assignmentSelector(driver, test, module, index, wait = NONE, **kwargs):
+    def assignmentSelector(driver, test, module, index, wait = None, **kwargs):
         try:
             driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
         except :
