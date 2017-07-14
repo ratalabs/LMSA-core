@@ -11,7 +11,7 @@ import time
 #        self.time = time
 
 def login(driver, url, wait = None, **kwargs):
-    uname = raw_input("Enter ASURITE username: ")
+    uname = input("Enter ASURITE username: ")
     pword = getpass.getpass("Enter ASURITE password: ")
     try:
         driver.get(url)
@@ -20,7 +20,6 @@ def login(driver, url, wait = None, **kwargs):
         driver.find_element_by_class_name('submit').click()
         time.sleep(wait)
     except Exception as e:
-        print e
         pass
 
 def dual_factor(driver, wait = None, **kwargs):

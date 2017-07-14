@@ -7,15 +7,22 @@ import pandas as pd
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 
-sys.path.append('/Users/smccaffrey/Desktop/blackboard_automation/')
+#sys.path.append('/Users/smccaffrey/Desktop/blackboard_automation/')
+#sys.path.append("C:\Users\sysadmin\Documents\GitHub\blackboard_automation")
 from blackboard_automation import tests as prelabs
 from blackboard_automation import assignments as lab_reports
 from blackboard_automation import sidebar
 from blackboard_automation import authorization
 
 ### Creates the browser instance in which all operations take place ###
-driver = wbd.Chrome('/Users/smccaffrey/Desktop/blackboard_automation/lib/chromedriver2.26')
-filename = '/Users/smccaffrey/Desktop/blackboard_automation/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
+### macOS ###
+#driver = wbd.Chrome('/Users/smccaffrey/Desktop/blackboard_automation/lib/chromedriver2.26')
+#filename = '/Users/smccaffrey/Desktop/blackboard_automation/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
+
+### Windows 10 ###
+driver = wbd.Chrome('\lib\chromedriver2_26')
+filename = 'PHY132_Fall2017\PHY132_Fall2017_v2.csv'
+
 p = 'PHY 132: University Physics Lab II (2017 Fall)-'
 URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 
@@ -87,5 +94,7 @@ def test_func(d, filename, dryrun=False):
         authorization.dual_factor(driver = d, wait = 14)
         updater(d, p, URL, parser(filename), module1 = 'PRELABS', module2 = 'Submit Lab Reports')
 
-if __name__ == '__main__':
-    test_func(driver, filename)
+test_func(driver, filename)
+
+#if __name__ == '__main__':
+#    test_func(driver, filename)
