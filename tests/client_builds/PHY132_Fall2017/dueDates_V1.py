@@ -12,6 +12,7 @@ from blackboard_automation import test_options as prelabs
 from blackboard_automation import assignment_options as lab_reports
 from blackboard_automation import SideBar
 from blackboard_automation import authorization
+from blackboard_automation import SectionSelector
 
 
 ### Creates the browser instance in which all operations take place ###
