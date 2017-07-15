@@ -1,20 +1,29 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
+    print('Error importing setup from setuptools. DEFAULTING to disutils.code')
     from distutils.core import setup
 
+version = __import__('blackboard_automation.version').get_version()
 
-config = {
-    'description': 'Blackboard Automation Framework',
-    'author': 'Sam McCaffrey',
-    'url': 'URL to get it at.',
-    'download_url': 'Where to download it.',
-    'author_email': 'samccaff@asu.edu',
-    'version': '0.1.0',
-    'install_requires': ['selenium','pandas', 'time', 'getpass'],
-    'packages': ['blackboard_automation'],
-    'scripts': [],
-    'name': 'blackboard automation'
-}
-
-setup(**config)
+setup(
+    name = "Blackboard_Assistant",
+    version = version,
+    description = "A full service Non-invasive automation framework for the Blackboard LMS system.",
+    long_description = "", #open("README.rst").read()
+    author = "Samuel McCaffrey",
+    author_email = "samccaff@asu.edu",
+    license = "Apache-2",
+    url = "https://github.com/smccaffrey/blackboard_automation",
+    keywords = "python automation selenium blackboard",
+    classifiers = [
+        "Development Status :: Pre-Alpha",
+        "Enviroment :: Console",
+        "Intended Audience :: Industry/Academic",
+        "Operating System :: UNIX",
+        "Programming Language :: Python 2.7",
+    ]
+)
