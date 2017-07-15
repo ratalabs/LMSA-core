@@ -1,5 +1,4 @@
 selenium
 getpass
-numpy
 time
 pandas
