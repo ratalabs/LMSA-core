@@ -13,4 +13,5 @@ __status__ = "Production"
 from . import authorization
 from .forms import assignment_options
 from .forms import test_options
-from .navigation.course import SideBar
+from .navigation.course.sidebar import SideBar
+from .navigation.home.section_selector import SectionSelector

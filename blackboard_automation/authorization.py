@@ -4,14 +4,8 @@
 import getpass
 import time
 
-#lass login():
-#    def __init__(self):
-#        self.driver = driver
-#        self.url = url
-#        self.time = time
-
 def login(driver, url, wait = None, **kwargs):
-    uname = input("Enter ASURITE username: ")
+    uname = raw_input("Enter ASURITE username: ")
     pword = getpass.getpass("Enter ASURITE password: ")
     try:
         driver.get(url)

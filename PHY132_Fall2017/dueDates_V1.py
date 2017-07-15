@@ -8,9 +8,9 @@ from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 
 sys.path.append('/Users/smccaffrey/Desktop/blackboard_automation/')
-from blackboard_automation import EditTests as prelabs
-from blackboard_automation import assignments as lab_reports
-from blackboard_automation import sidebar
+from blackboard_automation import test_options as prelabs
+from blackboard_automation import assignment_options as lab_reports
+from blackboard_automation import SideBar
 from blackboard_automation import authorization
 
 
@@ -88,7 +88,5 @@ def test_func(d, filename, dryrun=False):
         authorization.dual_factor(driver = d, wait = 14)
         updater(d, p, URL, parser(filename), module1 = 'PRELABS', module2 = 'Submit Lab Reports')
 
-test_func(driver, filename)
-
-#if __name__ == '__main__':
-#    test_func(driver, filename)
+if __name__ == '__main__':
+   test_func(driver, filename)
