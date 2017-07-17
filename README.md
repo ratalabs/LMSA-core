@@ -8,9 +8,9 @@ It can currently handle all content management and information editing tasks.
 
 #### Modules
 
-* [analytics](https://github.com/smccaffrey/BlackboardAssistant/analytics) - Handles all analytical tasks
-* [automation](https://github.com/smccaffrey/BlackboardAssistant/automation) - WebDriver automation framework for Blackboard Learn
-* [scraper](https://github.com/smccaffrey/BlackboardAssistant/scraper) - XML/HTML ingestion engine for dynamically scrapping web pages
+* [analytics](https://github.com/smccaffrey/BlackboardAssistant/tree/master/analytics) - Handles all analytical tasks
+* [automation](https://github.com/smccaffrey/BlackboardAssistant/tree/master/automation) - WebDriver automation framework for Blackboard Learn
+* [scraper](https://github.com/smccaffrey/BlackboardAssistant/tree/master/scraper) - XML/HTML ingestion engine for dynamically scrapping web pages
 
 ### Prerequisites
 
