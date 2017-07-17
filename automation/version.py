@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 
 """
-Blackboard_Assistant uses `semantic versioning`_ with the release number consisting
+Blackboard_ssistant uses `semantic versioning`_ with the release number consisting
 of a triplet *MAJOR.MINOR.PATCH*. *PATCH* releases are bug fixes or
 updates to docs or meta data only and do not introduce new features or
 change the API. Within a *MAJOR* release, the user API is stable
