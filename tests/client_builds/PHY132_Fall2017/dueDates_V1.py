@@ -7,17 +7,17 @@ import pandas as pd
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 
-sys.path.append('/Users/smccaffrey/Desktop/blackboard_automation/')
-from blackboard_automation import test_options as prelabs
-from blackboard_automation import assignment_options as lab_reports
-from blackboard_automation import SideBar
-from blackboard_automation import authorization
-from blackboard_automation import SectionSelector
+sys.path.append('/Users/smccaffrey/Desktop/BlackboardAssistant/')
+from automation import test_options as prelabs
+from automation import assignment_options as lab_reports
+from automation import SideBar
+from automation import authorization
+from automation import SectionSelector
 
 
 ### Creates the browser instance in which all operations take place ###
-driver = wbd.Chrome('/Users/smccaffrey/Desktop/blackboard_automation/lib/chromedriver2_26')
-filename = '/Users/smccaffrey/Desktop/blackboard_automation/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
+driver = wbd.Chrome('/Users/smccaffrey/Desktop/automation/lib/chromedriver2_26')
+filename = '/Users/smccaffrey/Desktop/automation/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
 p = 'PHY 132: University Physics Lab II (2017 Fall)-'
 URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 
