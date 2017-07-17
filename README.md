@@ -3,9 +3,14 @@
 The purpose of this library is to provide a structured framework for automation the boring
 stuff within the blackboard web portal.
 
-## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## For The Developers:
+
+#### Modules
+
+* [analytics](https://github.com/smccaffrey/BlackboardAssistant/analytics) - Handles all analytical tasks
+* [automation](https://github.com/smccaffrey/BlackboardAssistant/automation) - WebDriver automation framework for Blackboard Learn
+* [scraper](https://github.com/smccaffrey/BlackboardAssistant/scraper) - XML/HTML ingestion engine for dynamically scrapping web pages
 
 ### Prerequisites
 
