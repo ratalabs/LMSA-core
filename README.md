@@ -1,7 +1,7 @@
-## Blackboard Automation
+## Blackboard Assistant
 
-The purpose of this library is to provide a structured framework for automation the boring
-stuff within the blackboard web portal.
+This is a full service web-based automation application for the Blackboard Learn LMS.
+It can currently handle all content management and information editing tasks.
 
 
 ## For The Developers:
