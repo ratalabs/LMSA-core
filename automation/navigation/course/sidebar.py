@@ -11,13 +11,13 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class SideBar(object):
 
-    def __init__(self, driver, wait = None):
+    def __init__(self, driver):
         self.driver = driver
-        self.wait = wait
 
-    def navigate_to(self, element):
+    def navigate_to(self, element, wait):
         try:
             self.driver.find_element_by_link_text(element).click()
+            time.sleep(wait)
             #driver.find_element_by_link_text(module).click()
         except Exception as e:
             pass

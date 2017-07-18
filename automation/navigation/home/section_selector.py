@@ -8,16 +8,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class SectionSelector(object):
+class SectionSelector():
 
-    def __init__(self, driver, element):
+    def __init__(self, driver):
         self.driver = driver
-        self.element = element
 
     def find_section(self, module, section, wait = None):
         try:
-            x = self.driver.find_element_by_link_text(module + section)
-            x.click()
+            driver.find_element_by_link_text(module + section).click()
             time.sleep(wait)
         except:
             pass

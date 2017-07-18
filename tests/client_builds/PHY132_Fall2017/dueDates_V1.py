@@ -16,8 +16,9 @@ from automation import SectionSelector
 
 
 ### Creates the browser instance in which all operations take place ###
-driver = wbd.Chrome('/Users/smccaffrey/Desktop/automation/lib/chromedriver2_26')
-filename = '/Users/smccaffrey/Desktop/automation/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
+#driver = wbd.Chrome('/Users/smccaffrey/Desktop/BlackboardAssistant/automation/lib/chromedriver2_26')
+driver = wbd.Chrome()
+filename = '/Users/smccaffrey/Desktop/BlackboardAssistant/tests/client_builds/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
 p = 'PHY 132: University Physics Lab II (2017 Fall)-'
 URL = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 
@@ -30,9 +31,10 @@ def parser(filename):
 def updater(d, p, URL, arr, module1, module2, dryrun=True):
     i = 1
     for i in range(1, len(arr[0])):
-        d.find_element_by_link_text(p + str(arr[0][i])).click()
+        SectionSelector(d).find_section(module = p, section = arr[0][i], wait = 5)
+        #d.find_element_by_link_text(p + str(arr[0][i])).click()
         time.sleep(5)
-        sidebar.navigate(driver = d, module = 'PRELABS', wait = 5)
+        SideBar(d).navigate_to(element = 'PRELABS', wait = 5)
         #d.find_element_by_link_text(module1).click()
         #time.sleep(5)
 
