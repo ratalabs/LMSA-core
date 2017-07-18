@@ -1,1 +1,1 @@
-*.html, *.js, *.css linguist-language=Other
+*.html *.js *.css linguist-language=Other
