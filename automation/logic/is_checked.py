@@ -12,11 +12,12 @@ from selenium.webdriver.support import expected_conditions as EC
 """
     Create an object to check the state of any boolean element
 """
-class IsChecked(self, element):
+class IsChecked(self, driver, element):
 
     def __init__(self):
         self.element = element
-        
+        self.driver = driver
+
     def is_checked(self, driver, item, **kwargs):
         checked = driver.execute_script(("return document.getElementById('%s').checked") % item)
         return checked

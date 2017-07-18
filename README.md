@@ -10,7 +10,7 @@ It can currently handle all content management and information editing tasks.
 
 * [analytics](https://github.com/smccaffrey/BlackboardAssistant/tree/master/analytics) - Handles all analytical tasks
 * [automation](https://github.com/smccaffrey/BlackboardAssistant/tree/master/automation) - WebDriver automation framework for Blackboard Learn
-* [scraper](https://github.com/smccaffrey/BlackboardAssistant/tree/master/scraper) - XML/HTML ingestion engine for dynamically scrapping web pages
+* [scraper](https://github.com/smccaffrey/BlackboardAssistant/tree/master/scraper) - XML/HTML ingestion engine for dynamically scraping web pages
 
 ### Prerequisites
 
@@ -20,23 +20,54 @@ What things you need to install the software and how to install them
 ...in progress
 ```
 
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
+# Developer Installation
+Get your copy of the repository and setup the dev environment.
+## Clone
 ```
-...in progress
+  $ git clone https://github.com/smccaffrey/BlackboardAssistant.git <directory>
 ```
 
-And repeat
+## Virtual Environment Setup
 
 ```
-...in progress
+  $ pip install virtualenv
+  $ pip install virtualenvwrapper
+  $ export WORKON_HOME=~/Envs
+  $ source /usr/local/bin/virtualenvwrapper.sh
+```
+#### Create and Activate virtualenv
+```
+  $ mkvirtualenv v-env-name
+  $ workon v-env-name
+```
+#### Create directory for app
+
+```
+  (v-env-name) $ mkdir my-project
+  (v-env-name) $ cd my-project
+```
+#### Now that we have a project and are inside v-env-name install Flask
+```
+  (v-env-name) $ pip install Flask
+```
+#### Now run the application
+```
+  ~/my-project $ export FLASK_APP=run.py
+  ~/my-project $ flask run
+    * Serving Flask app "run"
+    * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+## Useful commands
+
+#### Shows all dependencies installed by Flask
+```
+  $ pip freeze
+```
+#### Push dependencies to requirements
+```
+  $ pip freeze > requirements.txt
+```
 
 ## Running the tests
 
