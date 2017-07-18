@@ -1,5 +1,5 @@
 UI/* export-ignore
 
-*.html linguist-vendored=true
-*.css linguist-vendored=true
-*.js linguist-vendored=true
+*.html linguist-language=true
+*.css linguist-language=true
+*.js linguist-language=true
