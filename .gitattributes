@@ -1,3 +1,5 @@
+UI export-ignore
+
 *.html linguist-language=Other
 *.js linguist-language=Other
 *.css linguist-language=Other
