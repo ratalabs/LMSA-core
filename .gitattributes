@@ -1,5 +1,12 @@
-UI/* export-ignore
-
-*.html linguist-language=true
-*.css linguist-language=true
-*.js linguist-language=true
+# Definitively text files
+*.php  text
+*.css  text
+*.js   text
+*.txt  text
+*.md   text
+*.xml  text
+*.json text
+*.bat  text
+*.sql  text
+*.xml  text
+*.yml  text
