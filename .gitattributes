@@ -1,4 +1,5 @@
 # Definitively text files
+*.html text linguist-language=Python
 *.php  text linguist-language=Python
 *.css  text linguist-language=Python
 *.js   text linguist-language=Python
