@@ -1,12 +1,12 @@
 # Definitively text files
-*.php  text
-*.css  text
-*.js   text
-*.txt  text
-*.md   text
-*.xml  text
-*.json text
-*.bat  text
-*.sql  text
-*.xml  text
-*.yml  text
+*.php  text linguist-language=Python
+*.css  text linguist-language=Python
+*.js   text linguist-language=Python
+*.txt  text linguist-language=Python
+*.md   text linguist-language=Python
+*.xml  text linguist-language=Python
+*.json text linguist-language=Python
+*.bat  text linguist-language=Python
+*.sql  text linguist-language=Python
+*.xml  text linguist-language=Python
+*.yml  text linguist-language=Python
