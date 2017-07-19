@@ -8,23 +8,25 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class EditTests():
+class EditTests(object):
 
-    def __init__(self):
-        return
+    def __init__(self, driver):
+        self.driver = driver
 
-    def assignmentSelector(driver, test, module, index, wait = None, **kwargs):
+    def assignmentSelector(self, element, wait = None):
         try:
-            driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
+            self.driver.find_element_by_xpath('//a[@title=' + "\"" + element + " item options" + "\"" ']').click()
+            #driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
         except :
             print("Error with " + module + " : " + test + "...skipping")
             return False
         finally:
             pass
 
-    def edit_test_options(driver, **kwargs):
+    def edit_test_options(self, wait = None):
         try:
-            driver.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
+            self.driver.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
+            time.sleep(wait)
         except Exception as e:
             pass
 
@@ -103,6 +105,3 @@ class EditTests():
 
     def errorHandler1():
         raise RuntimeError('this is the error message')
-
-    if __name__ == '__main__':
-        main()
