@@ -7,7 +7,7 @@ import pandas as pd
 from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 
-sys.path.append('/Users/smccaffrey/Desktop/BlackboardAssistant/')
+sys.path.append('/Users/smccaffrey/Desktop/BlackboardAssistant/core/')
 from automation import test_options as prelabs
 from automation import assignment_options as lab_reports
 from automation import SideBar
