@@ -8,11 +8,12 @@ from selenium import webdriver as wbd
 from selenium.webdriver.common.by import By
 
 sys.path.append('/Users/smccaffrey/Desktop/BlackboardAssistant/core/')
-from automation import test_options as prelabs
+#from automation import test_options as prelabs
 from automation import assignment_options as lab_reports
 from automation import SideBar
 from automation import authorization
 from automation import SectionSelector
+from automation import EditTests as prelabs
 
 
 ### Creates the browser instance in which all operations take place ###
@@ -33,18 +34,16 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
     for i in range(1, len(arr[0])):
         SectionSelector(d).find_section(module = p, section = arr[0][i], wait = 5)
         #d.find_element_by_link_text(p + str(arr[0][i])).click()
-        time.sleep(5)
         SideBar(d).navigate_to(element = 'PRELABS', wait = 5)
         #d.find_element_by_link_text(module1).click()
         #time.sleep(5)
 
         n = 1
         for n in range (1, 11):
-            prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
+            #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
+            prelabs(d).assignmentSelector(element = arr[n+2][0], wait = 5)
             print("Editing SECTION: " + str(arr[0][i]) + " " + arr[n+2][0])
-            time.sleep(5)
-            prelabs.edit_test_options(d)
-            time.sleep(3)
+            prelabs(d).edit_test_options(wait = 3)
             prelabs.start_restrict(d, False)
             prelabs.end_restrict(d, False)
             prelabs.dp_dueDate_date(d, arr[n+2][i])
