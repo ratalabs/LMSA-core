@@ -16,92 +16,85 @@ class EditTests(object):
     def assignmentSelector(self, element, wait = None):
         try:
             self.driver.find_element_by_xpath('//a[@title=' + "\"" + element + " item options" + "\"" ']').click()
-            #driver.find_element_by_xpath('//a[@title=' + "\"" + test + " item options" + "\"" ']').click()
+            time.sleep(wait)
         except :
             print("Error with " + module + " : " + test + "...skipping")
-            return False
         finally:
             pass
 
-    def edit_test_options(self, wait = None):
+    def editTestOptions(self, wait = None):
         try:
             self.driver.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
             time.sleep(wait)
         except Exception as e:
             pass
 
-    def start_restrict(driver, state, **kwargs):
+    def startRestrictCheck(self, state, wait = None):
         try:
             if state:
-               driver.find_element_by_id('start_restrict').click()
+               self.driver.find_element_by_id('start_restrict').click()
+               time.sleep(wait)
             else:
                pass
         except Exception as e:
             pass
 
-
-    def end_restrict(driver, state, **kwargs):
+    def endRestrictCheck(self, state, wait = None):
         try:
             if state:
-                driver.find_element_by_id('end_restrict').clear()
-                driver.find_element_by_id('end_restrict').click()
+                self.driver.find_element_by_id('end_restrict').clear()
+                self.driver.find_element_by_id('end_restrict').click()
+                time.sleep(wait)
             else:
-                driver.find_element_by_id('end_restrict').clear()
+                self.driver.find_element_by_id('end_restrict').clear()
+                time.sleep(wait)
         except Exception as e:
             pass
 
-    def _dueDate(driver, state, **kwargs):
+    def dueDateCheck(self, state, wait = None):
         try:
             if state:
-                #element = driver.find_element_by_name('due_date_in_use')
-                driver.find_element_by_id('_dueDate').click()
+                self.driver.find_element_by_id('_dueDate').click()
+                time.sleep(wait)
         except Exception as e:
             pass
 
-    def _lateSubmission(driver, state, **kwargs):
+    def lateSubmissionCheck(self, state, wait = None):
         try:
             if state:
-                driver.find_element_by_id('doNotAllowLateSubmission').click()
-                #while str(driver.execute_script("return document.getElementById('doNotAllowLateSubmission').checked")) == 'False':
-                #    element = driver.find_element_by_name('doNotAllowLateSubmission')
-                #    element.click()
+                self.driver.find_element_by_id('doNotAllowLateSubmission').click()
+                time.sleep(wait)
             else:
                 pass
         except Exception as e:
             pass
 
-    def dp_dueDate_date(driver, date, **kwargs):
+    def dueDate(self, date, wait = None):
         try:
-            driver.find_element_by_id('dp_dueDate_date').clear()
-            driver.find_element_by_id('dp_dueDate_date').send_keys(date)
+            self.driver.find_element_by_id('dp_dueDate_date').clear()
+            self.driver.find_element_by_id('dp_dueDate_date').send_keys(date)
+            time.sleep(wait)
         except Exception as e:
             pass
 
-    def tp_dueDate_time(driver, time, **kwargs):
+    def dueDateTime(self, time, wait = None):
         try:
             driver.find_element_by_id('tp_dueDate_time').clear()
             driver.find_element_by_id('tp_dueDate_time').send_keys(time)
+            time.sleep(wait)
         except Exception as e:
             pass
 
-    def cancel(driver, **kwargs):
+    def cancel(self, wait = None):
         try:
-            driver.find_element_by_name('bottom_Cancel').click()
+            self.driver.find_element_by_name('bottom_Cancel').click()
+            time.sleep(wait)
         except Exception as e:
             pass
 
-    def submit(driver, **kwargs):
+    def submit(self, wait = None):
         try:
             driver.find_element_by_name('bottom_submit').click()
+            time.sleep(wait)
         except Exception as e:
             pass
-
-    def main():
-        try:
-            errorHandler1()
-            return 0
-        except Exception as e:
-            raise
-
-    def errorHandler1():
-        raise RuntimeError('this is the error message')
