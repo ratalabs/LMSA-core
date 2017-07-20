@@ -14,7 +14,7 @@ class SideBar(object):
     def __init__(self, driver):
         self.driver = driver
 
-    def navigate_to(self, element, wait):
+    def navigate_to(self, element, wait = None):
         try:
             self.driver.find_element_by_link_text(element).click()
             time.sleep(wait)
