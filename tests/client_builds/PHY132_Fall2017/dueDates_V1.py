@@ -43,18 +43,18 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
             prelabs(d).assignmentSelector(element = arr[n+2][0], wait = 5)
             print("Editing SECTION: " + str(arr[0][i]) + " " + arr[n+2][0])
-            prelabs(d).edit_test_options(wait = 3)
-            prelabs.start_restrict(d, False)
-            prelabs.end_restrict(d, False)
-            prelabs.dp_dueDate_date(d, arr[n+2][i])
-            prelabs.tp_dueDate_time(d, arr[1][i])
+            prelabs(d).editTestOptions(wait = 3)
+            prelabs(d).startRestrictCheck(state = False)
+            prelabs(d).endRestrictCheck(state = False)
+            prelabs(d).dueDate(date = arr[n+2][i])
+            prelabs(d).dueDateTime(time = arr[1][i])
 
             for x in range(0, 2):
-                prelabs._dueDate(d, True)
+                prelabs(d).dueDateCheck(state = True)
             for x in range(0, 2):
-                prelabs._dueDate(d, True)
+                prelabs(d).dueDateCheck(state = True)
             for x in range(0, 1):
-                prelabs._lateSubmission(d, True)
+                prelabs(d).lateSubmissionCheck(state = True)
 
             #pause = raw_input("Press <ENTER> to continue: ")
             if not dryrun:
