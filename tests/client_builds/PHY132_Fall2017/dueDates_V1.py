@@ -17,7 +17,7 @@ from automation import EditTests as prelabs
 
 
 ### Creates the browser instance in which all operations take place ###
-#driver = wbd.Chrome('/Users/smccaffrey/Desktop/BlackboardAssistant/automation/lib/chromedriver2_26')
+#driver = wbd.Chrome('/Users/smccaffrey/Desktop/BlackboardAssistant/lib/chromedriver2_26')
 driver = wbd.Chrome()
 filename = '/Users/smccaffrey/Desktop/BlackboardAssistant/tests/client_builds/PHY132_Fall2017/PHY132_Fall2017_v2.csv'
 p = 'PHY 132: University Physics Lab II (2017 Fall)-'
@@ -32,6 +32,7 @@ def parser(filename):
 def updater(d, p, URL, arr, module1, module2, dryrun=True):
     i = 1
     for i in range(1, len(arr[0])):
+        print("Choosing a section")
         SectionSelector(d).find_section(module = p, section = arr[0][i], wait = 5)
         #d.find_element_by_link_text(p + str(arr[0][i])).click()
         SideBar(d).navigate_to(element = 'PRELABS', wait = 5)
@@ -40,6 +41,7 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
 
         n = 1
         for n in range (1, 11):
+            print("loop is starting: now select assignmentSelector")
             #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
             prelabs(d).assignmentSelector(element = arr[n+2][0], wait = 5)
             print("Editing SECTION: " + str(arr[0][i]) + " " + arr[n+2][0])
@@ -48,18 +50,20 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             prelabs(d).endRestrictCheck(state = False)
             prelabs(d).dueDate(date = arr[n+2][i])
             prelabs(d).dueDateTime(time = arr[1][i])
+            prelabs(d).dueDateCheck(state = True)
 
+            """
             for x in range(0, 2):
                 prelabs(d).dueDateCheck(state = True)
             for x in range(0, 2):
                 prelabs(d).dueDateCheck(state = True)
             for x in range(0, 1):
                 prelabs(d).lateSubmissionCheck(state = True)
-
+            """
             #pause = raw_input("Press <ENTER> to continue: ")
             if not dryrun:
-                prelabs.submit(d)
-            prelabs.cancel(d)
+                prelabs(d).submit()
+            prelabs(d).cancel()
 
             time.sleep(7)
 
@@ -87,7 +91,7 @@ def test_func(d, filename, dryrun=False):
     parser(filename)
     if not dryrun:
         authorization.login(driver = d, url = URL, wait = 10)
-        authorization.dual_factor(driver = d, wait = 14)
+        authorization.dual_factor(driver = d, wait = 15)
         updater(d, p, URL, parser(filename), module1 = 'PRELABS', module2 = 'Submit Lab Reports')
 
 if __name__ == '__main__':
