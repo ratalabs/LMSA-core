@@ -119,12 +119,12 @@ class Editor(object):
             pass
 
 
-    #class TestOptions(Editor):
+class TestOptions(Editor):
 
-    #    def __init__(self):
-    #        return
+    def __init__(self):
+        return
 
-    #class AssignmentOptions(Editor):
+class AssignmentOptions(Editor):
 
-    #    def __init__(self):
-    #        return
+    def __init__(self):
+        return
