@@ -13,12 +13,15 @@ class EditTests(object):
     def __init__(self, driver):
         self.driver = driver
 
-    def assignmentSelector(self, element, wait = None):
+    def is_checked(self, item):
+        return self.driver.execute_script(("return document.getElementById('%s').checked") % item)
+
+    def assignmentSelector(self, element, wait = None, **kwargs):
         try:
             self.driver.find_element_by_xpath('//a[@title=' + "\"" + element + " item options" + "\"" ']').click()
             time.sleep(wait)
-        except :
-            print("Error with " + module + " : " + test + "...skipping")
+        except:
+            print("Error with " + element + "...skipping")
         finally:
             pass
 
@@ -52,6 +55,8 @@ class EditTests(object):
             pass
 
     def dueDateCheck(self, state, wait = None):
+        #element = self.is_checked('_dueDate')
+        #while element:
         try:
             if state:
                 self.driver.find_element_by_id('_dueDate').click()
@@ -94,7 +99,11 @@ class EditTests(object):
 
     def submit(self, wait = None):
         try:
-            driver.find_element_by_name('bottom_submit').click()
+            self.driver.find_element_by_name('bottom_submit').click()
             time.sleep(wait)
         except Exception as e:
             pass
+
+    def is_checked(self, item):
+        checked = self.driver.execute_script(("return document.getElementById('%s').checked") % item)
+        return checked
