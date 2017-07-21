@@ -9,11 +9,11 @@ from selenium.webdriver.common.by import By
 
 sys.path.append('/Users/smccaffrey/Desktop/BlackboardAssistant/core/')
 #from automation import test_options as prelabs
+from automation import Editor as prelabs
 from automation import assignment_options as lab_reports
 from automation import SideBar
 from automation import authorization
 from automation import SectionSelector
-from automation import EditTests as prelabs
 
 
 ### Creates the browser instance in which all operations take place ###
@@ -28,21 +28,15 @@ def parser(filename):
     df1 = pd.read_csv(filename, dtype=str, delimiter=',', header=None)
     return df1
 
+
 ### Update Prelabs information ###
 def updater(d, p, URL, arr, module1, module2, dryrun=True):
     i = 1
     for i in range(1, len(arr[0])):
-        print("Choosing a section")
         SectionSelector(d).find_section(module = p, section = arr[0][i], wait = 5)
-        #d.find_element_by_link_text(p + str(arr[0][i])).click()
         SideBar(d).navigate_to(element = 'PRELABS', wait = 5)
-        #d.find_element_by_link_text(module1).click()
-        #time.sleep(5)
-
         n = 1
         for n in range (1, 11):
-            print("loop is starting: now select assignmentSelector")
-            #prelabs.assignmentSelector(driver = d, module = module1, test = arr[n+2][0], index = n)
             prelabs(d).assignmentSelector(element = arr[n+2][0], wait = 5)
             print("Editing SECTION: " + str(arr[0][i]) + " " + arr[n+2][0])
             prelabs(d).editTestOptions(wait = 3)
@@ -60,12 +54,10 @@ def updater(d, p, URL, arr, module1, module2, dryrun=True):
             for x in range(0, 1):
                 prelabs(d).lateSubmissionCheck(state = True)
             """
-            #pause = raw_input("Press <ENTER> to continue: ")
+            pause = raw_input("Press <ENTER> to continue: ")
             if not dryrun:
-                prelabs(d).submit()
-            prelabs(d).cancel()
-
-            time.sleep(7)
+                prelabs(d).submit(wait = 7)
+            prelabs(d).cancel(wait = 7)
 
         d.find_element_by_link_text(module2).click()
         time.sleep(3)

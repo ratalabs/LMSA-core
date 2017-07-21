@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 import selenium
 import time
@@ -8,29 +8,45 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class EditTests(object):
+
+class Editor(object):
 
     def __init__(self, driver):
         self.driver = driver
 
-    def is_checked(self, item):
-        return self.driver.execute_script(("return document.getElementById('%s').checked") % item)
+    def assignmentSelector(self, element, wait = None):
+        """
+        Selects (clicks) the desired assignment/test.
 
-    def assignmentSelector(self, element, wait = None, **kwargs):
+        :Args:
+        -   element: The element, or name, of the content item you wish to clicks.
+        -   wait: Specifies time to wait after action.
+            If None, does nothing.
+        """
         try:
             self.driver.find_element_by_xpath('//a[@title=' + "\"" + element + " item options" + "\"" ']').click()
             time.sleep(wait)
         except:
             print("Error with " + element + "...skipping")
-        finally:
-            pass
+            return False
+        else:
+            return True
 
     def editTestOptions(self, wait = None):
+        """
+        Clicks the 'Edit Test Options Button' for entering the edit options menu.
+
+        :Args:
+        -   wait: Specifies time to wait after action.
+            If None, does nothing.
+        """
         try:
             self.driver.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
             time.sleep(wait)
         except Exception as e:
             pass
+        else:
+            return True
 
     def startRestrictCheck(self, state, wait = None):
         try:
@@ -55,8 +71,6 @@ class EditTests(object):
             pass
 
     def dueDateCheck(self, state, wait = None):
-        #element = self.is_checked('_dueDate')
-        #while element:
         try:
             if state:
                 self.driver.find_element_by_id('_dueDate').click()
@@ -104,6 +118,13 @@ class EditTests(object):
         except Exception as e:
             pass
 
-    def is_checked(self, item):
-        checked = self.driver.execute_script(("return document.getElementById('%s').checked") % item)
-        return checked
+
+class TestOptions(Editor):
+
+    def __init__(self):
+        return
+
+class AssignmentOptions(Editor):
+
+    def __init__(self):
+        return
