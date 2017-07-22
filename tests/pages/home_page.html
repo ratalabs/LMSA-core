@@ -1,4 +1,320 @@
-<div id="_4_1termCourses_noterm" style="">
+<body>
+
+<h1 class="hideoff hideFromQuickLinks">Open Quick Links</h1><div id="quick_links_wrap" style="top: 45px;"><a id="quick_links_lightbox_link" href="#" onclick="quickLinks.lightboxHelper.toggleLightbox(); return false;" role="button" aria-haspopup="true" tabindex="1" title="Open Quick Links">Quick Links</a></div><div id="quickLinksLightboxDiv" class="hideoff" aria-hidden="true" style="display:none"><div class="ax-content"><div class="content-lite"><div id="quick_links_landmarks_section"><h2 class="hideFromQuickLinks">Page Landmarks</h2><ul class="shortcut-list" id="quick_links_landmark_list"></ul></div><div id="quick_links_headings_section"><h2 class="hideFromQuickLinks">Content Outline</h2><ul class="shortcut-list" id="quick_links_heading_list"></ul></div></div><div id="quick_links_hotkeys_section" class="legend"><h2 class="hideFromQuickLinks">Keyboard Shortcuts</h2><ul class="keycombos" id="quick_links_hotkey_list"></ul></div></div></div><h1 class="hideoff hideFromQuickLinks"></h1><div class="global-nav-bar-wrap"><div class="global-nav-bar logout"><a id="topframe.logout.label" href="/webapps/login/?action=logout" target="_top" class="nav-link logout-link" title="Logout"> Logout</a></div><div id="global-nav" class="global-nav-bar" role="navigation" data-preview="false"><div id="hotSpots" class="hotItems hotSpots u_floatThis-left"><span class="funZone"><style type="text/css">
+/* Set the visibility here */
+#asuAlertMsgContain {
+ display: none;
+ position: fixed;
+ top: 29px;
+ left: 100%;
+ margin-left: -220px;
+}
+/* Adjust this height if the message is overflowing */
+#asuAlertMsg:hover {
+ height: 200px;
+}
+/* Color secondary server headers */
+#topFrame, .bgBanner {
+ background-color: #FFF !important;
+}
+#asuAlertMsg {
+ padding: 5px;
+ height: 25px;
+ width: 90%;
+ margin: 5px 1%;
+ float: left;
+ position: relative;
+ transition: height 0.5s ease 0s;
+ text-align: center;
+ overflow: hidden;
+}
+.asuAlertMsgImg {
+ float: left;
+ padding-left: 4px;
+}
+.asuAlertMsgPill {
+ color: #000;
+ background-color: #FFCBCB;
+ border-radius: 10px;
+ font-size: 14px;
+ padding: 3px;
+ margin: 0px;
+}
+.asuAlertMsgTxt {
+ background-color: #FFCBCB;
+ border-radius: 5px;
+ padding: 5px;
+ margin-top: 10px;
+ box-shadow: 0px 8px 6px -6px #777;
+}
+.asuAlertMsgTxt, .asuAlertMsgTxt a {
+ color: #000;
+}
+.asuAlertMsgTxt a:hover {
+ color: #903 !important;
+}
+#asu_nav_wrapper a {
+ font: 12px/12px Arial,Helvetica,sans-serif !important;
+ color: black !important;
+ text-decoration: none !important;
+ text-align: right !important;
+ padding: 4px 8px 5px 8px !important;
+}
+#asu_nav_wrapper a:hover {
+ color: #903 !important;
+ text-decoration: underline !important;
+ text-align: right !important;
+}
+/* Remove color from hot links */
+.hotItems {
+ background-color: transparent !important;
+}
+/* Expand hot links area */
+.hotSpots {
+ width: 466px !important;
+}
+</style><div id="asu_nav_wrapper"><a href="http://www.asu.edu/">ASU Home</a><a href="https://my.asu.edu/">My ASU</a><a href="http://www.asu.edu/colleges/">Colleges &amp; Schools</a><a href="http://www.asu.edu/map/">Map &amp; Locations</a><a href="http://www.asu.edu/contactasu/">Contact Us</a></div><div id="asuAlertMsgContain"><div id="asuAlertMsg"><h3 class="asuAlertMsgPill" id="anonymous_element_1"><img src="https://www.asu.edu/it/acadtech/BbHeader/announcementIcon.png" alt="alert Icon" class="asuAlertMsgImg">System Maintenance</h3><p class="asuAlertMsgTxt">Routine maintenance will be performed on the ASU Blackboard system on Friday morning, 7/14 from 1:00AM to 2:00AM. &nbsp;Blackboard will not be available during this maintenance window. Please visit <a href="https://syshealth.asu.edu/" target="_blank">System Health</a>for Blackboard status and updates.</p></div></div></span></div><div class="hideoff">Global Menu</div><a id="global-nav-link" class="nav-link u_floatThis-right" href="#global-nav-flyout" aria-haspopup="true" tabindex="1" accesskey="m" role="navigation" title="Open Global Navigation Menu"><img src="/images/ci/ng/default_profile_avatar.png" alt="" id="global-avatar" datatooltitle="User Avatar Image" class="global-top-avatar"> Samuel Mccaffrey<span id="badgeTotal" style="visibility: visible;" title=""><span class="hideoff" id="badgeAXLabel">Activity Updates</span><span class="badge" id="badgeTotalCount" title="">15</span></span><img src="/images/ci/mybb/arrowDown-topnav.png" alt="Expand Global Nav" id="global-toggle-img" class="global-toggle"></a><div id="global-nav-flyout" class="flyout-menu" style="display: none;" role="application"><ul id="bottomButtons" class="bottom-buttons"><li class="bottom-buttons-home"><a id="topframe.home.label" href="http://my.asu.edu" target="_blank" class="home" title="Home" role="menuitem"> Home</a></li><li class="bottom-buttons-help"><a id="topframe.help.label" href="#" onclick="globalNavigation.openHelpWindow('http://help.asu.edu');" class="help" title="Help" role="menuitem"> Help</a></li></ul></div></div></div>
+<!-- global_nav.jsp -->
+
+<div id="globalNavPageNavArea">
+    <table class="bouncer" summary="Top frame table" role="presentation">
+      <tbody><tr>
+        <td>
+          <div class="topTabs bgBanner" id="topTabs">
+
+            <div class="brandingImgWrap">
+              <a href="https://www.asu.edu" target="_blank" title="Arizona State University">
+                <img src="/branding/_85_1/asu_logo_prod.png" alt="Arizona State University" title="Arizona State University" class="bannerImage">
+</a>
+            </div>
+
+            <div class="tabWrapper-left">
+              <h2 class="hideoff" id="anonymous_element_2">Top Frame Tabs</h2>
+              <table class="appTabs round" id="appTabList" summary="Tab List table" role="presentation">
+                <tbody><tr>
+                 <td id="Blackboard Home" class="active">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1" target="_top"><span>Blackboard Home</span>
+                        <span class="hideoff"> Tab 1 of 4&nbsp;(active tab)</span>
+                      </a>
+                    </td>
+                  <td id="Courses">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_2_1" target="_top"><span>Courses</span>
+                        <span class="hideoff"> Tab 2 of 4</span>
+                      </a>
+                    </td>
+                  <td id="Organizations">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_3_1" target="_top"><span>Organizations</span>
+                        <span class="hideoff"> Tab 3 of 4</span>
+                      </a>
+                    </td>
+                  <td id="Help">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_66_1" target="_top"><span>Help</span>
+                        <span class="hideoff"> Tab 4 of 4</span>
+                      </a>
+                    </td>
+                  </tr>
+              </tbody></table>
+              <div class="clearfloats"></div>
+            </div>
+            </div>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+<div id="globalNavPageContentArea" style="height: 895px; overflow: visible;">
+<div class="locationPane">
+ <div class="contentPaneWide clearfix tabbedPane portal">
+      <div id="content" class="contentBox clearfix">
+          <!-- Begin Action Control bar. -->
+    <div class="actionBar editmode clearfix" id="actionbar">
+      <h2 class="quickLink hideoff" id="anonymous_element_3">Actions for Content Page</h2>
+            <ul class="nav clearfix u_floatThis-left" id="nav" role="menubar">
+
+<li class="mainButton"><a id="" href="tabManageModules?cmd=manageModules&amp;layoutType=custom&amp;tabId=_1_1&amp;recallUrl=/webapps/portal/execute/tabs/tabAction%3Ftab_tab_group_id%3D_1_1%26tabId%3D_1_1">Add Module</a></li>
+
+	      	          </ul>
+            	      <ul class="nav clearfix u_floatThis-right" id="navsecondary">
+
+<li class="secondaryButton"><a href="#" class="access-reorder" title="Keyboard Accessible Reordering: Modules">
+    <span>
+      <img src="/images/ci/ng/keyboard.gif" alt="">
+      <span class="hideoff">Keyboard Accessible Reordering: Modules</span>
+    </span>
+  </a></li><li class="secondaryButton"><a id="" href="tabCustomization?cmd=customize&amp;layoutType=custom&amp;tabId=_1_1&amp;recallUrl=/webapps/portal/execute/tabs/tabAction%3Ftab_tab_group_id%3D_1_1%26tabId%3D_1_1">Personalize Page</a></li>
+
+				  			  			  			  	      </ul>
+          </div>
+    <!-- End Action Control bar. -->
+
+      <div class="container clearfix">
+    <style type="text/css">
+#column0
+{
+  width: 20%;
+}
+#column1
+{
+  width: 40%;
+}
+#column2
+{
+  width: 40%;
+}
+
+</style><link rel="stylesheet" type="text/css" href="/colorpalettes/slate/generated/colorpalette.generated.modern.css"><div class="contentBox contentBox-edit">
+    <div class="content clearfix">
+      <h1 class="hideoff" tabindex="-1" id="anonymous_element_4">Welcome, Samuel</h1>
+
+       <div class="containerPortal clearfix">
+
+             <div id="moduleReorderControls" class="clearfix">
+ <div>
+
+</div>
+</div>
+<div id="column0" class="column-3 clearfix" style="position: relative;"><div class="portlet clearfix  reorderableModule" id="module:_259_1">
+<!-- extid:portal/tools/my_institution: -->
+ <div class="edit_controls">
+                  <a title="Collapse Tools Module" href="#" class="moduleToggleLink" aria-expanded="true"><img alt="Collapse Tools Module" src="/images/ci/ng/portlet_contract.gif"></a>
+            </div>
+
+
+ <h2 class="dragHandle  clearfix" id="anonymous_element_5">
+  <span class="moduleTitle">Tools</span>
+  <span class="reorder"><span><img src="/images/ci/icons/generic_move.gif" alt=""></span></span>  </h2>
+
+
+ <div class="collapsible" style="overflow: auto;">
+
+<ul class="portletList">
+   <li>
+    <img src="/images/ci/icons/bookopen_li.gif" alt="" align="absmiddle">
+<a href="https://myasucourses.asu.edu/webapps/portal/frameset.jsp?tab_tab_group_id=_66_1&amp;returnUrl=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;tabId=_1_1&amp;forwardUrl=index.jsp" target="_self">ASU Blackboard Help</a>
+   </li>
+   <li>
+    <img src="/images/ci/icons/grades_li.gif" alt="" align="absmiddle">
+<a href="/webapps/gradebook/do/student/viewCourses?returnUrl=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;tabId=_1_1&amp;forwardUrl=index.jsp" target="_self">My Grades</a>
+   </li>
+   <li>
+    <img src="/images/ci/icons/bookopen_li.gif" alt="" align="absmiddle">
+<a href="https://lib.asu.edu?returnUrl=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;tabId=_1_1&amp;forwardUrl=index.jsp" target="_self">ASU Libraries</a>
+   </li>
+   <li>
+    <img src="/images/ci/icons/profile_li.gif" alt="" align="absmiddle">
+<a href="/webapps/blackboard/execute/personalInfo?returnUrl=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;tabId=_1_1&amp;forwardUrl=index.jsp" target="_self">Personal Information</a>
+   </li>
+   <li>
+    <img src="/images/ci/icons/calendar_li.gif" alt="" align="absmiddle">
+<a href="/webapps/blackboard/execute/viewCalendar?calcontext=personal&amp;view=day&amp;filter=showAll&amp;returnUrl=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;tabId=_1_1&amp;forwardUrl=index.jsp" target="_self">Calendar</a>
+   </li>
+   <li>
+    <img src="/images/ci/icons/learning_standards_li.gif" alt="" align="absmiddle">
+<a href="/webapps/goal/execute/documentSubDocManagement?cmd=enter&amp;returnUrl=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;tabId=_1_1&amp;forwardUrl=index.jsp" target="_self">Goals</a>
+   </li>
+   <li>
+    <img src="/images/ci/icons/bookopen_li.gif" alt="" align="absmiddle">
+<a href="/webapps/bbgs-goal-performance-bb_bb60/app/progress/program/?returnUrl=/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;tabId=_1_1&amp;forwardUrl=index.jsp" target="_self">Goal Performance</a>
+   </li>
+   </ul>
+
+
+ </div>
+</div><div class="portlet clearfix  reorderableModule" id="module:_868_1">
+<!-- extid:868: -->
+ <div class="edit_controls">
+                  <a title="Collapse Follett Discover Module" href="#" class="moduleToggleLink" aria-expanded="true"><img alt="Collapse Follett Discover Module" src="/images/ci/ng/portlet_contract.gif"></a>
+            </div>
+
+
+ <h2 class="dragHandle  clearfix" id="anonymous_element_6">
+  <span class="moduleTitle">Follett Discover</span>
+  <span class="reorder"><span><img src="/images/ci/icons/generic_move.gif" alt=""></span></span>  </h2>
+
+
+ <div class="collapsible" style="overflow: auto;">
+
+<div class="eudModule">
+  <div class="eudModule-inner">
+    <div class="portletBlock" style="border-top-width: 0">
+
+        <div style="font-family:Helvetica Neue,Arial,sans-serif;font-weight:300;max-width: 500px;">
+            <div style="width: 35%;min-width: 150px;float:left;max-width: 200px;">
+                <div style="width: 90%;max-width:150px;height:150px;display:block;border-style:solid;border-width:2px;margin: 10px 0px 10px 10px;color:#FFF;background-color:#FFF;border-color:#000;">
+                    <div style="width:100%;height:100px;background-color:#FFF;">
+                        <div style="text-align:left;font-weight:600;font-size: 18px;padding:8px 0 0 5px;color:#E17000;">Every book.</div>
+                        <div style="text-align:left;font-weight:600;font-size: 18px;padding:8px 0 0 5px;color:#CA9B4A;">Every course.</div>
+                        <div style="text-align:left;font-weight:600;font-size: 18px;padding:8px 0 0 5px;color:#3D7EDB;">Any time.</div>
+                    </div>
+                    <div style="width:100%;height:50px;background-color:#00338D;">
+                        <div style="text-align:center;padding-top:8px;">
+                            <span style="font-weight:600;font-size:16px;">Follett</span>&nbsp;<span style="font-weight:100;font-size:25px;font-stretch:ultra-condensed;">|</span>&nbsp;<span style="font-weight:100;font-size:16px;">Discover</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 63%;min-width: 135px;margin: 10px 0 0 10px;float:left;max-width: 373px;">
+                <div style="font-size: 16px;color:#00338D;">
+                    Faculty
+                </div>
+                <div style="font-size: 14px;color:#E17000;">
+                    Discover and Select Course Materials
+                </div>
+                <div style="font-size: 12px;">
+                    Easily submit to your campus store.
+                </div>
+                <div style="font-size: 12px;">
+                    Make available to your students.
+                </div>
+                <br>
+                <div style="font-size: 16px;color:#00338D;">
+                    Students
+                </div>
+                <div style="font-size: 14px;color:#E17000;">
+                    Buy and Rent Books
+                </div>
+                <div style="font-size: 12px;">
+                    Ship to your home or pick up from the campus store.
+                </div>
+            </div>
+        </div>
+    <div class="blockGroups" style="text-align: center;">
+      <br>
+
+
+
+
+  <a href="/webapps/osc-BasicLTI-bb_bb60/tool.jsp?mid=_868_1&amp;tab_tab_group_id=_1_1" target="_self" class="genericButton">
+    Launch Follett Discover
+  </a>
+
+</div>
+</div>
+  </div>
+</div>
+<div class="portletInfoFooter">Last updated: Jul 21, 2017 7:22 PM</div>
+
+
+ </div>
+</div></div>
+<div id="column1" class="column-3 clearfix" style="position: relative;"><div class="portlet clearfix  reorderableModule" id="module:_4_1">
+<!-- extid:learning/advancedcourses: -->
+ <div class="edit_controls">
+          <a title="Manage My Courses Module Settings" href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;forwardUrl=edit_module%2F_4_1%2Fbbcourseorg%3Fcmd%3Dedit&amp;recallUrl=%2Fwebapps%2Fportal%2Fexecute%2Ftabs%2FtabAction%3Ftab_tab_group_id%3D_1_1"><img alt="Manage My Courses Module Settings" src="/images/ci/ng/palette_settings.gif"></a>
+               <a title="Collapse My Courses Module" href="#" class="moduleToggleLink" aria-expanded="true"><img alt="Collapse My Courses Module" src="/images/ci/ng/portlet_contract.gif"></a>
+            </div>
+
+
+ <h2 class="dragHandle  clearfix" id="anonymous_element_7" style="cursor: default;">
+  <span class="moduleTitle">My Courses</span>
+  <span class="reorder"><span><img src="/images/ci/icons/generic_move.gif" alt=""></span></span>  </h2>
+
+
+ <div class="collapsible" style="overflow: auto;">
+  <div id="div_4_1">
+<div class="noItems" style="display:none">All of your courses are hidden.</div>
+
+      <div id="_4_1termCourses_noterm" style="">
         <h3 id="anonymous_element_8">Courses where you are: Instructor</h3>
         <ul class="portletList-img courseListing coursefakeclass ">
             <li>
@@ -258,3 +574,571 @@
 </li>
 </ul>
         </div>
+
+
+
+
+
+
+
+   </div>
+<script type="text/javascript">
+  Event.observe(window, 'load', function() {
+    new Ajax.Request('/webapps/portal/execute/tabs/tabAction', {
+      method: 'post',
+      parameters: 'action=refreshAjaxModule&modId=_4_1&tabId=_1_1&tab_tab_group_id=_1_1',
+      onSuccess: function(transport) {
+        try {
+          var res = transport.responseXML.getElementsByTagName('contents')[0].textContent;
+          $('div_4_1').innerHTML = res.stripScripts();
+          page.globalEvalScripts(res,true);
+        } catch (e) {
+          $('div_4_1').innerHTML = 'Module information is temporarily unavailable. Please reload the page.<!--' + e.toString().escapeHTML().gsub( '-', '&#045;' ) + '-->';
+        }
+      },
+      onFailure: function(transport) {
+        $('div_4_1').innerHTML = 'Error loading module.';
+      }
+    });
+  });
+</script>
+ </div>
+</div><div class="portlet clearfix  reorderableModule" id="module:_1_1">
+<!-- extid:platform/my-announcements: -->
+ <div class="edit_controls">
+          <a title="Manage My Announcements Module Settings" href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;forwardUrl=edit_module%2F_1_1%2Fbbannouncements%3Fcmd%3Dedit&amp;recallUrl=%2Fwebapps%2Fportal%2Fexecute%2Ftabs%2FtabAction%3Ftab_tab_group_id%3D_1_1"><img alt="Manage My Announcements Module Settings" src="/images/ci/ng/palette_settings.gif"></a>
+               <a title="Collapse My Announcements Module" href="#" class="moduleToggleLink" aria-expanded="true"><img alt="Collapse My Announcements Module" src="/images/ci/ng/portlet_contract.gif"></a>
+            </div>
+
+
+ <h2 class="dragHandle  clearfix" id="anonymous_element_10">
+  <span class="moduleTitle">My Announcements</span>
+  <span class="reorder"><span><img src="/images/ci/icons/generic_move.gif" alt=""></span></span>  </h2>
+
+
+ <div class="collapsible" style="overflow: auto;">
+  <div id="div_1_1">
+<!-- Display system announcements -->
+  <div class="noItems divider">No Institution Announcements have been posted in the last 7 days.</div>
+      <!-- Display course/org announcements -->
+  <div class="noItems divider">No Course or Organization Announcements have been posted in the last 7 days.</div>
+  <div class="moduleControlWrapper u_reverseAlign">
+    <a class="button-6" href="/webapps/blackboard/execute/announcement?method=search&amp;context=mybb&amp;viewChoice=3">more announcements...</a>
+    </div>
+
+
+
+
+            </div>
+<script type="text/javascript">
+  Event.observe(window, 'load', function() {
+    new Ajax.Request('/webapps/portal/execute/tabs/tabAction', {
+      method: 'post',
+      parameters: 'action=refreshAjaxModule&modId=_1_1&tabId=_1_1&tab_tab_group_id=_1_1',
+      onSuccess: function(transport) {
+        try {
+          var res = transport.responseXML.getElementsByTagName('contents')[0].textContent;
+          $('div_1_1').innerHTML = res.stripScripts();
+          page.globalEvalScripts(res,true);
+        } catch (e) {
+          $('div_1_1').innerHTML = 'Module information is temporarily unavailable. Please reload the page.<!--' + e.toString().escapeHTML().gsub( '-', '&#045;' ) + '-->';
+        }
+      },
+      onFailure: function(transport) {
+        $('div_1_1').innerHTML = 'Error loading module.';
+      }
+    });
+  });
+</script>
+ </div>
+</div><div class="portlet clearfix  reorderableModule" id="module:_7_1">
+<!-- extid:platform/my-tasks: -->
+ <div class="edit_controls">
+                  <a title="Collapse My Tasks Module" href="#" class="moduleToggleLink" aria-expanded="true"><img alt="Collapse My Tasks Module" src="/images/ci/ng/portlet_contract.gif"></a>
+              <a title="Close My Tasks Module" href="#" class="moduleCloseLink"><img alt="Close My Tasks Module" src="/images/ci/ng/close_mini.gif"></a>
+     </div>
+
+
+ <h2 class="dragHandle  clearfix" id="anonymous_element_11">
+  <span class="moduleTitle">My Tasks</span>
+  <span class="reorder"><span><img src="/images/ci/icons/generic_move.gif" alt=""></span></span>  </h2>
+
+
+ <div class="collapsible" style="overflow: auto;">
+  <div id="div_7_1">
+<h3>My Tasks:</h3>
+    <h3>ECN 211: Macroeconomic Principles 23175-23176:</h3>
+        <ul class="portletList">
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85213_1">
+               Midterm Exam #1</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85225_1">
+               Midterm Exam #1</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85207_1">
+               Midterm Exam #2</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85219_1">
+               Midterm Exam #2</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85203_1">
+               Midterm Exam #3</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85215_1">
+               Midterm Exam #3</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85212_1">
+               Optional Final Exam</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85224_1">
+               Optional Final Exam</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85205_1">
+               W. P. Carey Honor Code Quiz</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85217_1">
+               W. P. Carey Honor Code Quiz</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85204_1">
+               Syllabus Quiz</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85216_1">
+               Syllabus Quiz</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85210_1">
+               Quiz #1</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85222_1">
+               Quiz #1</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85211_1">
+               Quiz #2</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85223_1">
+               Quiz #2</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85208_1">
+               Weekly Discussion #1</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85220_1">
+               Weekly Discussion #1</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85209_1">
+               Weekly Discussion #2</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85221_1">
+               Weekly Discussion #2</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85206_1">
+               Quiz #3</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85218_1">
+               Quiz #3</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85214_1">
+               Weekly Discussion #3</a>
+            </li>
+          <li>
+                <a href="/webapps/blackboard/execute/taskView?course_id=&amp;task_id=_85226_1">
+               Weekly Discussion #3</a>
+            </li>
+          </ul>
+        <div class="moduleControlWrapper u_reverseAlign">
+<a class="button-6" href="/webapps/blackboard/execute/taskEditList?course_id=">
+      more tasks...</a>
+  </div>
+
+
+
+
+
+            </div>
+<script type="text/javascript">
+  Event.observe(window, 'load', function() {
+    new Ajax.Request('/webapps/portal/execute/tabs/tabAction', {
+      method: 'post',
+      parameters: 'action=refreshAjaxModule&modId=_7_1&tabId=_1_1&tab_tab_group_id=_1_1',
+      onSuccess: function(transport) {
+        try {
+          var res = transport.responseXML.getElementsByTagName('contents')[0].textContent;
+          $('div_7_1').innerHTML = res.stripScripts();
+          page.globalEvalScripts(res,true);
+        } catch (e) {
+          $('div_7_1').innerHTML = 'Module information is temporarily unavailable. Please reload the page.<!--' + e.toString().escapeHTML().gsub( '-', '&#045;' ) + '-->';
+        }
+      },
+      onFailure: function(transport) {
+        $('div_7_1').innerHTML = 'Error loading module.';
+      }
+    });
+  });
+</script>
+ </div>
+</div><div class="portlet clearfix  reorderableModule" id="module:_5_1">
+<!-- extid:community/my-organizations: -->
+ <div class="edit_controls">
+          <a title="Manage My Organizations Module Settings" href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1&amp;forwardUrl=edit_module%2F_5_1%2Fbbcourseorg%3Fcmd%3Dedit%26serviceLevel%3DCOMMUNITY&amp;recallUrl=%2Fwebapps%2Fportal%2Fexecute%2Ftabs%2FtabAction%3Ftab_tab_group_id%3D_1_1"><img alt="Manage My Organizations Module Settings" src="/images/ci/ng/palette_settings.gif"></a>
+               <a title="Collapse My Organizations Module" href="#" class="moduleToggleLink" aria-expanded="true"><img alt="Collapse My Organizations Module" src="/images/ci/ng/portlet_contract.gif"></a>
+              <a title="Close My Organizations Module" href="#" class="moduleCloseLink"><img alt="Close My Organizations Module" src="/images/ci/ng/close_mini.gif"></a>
+     </div>
+
+
+ <h2 class="dragHandle  clearfix" id="anonymous_element_12">
+  <span class="moduleTitle">My Organizations</span>
+  <span class="reorder"><span><img src="/images/ci/icons/generic_move.gif" alt=""></span></span>  </h2>
+
+
+ <div class="collapsible" style="overflow: auto;">
+  <div id="div_5_1">
+<div class="noItems">You are not currently participating in any organizations.</div>
+
+
+
+
+
+
+
+   </div>
+<script type="text/javascript">
+  Event.observe(window, 'load', function() {
+    new Ajax.Request('/webapps/portal/execute/tabs/tabAction', {
+      method: 'post',
+      parameters: 'action=refreshAjaxModule&modId=_5_1&tabId=_1_1&tab_tab_group_id=_1_1',
+      onSuccess: function(transport) {
+        try {
+          var res = transport.responseXML.getElementsByTagName('contents')[0].textContent;
+          $('div_5_1').innerHTML = res.stripScripts();
+          page.globalEvalScripts(res,true);
+        } catch (e) {
+          $('div_5_1').innerHTML = 'Module information is temporarily unavailable. Please reload the page.<!--' + e.toString().escapeHTML().gsub( '-', '&#045;' ) + '-->';
+        }
+      },
+      onFailure: function(transport) {
+        $('div_5_1').innerHTML = 'Error loading module.';
+      }
+    });
+  });
+</script>
+ </div>
+</div></div>
+<div id="column2" class="column-3 clearfix" style="position: relative;"><div class="portlet clearfix  reorderableModule" id="module:_351_1">
+<!-- extid:351: -->
+ <div class="edit_controls">
+                  <a title="Collapse ASU Library: Search Module" href="#" class="moduleToggleLink" aria-expanded="true"><img alt="Collapse ASU Library: Search Module" src="/images/ci/ng/portlet_contract.gif"></a>
+            </div>
+
+
+ <h2 class="dragHandle  clearfix" id="anonymous_element_13" style="cursor: default;">
+  <span class="moduleTitle">ASU Library: Search</span>
+  <span class="reorder"><span><img src="/images/ci/icons/generic_move.gif" alt=""></span></span>  </h2>
+
+
+ <div class="collapsible" style="overflow: auto;">
+
+
+
+
+<title>ASU Library - Search</title>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" media="all" href="https://www.asu.edu/lib/pages/css/newtabs.css">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-26190030-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<div id="libtabs">
+
+  <p id="search-info">Search for journals, articles, books, magazines, and newspapers, all in one search.</p>
+
+  <form name="search-form" id="search-form" action="javascript:libtabs_submitSearch();" method="get">
+    <input id="libtabs_searchQueryTemp" placeholder="Enter keywords..." size="35" type="text" value="">
+    <select id="libtabs_searches" onchange="libtabs_switch()">
+      <option value="primo">One Search</option>
+      <option value="catalog">ASU Library Catalog</option>
+      <option value="databases">Databases</option>
+      <option value="journals">Journal Titles</option>
+      <option value="scholar">Google Scholar</option>
+      <option value="libguides">Guides</option>
+      <option value="reserves">Course Reserves</option>
+    </select>
+
+    <input name="submit" type="submit" class="los-search" value="Search">
+  </form>
+<p id="libtabs_extra-text" class="los-infos"><a href="https://search.lib.asu.edu/primo-explore/search?institution=01ASU_INST&amp;vid=01ASU&amp;search_scope=Everything&amp;mode=advanced&amp;lang=en_US">Advanced Search</a></p>
+
+<!-- add library links -->
+ <div class="libtab_links">
+  <ul class="libtab_linklist libtab_firstlist">
+  <li><a href="https://lib.asu.edu/" target="_blank">Library Website</a></li>
+  <li><a href="https://lib.asu.edu/find-materials" target="_blank">Find Materials (How To)</a></li>
+	<li><a href="http://libguides.asu.edu/az.php" target="_blank">All Research Databases</a></li>
+  <li><a href="https://lib.asu.edu/tutorials" target="_blank">Tutorials</a></li>
+  </ul>
+  <ul class="libtab_linklist">
+	<li><a href="http://askalibrarian.asu.edu/" target="_blank">Ask a Librarian</a></li>
+	<li><a href="https://lib.asu.edu/locations" target="_blank">ASU Library Locations</a></li>
+	<li><a href="https://lib.asu.edu/services/undergraduate-students" target="_blank">Library Services for Students</a></li>
+	<li><a href="https://search.lib.asu.edu/primo-explore/account?vid=01ASU&amp;lang=en_US" target="_blank">My Library Account</a></li>
+  </ul>
+ </div>
+
+</div>
+<script type="text/javascript">
+  var libtabs_searchAction = "https://search.lib.asu.edu/primo-explore/search?query=any,contains,";
+  var libtabs_searchVars = "&institution=01ASU_INST&vid=01ASU&search_scope=Everything&mode=Basic&displayField=all&sortby=rank&lang=en_US";
+  var libtabs_searchInfo = "Search for journals, articles, books, magazines, and newspapers, all in one search.";
+  var libtabs_extraText = '<a href="https://search.lib.asu.edu/primo-explore/search?institution=01ASU_INST&vid=01ASU&search_scope=Everything&mode=advanced&lang=en_US">Advanced Search</a>';
+
+  function libtabs_switch() {
+    var libtabs_searchName = document.getElementById("libtabs_searches").value;
+
+    switch (libtabs_searchName) {
+      case "primo":
+        libtabs_searchAction = "https://search.lib.asu.edu/primo-explore/search?query=any,contains,";
+        libtabs_searchVars = "&institution=01ASU_INST&vid=01ASU&search_scope=Everything&mode=Basic&displayField=all&sortby=rank&lang=en_US";
+        libtabs_searchPlace = "Enter keywords...";
+        libtabs_searchInfo = "Search for journals, articles, books, magazines, and newspapers, all in one search.";
+        libtabs_extraText = '<a href="https://search.lib.asu.edu/primo-explore/search?institution=01ASU_INST&vid=01ASU&search_scope=Everything&mode=advanced&lang=en_US">Advanced Search</a>';
+        break;
+
+      case "catalog":
+        libtabs_searchAction = "https://search.lib.asu.edu/primo-explore/search?query=any,contains,";
+        libtabs_searchVars = "&institution=01ASU_INST&vid=01ASU&search_scope=default_scope&mode=Basic&displayField=all&sortby=rank&lang=en_US";
+        libtabs_searchPlace = "Enter keywords...";
+        libtabs_searchInfo = "Search the ASU Library Catalog.";
+        libtabs_extraText = '<a href="https://search.lib.asu.edu/primo-explore/search?institution=01ASU_INST&vid=01ASU&search_scope=default_scope&mode=advanced&lang=en_US">Advanced Search</a>';
+        break;
+
+      case "libguides":
+        libtabs_searchAction = "http://libguides.asu.edu/srch.php?q=";
+        libtabs_searchVars = "";
+        libtabs_searchPlace = "Search Library Guides...";
+        libtabs_searchInfo = "Best library resources for specific subjects and courses, created by ASU librarians.";
+        libtabs_extraText = '&nbsp;';
+        break;
+
+      case "journals":
+        libtabs_searchAction = "https://search.lib.asu.edu/primo-explore/jsearch?query=any,contains,&tab=jsearch_slot&institution=01ASU_INST&vid=01ASU&lang=en_US&offset=0&journals=any,";
+        libtabs_searchVars = "";
+        libtabs_searchPlace = "Enter title or ISSN";
+        libtabs_searchInfo = "Find specific online or print journals by title.";
+        libtabs_extraText = '&nbsp;';
+        break;
+
+      case "databases":
+        libtabs_searchAction = "http://libguides.asu.edu/az.php?q=";
+        libtabs_searchVars = "";
+        libtabs_searchPlace = "Search for Database Title";
+        libtabs_searchInfo = "Select specialized search engines to find articles and other materials.";
+        libtabs_extraText = '&nbsp;';
+        break;
+
+      case "scholar":
+        libtabs_searchAction = "https://scholar.google.com/scholar?hl=en&inst=3939048955749227516&q=";
+        libtabs_searchVars = "";
+        libtabs_searchPlace = "";
+        libtabs_searchInfo = "Broadly search for scholarly literature across many disciplines and types of sources.";
+        libtabs_extraText = '&nbsp;';
+        break;
+
+      case "reserves":
+        libtabs_searchAction = "https://search.lib.asu.edu/primo-explore/search?query=any,contains,";
+        libtabs_searchVars = "&tab=course_reserves&search_scope=Course_Reserves&vid=01ASU&lang=en_US&offset=0";
+        libtabs_searchPlace = "Course name, number, or instructor";
+        libtabs_searchInfo = "Find items selected for a course by your instructor.";
+        libtabs_extraText = '<a href="https://lib.asu.edu/access/reserves/students/faq">FAQ</a>';
+        break;
+    }
+    document.getElementById("search-info").innerHTML = libtabs_searchInfo;
+    document.getElementById("libtabs_extra-text").innerHTML = libtabs_extraText;
+    document.getElementById("libtabs_searchQueryTemp").placeholder = libtabs_searchPlace;
+  }
+
+  function libtabs_submitSearch() {
+    var libtabs_searchTerm = document.getElementById('libtabs_searchQueryTemp').value.replace(/[,]/g, " ");
+    window.open(libtabs_searchAction + encodeURIComponent(libtabs_searchTerm) + libtabs_searchVars);
+
+  }
+</script>
+
+
+
+ </div>
+</div></div>
+</div>
+        </div>
+		</div>
+
+   </div>
+  </div>
+ </div>
+</div></div>
+
+
+
+
+  <script type="text/javascript">page.bundle.addKey('inlineconfirmation.close','Close');page.bundle.addKey('inlineconfirmation.refresh','Refresh');page.bundle.addKey('hidden.link.close.menu','End of menu. Click to return to associated item.');page.bundle.addKey('hidden.link.close.form','End of form. Click to return to associated item.');page.bundle.addKey('lightbox.loading','Loading...');page.bundle.addKey('yt.stopped','Stopped:');page.bundle.addKey('yt.playing','Playing:');page.bundle.addKey('yt.cued','Cued:');page.bundle.addKey('yt.buffering','Buffering:');page.bundle.addKey('yt.paused','Paused:');page.bundle.addKey('yt.ended','Ended:');page.bundle.addKey('yt.play','Play');page.bundle.addKey('yt.pause','Pause');page.bundle.addKey('yt.mute','Mute');page.bundle.addKey('yt.unmute','Unmute');page.bundle.addKey('lightbox.overlay','{0} has been opened as a lightbox overlaying the current page.');page.bundle.addKey('display.playerControls','Player Controls');page.bundle.addKey('display.videoPlayerControls','Video Player Controls');page.bundle.addKey('display.play','Play');page.bundle.addKey('display.stop','Stop');page.bundle.addKey('display.volumeUp','Volume Up');page.bundle.addKey('display.volumeDown','Volume Down');page.bundle.addKey('display.mute','Mute');page.bundle.addKey('display.videoStatus','Video Status');page.bundle.addKey('display.closePlayerControls','Close Player Controls');page.bundle.addKey('display.embeddedVideoPlayer','Embedded Video Player');page.bundle.addKey('display.of','of');page.bundle.addKey('display.view.on.flickr','View Photo on Flickr');page.bundle.addKey('mashups.content.data.msg','We are unable to display the mashup content. This happens if the system detects an invalid URL. Remove the mashup item and try again to resolve this issue.');page.bundle.addKey('contextmenu.frame.title','Menu frame');page.bundle.addKey('frameset.contentframe.title','Content');page.bundle.addKey('common.pair.paren','{0} ({1})');page.bundle.addKey('portal.module.collapse','Collapse {0} Module');page.bundle.addKey('portal.module.expand','Expand {0} Module');page.bundle.addKey('portal.module.close.confirm','This will remove {0} from this view. It will not be permanently deleted.');page.bundle.addKey('dragdrop.accessible.error.chooseOption','Select an item first.');page.bundle.addKey('dragdrop.accessible.empty','No items available to reposition.');page.bundle.addKey('dragdrop.accessible.complete','Items have been reordered.');page.bundle.addKey('dragdrop.accessible.complete.nochange','No ordering changes made.');page.bundle.addKey('dragdrop.accessible.error.pinned','Fixed module cannot be repositioned.');page.bundle.addKey('dragdrop.accessible.pinned.postfix','(fixed)');page.bundle.addKey('tool.activity.description','activity updates');page.bundle.addKey('accessDeniedMsg','Access Denied');</script>
+  <script type="text/javascript">globalNavigation.init(); Event.observe(window, 'resize', globalNavigation.onResize);</script>
+  <script type="text/javascript">
+    page.bundle.addKey('globalnav.menu.expand','Expand\x20Global\x20Nav');
+    page.bundle.addKey('globalnav.menu.collapse','Collapse\x20Global\x20Nav');
+  </script>
+
+  <script type="text/javascript">
+    page.bundle.addKey('quick_links.link.title','Navigate\x20to\x20element\x20\x7B1\x7D\x20of\x20type\x20\x7B2\x7D\x20in\x20\x7B0\x7D\x20frame');
+    page.bundle.addKey('quick_links.lightbox_title','Quick\x20Links');
+    page.bundle.addKey('quick_links.link_title','Open\x20Quick\x20Links');
+    page.bundle.addKey('quick_links.hotkey.shift','Shift');
+    page.bundle.addKey('quick_links.hotkey.control','Ctrl');
+    page.bundle.addKey('quick_links.hotkey.alt','Alt');
+    page.bundle.addKey('quick_links.hotkey.combination_divider','\x2B');
+  </script>
+
+  <script type="text/javascript">quickLinks.initialize( [ '' ] );</script>
+  <script type="text/javascript">
+  		            globalNavMenu.init( true );
+  		          </script>
+
+  <script type="text/javascript"> social.Profile.MY_PROFILE_TOOL_ID='BB-CORE_____myProfile'; social.Profile.MY_PROFILE_TOOL_URI='/webapps/bb-social-learning-bb_bb60/execute/mybb?cmd=display&toolId=BB-CORE_____myProfile&location='; </script>
+
+   <script type="text/javascript">
+   FastInit.addOnLoad( function()
+   {
+            if ( window.DWREngine )
+       {
+        try {DWREngine.beginBatch();} catch(ignore) {}
+       }
+                new portalmodule.DisplayController('portlet', 'moduleReorderControls', '/webapps/portal/execute/module/displayControls', 'tab_id=_1_1');
+                                                             new dragdrop.ModuleReordering(['column0','column1','column2'], 'moduleReorderControls', true, 'div', 'dragHandle', '/webapps/portal/execute/module/reposition', 'tab_id=_1_1', 1500690136240, 'reorderableModule');
+                                                             welcomeOverlay.initOverlay();
+                                                             tool_service.init ('300000', 'Suppress-Session-Timestamp-Update' );
+                                                             if (typeof(initEditors) == 'function') { initEditors(); };
+                                                             if (window['org'] && window['org']['owasp']) { org.owasp.esapi.ESAPI.initialize(); };
+                                                             quickLinks.createHelper();
+                                                                  if ( window.DWREngine )
+       {
+         try {DWREngine.endBatch();} catch(ignore) {}
+       }
+                          BrowserSpecific.registerListeners();
+                theSecondaryTabs = new secondaryTabs.SecondaryTabs();
+               });
+   </script>
+       <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['asu._setAccount', 'UA-2392647-1'], ['asu._setDomainName', '.asu.edu']);
+_gaq.push(['asu._trackPageview']);
+_gaq.push(['_setAccount', 'UA-20247130-7'], ['_setDomainName', '.asu.edu']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_setAccount', 'UA-45694102-3'], ['_setDomainName', '.asu.edu']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+if (location.pathname.toLowerCase().indexOf('topframe') > -1) {
+	document.observe("dom:loaded", function() {
+		// we want a little less space in the top frame, bb does not let us set this so cheat with javascript
+		parent.document.getElementById('bbFrameset').setAttribute('rows', '63,*', 0);
+
+		// try to parse out the username from SSONAME cookie
+		var cookies = document.cookie.split(";");
+		for(var i = 0; i < cookies.length; i++) {
+			if (cookies[i].indexOf('SSONAME') > 0) {
+				document.getElementById('username').innerHTML = "<b>"+cookies[i].substring(9)+"</b>";
+				document.getElementById('username').style.display = 'inline';
+				break;
+			}
+		}
+	});
+}
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"e99ceaa32b","agent":"","beacon":"bam.nr-data.net","applicationTime":122,"applicationID":"10313994","transactionName":"YlUEYhdYCkUAWhdfX1sfNUIXTBBFIFoXX19bHwRaBFoPVA5YEVIeQlUEVxVJFxgRVhFCUVkeFUIXTBBFT20CVHFWRA9ZCw==","queueTime":0}</script>
+
+
+<div class="keyboardAccess" style="display:none;">
+  <h3>Reorder: Modules</h3>
+   <div style="width: 140px; display: none;"><p>No items available to reposition.</p></div><div class="access-reorder-block clearfix u_floatThis-left">
+   <label for="moduleReorderControlsColumn1">Column 1</label><br>
+   <select size="5" id="moduleReorderControlsColumn1">
+       <option value="_259_1">Tools</option>
+       <option value="_868_1">Follett Discover</option>
+      </select>
+   <div class="y-arrows">
+   <a href="#" title="Move Up" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_up.gif" alt="Move Up"></a>
+   <a href="#" title="Move Down" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_down.gif" alt="Move Down"></a>
+   </div>
+  </div>
+    <div class="x-arrows  u_floatThis-left">
+   <br>
+   <br>
+   <button type="button" title="Move Left" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_left.gif" alt="Move Left"></button>
+   <br>
+   <button type="button" title="Move Right" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_right.gif" alt="Move Right"></button>
+  </div>
+     <div class="access-reorder-block clearfix u_floatThis-left">
+   <label for="moduleReorderControlsColumn2">Column 2</label><br>
+   <select size="5" id="moduleReorderControlsColumn2">
+       <option value="_4_1">My Courses</option>
+       <option value="_1_1">My Announcements</option>
+       <option value="_7_1">My Tasks</option>
+       <option value="_5_1">My Organizations</option>
+      </select>
+   <div class="y-arrows">
+   <a href="#" title="Move Up" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_up.gif" alt="Move Up"></a>
+   <a href="#" title="Move Down" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_down.gif" alt="Move Down"></a>
+   </div>
+  </div>
+    <div class="x-arrows  u_floatThis-left">
+   <br>
+   <br>
+   <button type="button" title="Move Left" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_left.gif" alt="Move Left"></button>
+   <br>
+   <button type="button" title="Move Right" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_right.gif" alt="Move Right"></button>
+  </div>
+     <div class="access-reorder-block clearfix u_floatThis-left">
+   <label for="moduleReorderControlsColumn3">Column 3</label><br>
+   <select size="5" id="moduleReorderControlsColumn3">
+       <option value="_351_1">ASU Library: Search</option>
+      </select>
+   <div class="y-arrows">
+   <a href="#" title="Move Up" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_up.gif" alt="Move Up"></a>
+   <a href="#" title="Move Down" style="background-color: transparent; border: none; padding: 0px;"><img src="/images/ci/ng/cm_arrow_down.gif" alt="Move Down"></a>
+   </div>
+  </div>
+      <div class="controls" style="clear:both;">
+  <button type="button" class="button-4">Cancel</button>
+  <button type="button" class="button-3">Submit</button>
+  </div>
+ </div></body>
