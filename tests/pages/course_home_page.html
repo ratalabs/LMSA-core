@@ -1,0 +1,937 @@
+<body class="ineditmode">
+
+<h1 class="hideoff hideFromQuickLinks">Open Quick Links</h1><div id="quick_links_wrap" style="top: 45px;"><a id="quick_links_lightbox_link" href="#" onclick="quickLinks.lightboxHelper.toggleLightbox(); return false;" role="button" aria-haspopup="true" tabindex="1" title="Open Quick Links">Quick Links</a></div><div id="quickLinksLightboxDiv" class="hideoff" aria-hidden="true" style="display:none"><div class="ax-content"><div class="content-lite"><div id="quick_links_landmarks_section"><h2 class="hideFromQuickLinks">Page Landmarks</h2><ul class="shortcut-list" id="quick_links_landmark_list"></ul></div><div id="quick_links_headings_section"><h2 class="hideFromQuickLinks">Content Outline</h2><ul class="shortcut-list" id="quick_links_heading_list"></ul></div></div><div id="quick_links_hotkeys_section" class="legend"><h2 class="hideFromQuickLinks">Keyboard Shortcuts</h2><ul class="keycombos" id="quick_links_hotkey_list"></ul></div></div></div><h1 class="hideoff hideFromQuickLinks"></h1><div class="global-nav-bar-wrap"><div class="global-nav-bar logout"><a id="topframe.logout.label" href="/webapps/login/?action=logout" target="_top" class="nav-link logout-link" title="Logout"> Logout</a></div><div id="global-nav" class="global-nav-bar" role="navigation" data-preview="false"><div id="hotSpots" class="hotItems hotSpots u_floatThis-left"><span class="funZone"><style type="text/css">
+/* Set the visibility here */
+#asuAlertMsgContain {
+ display: none;
+ position: fixed;
+ top: 29px;
+ left: 100%;
+ margin-left: -220px;
+}
+/* Adjust this height if the message is overflowing */
+#asuAlertMsg:hover {
+ height: 200px;
+}
+/* Color secondary server headers */
+#topFrame, .bgBanner {
+ background-color: #FFF !important;
+}
+#asuAlertMsg {
+ padding: 5px;
+ height: 25px;
+ width: 90%;
+ margin: 5px 1%;
+ float: left;
+ position: relative;
+ transition: height 0.5s ease 0s;
+ text-align: center;
+ overflow: hidden;
+}
+.asuAlertMsgImg {
+ float: left;
+ padding-left: 4px;
+}
+.asuAlertMsgPill {
+ color: #000;
+ background-color: #FFCBCB;
+ border-radius: 10px;
+ font-size: 14px;
+ padding: 3px;
+ margin: 0px;
+}
+.asuAlertMsgTxt {
+ background-color: #FFCBCB;
+ border-radius: 5px;
+ padding: 5px;
+ margin-top: 10px;
+ box-shadow: 0px 8px 6px -6px #777;
+}
+.asuAlertMsgTxt, .asuAlertMsgTxt a {
+ color: #000;
+}
+.asuAlertMsgTxt a:hover {
+ color: #903 !important;
+}
+#asu_nav_wrapper a {
+ font: 12px/12px Arial,Helvetica,sans-serif !important;
+ color: black !important;
+ text-decoration: none !important;
+ text-align: right !important;
+ padding: 4px 8px 5px 8px !important;
+}
+#asu_nav_wrapper a:hover {
+ color: #903 !important;
+ text-decoration: underline !important;
+ text-align: right !important;
+}
+/* Remove color from hot links */
+.hotItems {
+ background-color: transparent !important;
+}
+/* Expand hot links area */
+.hotSpots {
+ width: 466px !important;
+}
+</style><div id="asu_nav_wrapper"><a href="http://www.asu.edu/">ASU Home</a><a href="https://my.asu.edu/">My ASU</a><a href="http://www.asu.edu/colleges/">Colleges &amp; Schools</a><a href="http://www.asu.edu/map/">Map &amp; Locations</a><a href="http://www.asu.edu/contactasu/">Contact Us</a></div><div id="asuAlertMsgContain"><div id="asuAlertMsg"><h3 class="asuAlertMsgPill" id="anonymous_element_1"><img src="https://www.asu.edu/it/acadtech/BbHeader/announcementIcon.png" alt="alert Icon" class="asuAlertMsgImg">System Maintenance</h3><p class="asuAlertMsgTxt">Routine maintenance will be performed on the ASU Blackboard system on Friday morning, 7/14 from 1:00AM to 2:00AM. &nbsp;Blackboard will not be available during this maintenance window. Please visit <a href="https://syshealth.asu.edu/" target="_blank">System Health</a>for Blackboard status and updates.</p></div></div></span></div><div class="hideoff">Global Menu</div><a id="global-nav-link" class="nav-link u_floatThis-right" href="#global-nav-flyout" aria-haspopup="true" tabindex="1" accesskey="m" role="navigation" title="Open Global Navigation Menu"><img src="/images/ci/ng/default_profile_avatar.png" alt="" id="global-avatar" datatooltitle="User Avatar Image" class="global-top-avatar"> Samuel Mccaffrey<span id="badgeTotal" style="visibility: visible;" title=""><span class="hideoff" id="badgeAXLabel">Activity Updates</span><span class="badge" id="badgeTotalCount" title="">15</span></span><img src="/images/ci/mybb/arrowDown-topnav.png" alt="Expand Global Nav" id="global-toggle-img" class="global-toggle"></a><div id="global-nav-flyout" class="flyout-menu" style="display: none;" role="application"><ul id="bottomButtons" class="bottom-buttons"><li class="bottom-buttons-home"><a id="topframe.home.label" href="http://my.asu.edu" target="_blank" class="home" title="Home" role="menuitem"> Home</a></li><li class="bottom-buttons-help"><a id="topframe.help.label" href="#" onclick="globalNavigation.openHelpWindow('http://help.asu.edu');" class="help" title="Help" role="menuitem"> Help</a></li></ul></div></div></div>
+<!-- global_nav.jsp -->
+
+<div id="globalNavPageNavArea">
+    <table class="bouncer" summary="Top frame table" role="presentation">
+      <tbody><tr>
+        <td>
+          <div class="topTabs bgBanner" id="topTabs">
+
+            <div class="brandingImgWrap">
+              <a href="https://www.asu.edu" target="_blank" title="Arizona State University">
+                <img src="/branding/_85_1/asu_logo_prod.png" alt="Arizona State University" title="Arizona State University" class="bannerImage">
+</a>
+            </div>
+
+            <div class="tabWrapper-left">
+              <h2 class="hideoff" id="anonymous_element_3">Top Frame Tabs</h2>
+              <table class="appTabs round" id="appTabList" summary="Tab List table" role="presentation">
+                <tbody><tr>
+                 <td id="Blackboard Home">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1" target="_top"><span>Blackboard Home</span>
+                        <span class="hideoff"> Tab 1 of 4</span>
+                      </a>
+                    </td>
+                  <td id="Courses" class="active">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_2_1" target="_top"><span>Courses</span>
+                        <span class="hideoff"> Tab 2 of 4&nbsp;(active tab)</span>
+                      </a>
+                    </td>
+                  <td id="Organizations">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_3_1" target="_top"><span>Organizations</span>
+                        <span class="hideoff"> Tab 3 of 4</span>
+                      </a>
+                    </td>
+                  <td id="Help">
+                      <a href="/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_66_1" target="_top"><span>Help</span>
+                        <span class="hideoff"> Tab 4 of 4</span>
+                      </a>
+                    </td>
+                  </tr>
+              </tbody></table>
+              <div class="clearfloats"></div>
+            </div>
+            </div>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+<div id="globalNavPageContentArea" style="height: 895px; overflow: visible;">
+
+<h2 class="hideoff" id="anonymous_element_4">
+ Current Location
+</h2>
+
+<div id="breadcrumbs" class="breadcrumbs clearfix ">
+
+ <div class="breadcrumb-controls clearfix" id="breadcrumb_controls_id">
+
+
+  <form id="enterStudentPreviewForm" method="POST" action="/webapps/spreview/startPreview">
+    <input type="hidden" name="course_id" value="_356996_1">
+    <input type="hidden" name="blackboard.platform.security.NonceUtil.nonce" value="c2319ae9-4258-4432-9015-a5726204f0c8">
+  </form>
+
+  <div id="student-preview-control" class="student-preview-control  clean ">
+    <h2 class="quickLink hideoff" id="anonymous_element_5">Student Preview</h2>
+    <a href="#" id="startStudentPreviewLink" title="Enter Student Preview" onclick="studentpreview.enterStudentPreview();"><span></span></a>
+  </div>
+
+    <div class="student-preview-ribbon" id="student-preview-ribbon" style="display:none;">
+    <h2 class="quickLink hideoff" id="anonymous_element_2">Student Preview</h2>
+    <span>Entering Student Preview</span>
+  </div>
+
+
+
+
+    <div class="theme-switch-wrapper">
+      <div class="theme-switch" id="theme-switch">
+    <ul class="nav">
+      <li class="mainButtonType sub">
+        <a href="#" title="Change Course Theme">
+          <span></span>
+          <span class="hideoff">Change Course Theme</span>
+        </a>
+          <ul style="max-height: 300px; overflow: auto">
+            <li class="currentTheme" id="themeId_default">
+              <a href="#" onclick="courseTheme.switchTheme('_356996_1', '')">
+                Default
+                <span class="hideoff">Current Selection</span>              </a>
+            </li>
+                                    <li><h4 class="hideFromQuickLinks">Color</h4></li>
+
+              <li id="themeId__10_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_10_1')">
+              Citrus
+                          </a>
+          </li>
+
+              <li id="themeId__13_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_13_1')">
+              Coral
+                          </a>
+          </li>
+
+              <li id="themeId__18_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_18_1')">
+              Flame
+                          </a>
+          </li>
+
+              <li id="themeId__20_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_20_1')">
+              Fuchsia
+                          </a>
+          </li>
+
+              <li id="themeId__21_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_21_1')">
+              Garnet
+                          </a>
+          </li>
+
+              <li id="themeId__22_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_22_1')">
+              Gold
+                          </a>
+          </li>
+
+              <li id="themeId__25_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_25_1')">
+              Ink
+                          </a>
+          </li>
+
+              <li id="themeId__27_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_27_1')">
+              Lavender
+                          </a>
+          </li>
+
+              <li id="themeId__19_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_19_1')">
+              Moss
+                          </a>
+          </li>
+
+              <li id="themeId__42_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_42_1')">
+              Night
+                          </a>
+          </li>
+
+              <li id="themeId__35_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_35_1')">
+              Ocean
+                          </a>
+          </li>
+
+              <li id="themeId__40_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_40_1')">
+              Sand
+                          </a>
+          </li>
+
+              <li id="themeId__41_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_41_1')">
+              Silver
+                          </a>
+          </li>
+
+              <li id="themeId__47_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_47_1')">
+              Steel
+                          </a>
+          </li>
+
+              <li id="themeId__49_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_49_1')">
+              Sunshine
+                          </a>
+          </li>
+                               <li><h4 class="hideFromQuickLinks">Design</h4></li>
+
+              <li id="themeId__2_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_2_1')">
+              America
+                          </a>
+          </li>
+
+              <li id="themeId__7_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_7_1')">
+              Blast Off
+                          </a>
+          </li>
+
+              <li id="themeId__8_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_8_1')">
+              Chalkboard
+                          </a>
+          </li>
+
+              <li id="themeId__11_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_11_1')">
+              Composition
+                          </a>
+          </li>
+
+              <li id="themeId__12_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_12_1')">
+              Confetti
+                          </a>
+          </li>
+
+              <li id="themeId__51_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_51_1')">
+              Connected
+                          </a>
+          </li>
+
+              <li id="themeId__26_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_26_1')">
+              Inspiration
+                          </a>
+          </li>
+
+              <li id="themeId__28_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_28_1')">
+              Leaves
+                          </a>
+          </li>
+
+              <li id="themeId__31_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_31_1')">
+              Mosaic
+                          </a>
+          </li>
+
+              <li id="themeId__33_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_33_1')">
+              Nature
+                          </a>
+          </li>
+
+              <li id="themeId__38_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_38_1')">
+              Pine
+                          </a>
+          </li>
+
+              <li id="themeId__50_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_50_1')">
+              Pizzazz
+                          </a>
+          </li>
+
+              <li id="themeId__39_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_39_1')">
+              Rainbow
+                          </a>
+          </li>
+
+              <li id="themeId__43_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_43_1')">
+              Soccer
+                          </a>
+          </li>
+
+              <li id="themeId__44_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_44_1')">
+              Sports
+                          </a>
+          </li>
+
+              <li id="themeId__46_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_46_1')">
+              Starry Night
+                          </a>
+          </li>
+                               <li><h4 class="hideFromQuickLinks">Season</h4></li>
+
+              <li id="themeId__16_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_16_1')">
+              Fall
+                          </a>
+          </li>
+
+              <li id="themeId__23_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_23_1')">
+              Halloween
+                          </a>
+          </li>
+
+              <li id="themeId__45_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_45_1')">
+              Spring
+                          </a>
+          </li>
+
+              <li id="themeId__48_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_48_1')">
+              Summer
+                          </a>
+          </li>
+
+              <li id="themeId__54_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_54_1')">
+              Winter
+                          </a>
+          </li>
+                               <li><h4 class="hideFromQuickLinks">Structure</h4></li>
+
+              <li id="themeId__3_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_3_1')">
+              ANGEL
+                          </a>
+          </li>
+
+              <li id="themeId__36_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_36_1')">
+              Open Source
+                          </a>
+          </li>
+
+              <li id="themeId__53_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_53_1')">
+              Vista
+                          </a>
+          </li>
+                               <li><h4 class="hideFromQuickLinks">Subject</h4></li>
+
+              <li id="themeId__1_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_1_1')">
+              Accounting
+                          </a>
+          </li>
+
+              <li id="themeId__5_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_5_1')">
+              Astronomy
+                          </a>
+          </li>
+
+              <li id="themeId__6_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_6_1')">
+              Biology
+                          </a>
+          </li>
+
+              <li id="themeId__9_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_9_1')">
+              Chemistry
+                          </a>
+          </li>
+
+              <li id="themeId__4_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_4_1')">
+              Design
+                          </a>
+          </li>
+
+              <li id="themeId__14_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_14_1')">
+              Digital Learning
+                          </a>
+          </li>
+
+              <li id="themeId__15_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_15_1')">
+              Economics
+                          </a>
+          </li>
+
+              <li id="themeId__17_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_17_1')">
+              Finance
+                          </a>
+          </li>
+
+              <li id="themeId__24_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_24_1')">
+              History 1
+                          </a>
+          </li>
+
+              <li id="themeId__29_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_29_1')">
+              Math
+                          </a>
+          </li>
+
+              <li id="themeId__30_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_30_1')">
+              Medicine
+                          </a>
+          </li>
+
+              <li id="themeId__32_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_32_1')">
+              Music 1
+                          </a>
+          </li>
+
+              <li id="themeId__55_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_55_1')">
+              Music 2
+                          </a>
+          </li>
+
+              <li id="themeId__34_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_34_1')">
+              Nursing
+                          </a>
+          </li>
+
+              <li id="themeId__37_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_37_1')">
+              Physics
+                          </a>
+          </li>
+
+              <li id="themeId__52_1">
+            <a href="#" onclick="courseTheme.switchTheme('_356996_1', '_52_1')">
+              Technology
+                          </a>
+          </li>
+                 </ul>
+      </li>
+    </ul>
+      </div>
+    </div>
+
+
+
+
+
+<div class="modeSwitchWrap">
+
+  <span class="switcherLabel">Edit Mode is:</span>
+  <div>
+    <a href="javascript:designer_participant.toggleEditMode('/webapps/blackboard/execute/announcement?method=search&amp;editMode=false&amp;viewChoice=2&amp;course_id=_356996_1&amp;context=course&amp;searchSelect=_356996_1&amp;internalHandle=cp_announcements','_356996_1','participant');" id="editModeToggleLink" class="modeSwitch read-on"><span id="statusText">ON</span><span class="hideoff">. Click to toggle Edit Mode Off.</span><img src="/images/ci/ng/mode_toggle_bottom.gif" alt="Click to toggle Edit Mode Off."></a>
+  </div>
+</div>
+
+
+
+<div id="helpTextToggle" class="helpLink">
+  <a href="#" id="helpTextToggleLink" class="browseIcon" title="Help is On: Click to hide page help." style="display: inline-block;">
+	<img id="helpTextToggleImg" src="https://myasucourses.asu.edu/images/ci/ng/small_help_on2.gif" alt="Help is On: Click to hide page help."></a>
+</div>
+ <input type="hidden" name="showHelperSetting" id="showHelperSetting" value="true">
+ </div>
+
+ <div class="path " role="navigation" id="anonymous_element_12">
+ <ol class="clearfix">
+    	<li class="root coursePath"> <a href="/webapps/blackboard/execute/courseMain?course_id=_356996_1" title="<span class=&quot;courseName&quot;>PHY 132: University Physics Lab II (2017 Fall)-71852</span> <span class=&quot;courseId&quot;>2017Fall-T-PHY132-71852</span>">                  <span class="courseName">PHY 132: University Physics Lab II (2017 Fall)-71852</span> <span class="courseId">2017Fall-T-PHY132-71852</span>
+              </a>      <div id="arrowContext_1" class="courseArrow" onclick="page.ContextMenu.changeArrowInBreadcrumb(1, event );">
+<span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCrossCourseMenuHTML?course_id=_356996_1" bb:navitem="" bb:contextparameters="" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc="">
+
+  <a id="cmlink_c974c22aeb5f43f7aae3968b074c26f0" onfocus="page.ContextMenu.LI(event, 'cmdiv_c974c22aeb5f43f7aae3968b074c26f0',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_c974c22aeb5f43f7aae3968b074c26f0',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Course-to-Course Navigation"> <img src="/images/ci/icons/cmlink_generic.gif" alt="Course-to-Course Navigation"></a>
+
+</span>
+</div>    </li>
+   	<li class="placeholder">                   Announcements
+                        </li>
+  </ol>
+ </div>
+
+</div>
+
+<div class="locationPane">
+ <div id="navigationPane" class="navigationPane" style="height: 1298px;">
+
+
+ <div id="menuWrap" class="menuWrap">
+  <div id="puller" class="">
+  <a id="menuPuller" class="clickpuller" title="Hide Course Menu" href="#">
+   <img id="expander" alt="Hide Course Menu" src="/images/spacer.gif">
+  </a>
+ </div>
+<div class="menuWrap-inner">
+  <input type="hidden" name="blackboard.platform.security.NonceUtil.nonce" value="55edee80-3ab5-460c-ac72-c2aeadf22ab7"><div id="courseMenuPalette" class="navPalette listCm navPaletteExpCol"><div class="actionBarMicro clearfix"><h2 class="hideoff">Menu Management Options</h2><ul id="courseMenuPalette_actionbar" class="nav clearfix u_floatThis-left"><li id="addCmItem" class="mainButton sub"><a href="#" title="Add Menu Item (Click to see options)" id="cmlink_bb13b5b34b0d4163b4ea5b97cf81e89e"><span><img src="/images/ci/ng/mini_add_item2.gif" alt="Add Menu Item (Click to see options)"></span></a><ul id="cmul0_bb13b5b34b0d4163b4ea5b97cf81e89e"><li><a href="#" id="addContentAreaButton"><span class="hideoff">Create</span> Content Area</a></li><li><a href="#" id="addModulePageButton"><span class="hideoff">Create</span> Module Page</a></li><li><a href="#" id="addBlankPageButton"><span class="hideoff">Create</span> Blank Page</a></li><li class="dividerRow"><a href="#" id="addToolLinkButton"><span class="hideoff">Create</span> Tool Link</a></li><li><a href="#" id="addExternalLinkButton"><span class="hideoff">Create</span> Web Link</a></li><li><a href="#" id="addCourseLinkButton"><span class="hideoff">Create</span> Course Link</a></li><li class="dividerRow"><a href="#" id="addSubHeaderButton"><span class="hideoff">Create</span> Subheader</a></li><li><a href="#" id="addDividerButton"><span class="hideoff">Create</span> Divider</a></li></ul></li></ul><ul class="nav clearfix u_floatThis-right"><li class="secondaryButton"><a href="#" id="courseMenuPalette_reorderControlLink" class="access-reorder" title="Keyboard Accessible Reordering: Menu Items"><span><img src="/images/ci/ng/keyboard.gif" alt=""><span class="hideoff">Keyboard Accessible Reordering: Menu Items</span></span></a></li><li id="refreshMenuLink" class="secondaryButton "><a href="#" title="Refresh"><span><img src="/images/ci/ng/small_refresh.gif" alt="Refresh"></span></a></li><li id="courseMapButton" class="secondaryButton "><a href="#" title="Display Course Menu in a Window"><span><img src="/images/ci/ng/small_new_window.gif" alt="Display Course Menu in a Window"></span></a></li></ul></div><div class="navPaletteContent"><span id="courseMenuPalette_reorderControls"><span></span></span><h2 class="hideoff" tabindex="-1">Course Menu:</h2><div id="courseMenuPalette_paletteTitleHeading"><div class="navPaletteTitle"><h3 aria-expanded="true"><a href="#" class="comboLink" title="Collapse PHY 132: University Physics Lab II (2017 Fall)-71852 (2017Fall-T-PHY132-71852)" id="courseMenu_link">PHY 132: University Physics Lab II (2017 Fall)-71852 (2017Fall-T-PHY132-71852)</a></h3><h3><a href="/webapps/blackboard/execute/courseMain?course_id=_356996_1" target="" class="submenuLink" id="courseMenu_combo" title="Go to Course Entry Page"><img src="/images/ci/icons/generic_dbl_arrow_right.gif" alt="Course Entry Page"></a></h3></div></div><ul id="courseMenuPalette_contents" class="courseMenu"><li id="paletteItem:_3528036_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/launchLink.jsp?course_id=_356996_1&amp;tool_id=_123_1&amp;tool_type=TOOL&amp;mode=cpview&amp;mode=reset" target="_self"><span title="Announcements">Announcements</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528036_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_9cca075be318484e902efec654513c4b" onfocus="page.ContextMenu.LI(event, 'cmdiv_9cca075be318484e902efec654513c4b',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_9cca075be318484e902efec654513c4b',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Announcements menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="Announcements menu item options"></a></span></li><li id="paletteItem:_3528023_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/listContentEditable.jsp?content_id=_15842574_1&amp;course_id=_356996_1&amp;mode=reset" target="_self"><span title="Getting Started Quiz">Getting Started Quiz</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528023_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_dbcecc9076654a8186097f980ddf9462" onfocus="page.ContextMenu.LI(event, 'cmdiv_dbcecc9076654a8186097f980ddf9462',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_dbcecc9076654a8186097f980ddf9462',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Getting Started Quiz menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="Getting Started Quiz menu item options"></a></span></li><li id="paletteItem:_3528037_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="https://myasucourses.asu.edu/webapps/blackboard/execute/announcement?method=search&amp;context=course&amp;course_id=_357851_1&amp;handle=cp_announcements&amp;mode=cpview" target="_blank"><span title="MASTER SITE">MASTER SITE</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528037_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_f8664f82f7ae4c99ad9c85623ea4a0b5" onfocus="page.ContextMenu.LI(event, 'cmdiv_f8664f82f7ae4c99ad9c85623ea4a0b5',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_f8664f82f7ae4c99ad9c85623ea4a0b5',false);" class="cmimg editmode jsInit " href="#contextMenu" title="MASTER SITE menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="MASTER SITE menu item options"></a></span></li><li id="paletteItem:_3528024_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/listContentEditable.jsp?content_id=_15842573_1&amp;course_id=_356996_1&amp;mode=reset" target="_self"><span title="PRELABS">PRELABS</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528024_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_a7e96b235c50421b8e4c73d172ba65d2" onfocus="page.ContextMenu.LI(event, 'cmdiv_a7e96b235c50421b8e4c73d172ba65d2',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_a7e96b235c50421b8e4c73d172ba65d2',false);" class="cmimg editmode jsInit " href="#contextMenu" title="PRELABS menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="PRELABS menu item options"></a></span></li><li id="paletteItem:_3528025_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/listContentEditable.jsp?content_id=_15842576_1&amp;course_id=_356996_1&amp;mode=reset" target="_self"><span title="Submit Lab Reports">Submit Lab Reports</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528025_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_a7588999231d494b95f6b9b155cfd342" onfocus="page.ContextMenu.LI(event, 'cmdiv_a7588999231d494b95f6b9b155cfd342',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_a7588999231d494b95f6b9b155cfd342',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Submit Lab Reports menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="Submit Lab Reports menu item options"></a></span></li><li id="paletteItem:_3528038_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/launchLink.jsp?course_id=_356996_1&amp;tool_id=_178_1&amp;tool_type=TOOL&amp;mode=cpview&amp;mode=reset" target="_self"><span title="My Grades">My Grades</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528038_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_918bbb34b92a4c60ad0144b859c1ea04" onfocus="page.ContextMenu.LI(event, 'cmdiv_918bbb34b92a4c60ad0144b859c1ea04',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_918bbb34b92a4c60ad0144b859c1ea04',false);" class="cmimg editmode jsInit " href="#contextMenu" title="My Grades menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="My Grades menu item options"></a></span></li><li id="paletteItem:_3528039_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/launchLink.jsp?course_id=_356996_1&amp;tool_id=_167_1&amp;tool_type=TOOL&amp;mode=cpview&amp;mode=reset" target="_self"><span title="Staff Information">Staff Information</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528039_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_09d18c7c48fa4ef9ad6e8f64e7c34bb4" onfocus="page.ContextMenu.LI(event, 'cmdiv_09d18c7c48fa4ef9ad6e8f64e7c34bb4',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_09d18c7c48fa4ef9ad6e8f64e7c34bb4',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Staff Information menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="Staff Information menu item options"></a></span></li><li id="paletteItem:_3528040_1" class="clearfix "><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/launchLink.jsp?course_id=_356996_1&amp;tool_id=_10_1&amp;tool_type=TOOL&amp;mode=cpview&amp;mode=reset" target="_self"><span title="Tools">Tools</span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528040_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_8f141431e05540cc9357a52eca139026" onfocus="page.ContextMenu.LI(event, 'cmdiv_8f141431e05540cc9357a52eca139026',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_8f141431e05540cc9357a52eca139026',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Tools menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="Tools menu item options"></a></span></li><li id="paletteItem:_3528041_1" class="clearfix invisible"><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="https://docs.google.com/a/asu.edu/forms/d/1oqJ3_7gVF-DxQ2_J6XyAyJY-Rm0LrymUErJVBTHbEN0/edit" target="_blank"><span title="SURVEY">SURVEY</span><span class="cmLink-hidden" title="This link is hidden from students"><img src="/images/ci/icons/hidden_link_generic.gif" alt="This link is hidden from students"></span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528041_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_5d4021332e80479bbb981e0f52e7a79e" onfocus="page.ContextMenu.LI(event, 'cmdiv_5d4021332e80479bbb981e0f52e7a79e',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_5d4021332e80479bbb981e0f52e7a79e',false);" class="cmimg editmode jsInit " href="#contextMenu" title="SURVEY menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="SURVEY menu item options"></a></span></li><li id="paletteItem:_3528026_1" class="clearfix invisible"><span class="reorder"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span><a href="/webapps/blackboard/content/listContentEditable.jsp?content_id=_15842575_1&amp;course_id=_356996_1&amp;mode=reset" target="_self"><span title="FINAL Lab Test">FINAL Lab Test</span><span class="cmLink-hidden" title="This link is hidden from students"><img src="/images/ci/icons/hidden_link_generic.gif" alt="This link is hidden from students"></span></a><span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="/webapps/blackboard/execute/getCourseMenuContextMenu" bb:navitem="" bb:contextparameters="course_id=_356996_1&amp;toc_id=_3528026_1" bb:menuorder="" bb:overwritenavitems="" bb:beforeshowfunc=""><a id="cmlink_a3414a0a17e94cd1a2f4133a98ecbc0b" onfocus="page.ContextMenu.LI(event, 'cmdiv_a3414a0a17e94cd1a2f4133a98ecbc0b',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_a3414a0a17e94cd1a2f4133a98ecbc0b',false);" class="cmimg editmode jsInit " href="#contextMenu" title="FINAL Lab Test menu item options"><img src="/images/ci/icons/cmlink_generic.gif" alt="FINAL Lab Test menu item options"></a></span></li></ul></div></div><h2 class="navDivider"> Course Management</h2><div id="controlPanelPalette" class="navPalette controlpanel navPaletteExpCol"><div class="navPaletteContent"><div id="controlPanelPalette_paletteTitleHeading"><div class="navPaletteTitle"><h3 aria-expanded="true"><a href="#" id="controlPanelPalette_link" title="Collapse Control Panel"> Control Panel </a></h3></div></div><ul id="controlPanelPalette_contents" class=""><li id="controlpanel.course.files"><h4 aria-expanded="false"><a class="comboLink" href="#" id="controlpanel.course.files_groupExpanderLink" title="Expand Files">Files</a></h4><a class="submenuLink" href="/webapps/cmsmain/webui/courses/2017Fall-T-PHY132-71852?action=frameset&amp;subaction=view&amp;uniq=bicp3h&amp;course_id=_356996_1" title="Go to Files for this course"><img alt="Files for this course" src="/images/ci/icons/generic_dbl_arrow_right.gif"></a><ul class="submenu" id="controlpanel.course.files_groupContents" style="display:none;"><li>&nbsp;</li></ul></li><li id="controlpanel.course.tools"><h4 aria-expanded="false"><a href="#" id="controlpanel.course.tools_groupExpanderLink" title="Expand Course Tools" class="">Course Tools</a></h4><ul class="submenu" id="controlpanel.course.tools_groupContents" style="display:none;"><li>&nbsp;</li></ul></li><li id="controlpanel.evaluation"><h4 aria-expanded="false"><a class="comboLink" href="#" id="controlpanel.evaluation_groupExpanderLink" title="Expand Evaluation">Evaluation</a></h4><a class="submenuLink" href="/webapps/blackboard/landingPage.jsp?navItem=cp_evaluation&amp;course_id=_356996_1" title="Go to Evaluation Overview Page"><img alt="Evaluation Overview Page" src="/images/ci/icons/generic_dbl_arrow_right.gif"></a><ul class="submenu" id="controlpanel.evaluation_groupContents" style="display:none;"><li>&nbsp;</li></ul></li><li id="controlpanel.grade.center"><h4 aria-expanded="false"><a class="comboLink" href="#" id="controlpanel.grade.center_groupExpanderLink" title="Expand Grade Center">Grade Center</a></h4><a class="submenuLink" href="/webapps/gradebook/do/instructor/enterGradeCenter?course_id=_356996_1" title="Go to Grade Center Page"><img alt="Grade Center Page" src="/images/ci/icons/generic_dbl_arrow_right.gif"></a><ul class="submenu" id="controlpanel.grade.center_groupContents" style="display:none;"><li>&nbsp;</li></ul></li><li id="controlpanel.users.and.groups"><h4 aria-expanded="false"><a href="#" id="controlpanel.users.and.groups_groupExpanderLink" title="Expand Users and Groups" class="">Users and Groups</a></h4><ul class="submenu" id="controlpanel.users.and.groups_groupContents" style="display:none;"><li>&nbsp;</li></ul></li><li id="controlpanel.customization"><h4 aria-expanded="false"><a class="comboLink" href="#" id="controlpanel.customization_groupExpanderLink" title="Expand Customization">Customization</a></h4><a class="submenuLink" href="/webapps/blackboard/landingPage.jsp?navItem=cp_course_customization&amp;course_id=_356996_1" title="Go to Customization Overview Page"><img alt="Customization Overview Page" src="/images/ci/icons/generic_dbl_arrow_right.gif"></a><ul class="submenu" id="controlpanel.customization_groupContents" style="display:none;"><li>&nbsp;</li></ul></li><li id="controlpanel.packages.and.utilities"><h4 aria-expanded="false"><a class="comboLink" href="#" id="controlpanel.packages.and.utilities_groupExpanderLink" title="Expand Packages and Utilities">Packages and Utilities</a></h4><a class="submenuLink" href="/webapps/blackboard/landingPage.jsp?navItem=cp_package_utillities&amp;course_id=_356996_1&amp;filterForCourse=true" title="Go to Packages &amp; Utilities Overview Page"><img alt="Packages &amp; Utilities Overview Page" src="/images/ci/icons/generic_dbl_arrow_right.gif"></a><ul class="submenu" id="controlpanel.packages.and.utilities_groupContents" style="display:none;"><li>&nbsp;</li></ul></li></ul></div></div>
+  </div>
+ </div>
+ </div>
+ <div id="contentPanel" class="contentPane" style="height: 1298px;">
+<div class="shadow">
+       <div id="editmodeWrapper">
+
+  <div id="content" class="contentBox contentBox-edit">
+
+<div id="pageTitleDiv" class="pageTitle clearfix ">
+
+
+<div id="pageTitleBar" class="pageTitleIcon" tabindex="0">
+  <img src="/images/ci/sets/set01/announcement_on.gif" alt="" id="titleicon"><h1 id="pageTitleHeader" tabindex="-1"><span id="pageTitleText">
+  Announcements  </span></h1>
+        <span id="_titlebarExtraContent" class="titleButtons"></span>
+</div>
+
+
+<div id="helpPageTitle" tabindex="0" class="helphelp">
+<p class="helphelp">
+New Announcements appear directly below the repositionable bar. Reorder by dragging announcements to new positions. Move priority announcements above the repositionable bar to pin them to the top of the list and prevent new announcements from superseding them. The order shown here is the order presented to students. Students do not see the bar and cannot reorder announcements.
+</p>
+</div>
+
+</div>
+
+          <!-- Begin Action Control bar. -->
+    <div class="actionBar editmode clearfix" id="actionbar">
+      <h2 class="quickLink hideoff" id="anonymous_element_6">Actions for Content Page</h2>
+            <ul class="nav clearfix u_floatThis-left" id="nav" role="menubar">
+
+<li class="mainButton"><a id="" href="javascript:designer_participant.toggleEditMode('javascript:Announcement.addAnnouncement()','_356996_1','designer')">Create Announcement</a></li>
+
+	      	          </ul>
+                <ul id="navsecondary" class="nav clearfix u_floatThis-right"><li class="secondaryButton"><a href="#" class="access-reorder" title="Keyboard Accessible Reordering: Announcements">
+    <span>
+      <img src="/images/ci/ng/keyboard.gif" alt="">
+      <span class="hideoff">Keyboard Accessible Reordering: Announcements</span>
+    </span>
+  </a></li></ul></div>
+    <!-- End Action Control bar. -->
+
+      <div class="container clearfix" id="containerdiv">
+    <h2 class="hideoff" id="anonymous_element_7">Content</h2>
+    <script type="text/javascript" src="/webapps/achievements/js/achievement.js"></script><script src="/javascript/scriptaculous/version_pinned_scriptaculous.js"></script><script type="text/javascript" src="https://myasucourses.asu.edu/javascript/scriptaculous/builder.js?version=190"></script><script type="text/javascript" src="https://myasucourses.asu.edu/javascript/scriptaculous/effects.js?version=190"></script><script type="text/javascript" src="https://myasucourses.asu.edu/javascript/scriptaculous/dragdrop.js?version=190"></script><script type="text/javascript" src="https://myasucourses.asu.edu/javascript/scriptaculous/controls.js?version=190"></script><link rel="stylesheet" href="/webapps/achievements/css/achievements.css" type="text/css" media="screen"><script type="text/javascript">
+new Ajax.Request('/webapps/achievements/checkAchievements.form', {
+method:'get',
+asynchronous:true,
+parameters: {courseId: '_356996_1', type: 1 },
+onSuccess: function(response) {
+var jsonArray = response.responseJSON;
+handleAchievements(jsonArray);
+},
+onFailure: function() { alert('Something went wrong...'); }
+});
+</script><form name="announcementForm" id="announcementForm" method="post" action="/webapps/blackboard/execute/announcement"><input type="hidden" name="blackboard.platform.security.NonceUtil.nonce" value="8b375670-1297-45fc-8991-c5fa0ec731ec">
+<input type="hidden" name="method" value="search" id="method"><input type="hidden" name="viewChoice" value="2" id="viewChoice"><input type="hidden" name="editMode" value="true" id="editMode"><input type="hidden" name="tabAction" value="false" id="tabAction"><input type="hidden" name="announcementId" value="" id="announcementId"><input type="hidden" name="course_id" value="_356996_1" id="course_id"><input type="hidden" name="context" value="course" id="context"><input type="hidden" name="internalHandle" value="cp_announcements" id="internalHandle"><input type="hidden" name="searchSelect" value="_356996_1"><div class="">
+<!-- Begin Accessible Drag and Drop Control -->
+<div id="reorderControlsannouncementList">
+ <div>
+
+ </div>
+
+</div>
+<!-- End Accessible Drag and Drop Control -->
+
+<!-- Begin top list actionbar /paging area -->
+<ul class="buildList" id="announcementList"><li id="announcementList:insertionMarker.announcementList" class="clearfix separator"><h3 class="item" id="anonymous_element_8"><span class="reorder editmode"><span><img alt="" src="https://myasucourses.asu.edu/images/ci/icons/generic_updown.gif"></span></span><span class="line"></span><span class="text">New announcements appear below this line</span></h3></li><li class="clearfix " style="position: relative" id="announcementList:_2185936_1">
+
+      <div class="item clearfix">
+    <h3 id="anonymous_element_9">
+
+      <span class="reorder editmode"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span>
+        <span style="color:#000000">Getting Started Quiz</span>
+
+
+<span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="" bb:navitem="" bb:contextparameters="" bb:menuorder="modify_item_0b8decb975274d72b4b2527c6cbbf8bf,*separator*,remove_item_0b8decb975274d72b4b2527c6cbbf8bf," bb:overwritenavitems="" bb:beforeshowfunc="">
+
+  <a id="cmlink_0b8decb975274d72b4b2527c6cbbf8bf" onfocus="page.ContextMenu.LI(event, 'cmdiv_0b8decb975274d72b4b2527c6cbbf8bf',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_0b8decb975274d72b4b2527c6cbbf8bf',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Click for more options"> <img src="/images/ci/icons/cmlink_generic.gif" alt="Click for more options"></a>
+
+</span>
+
+
+      </h3>
+    </div>
+
+      <div class="details tab-group-label">
+      <i>Item is not available.</i><br>
+				     <br>
+	  	     <p><span>Posted on: Sunday, August 13, 2017 11:59:00 PM MST</span></p>
+             <div class="vtbegenerated"><p><span style="color: #0000ff;"><strong>To get full access to the course materials you have to pass the "Getting Started Quiz"&nbsp; with 100% score (34/34).</strong></span></p>
+<p><span style="font-family: 'Times New Roman','serif'; font-size: 12pt; background-color: #ffffff; color: #0000ff;"><span style="font-weight: bold; text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">The score of this Quiz will not be included in Grade Center Score Calculations!</span></span></span></p>
+<p><span style="color: #0000ff;">Please read the Syllabus to answer the questions. &nbsp; </span><span style="color: #0000ff;">Take this quiz as many times as you need to earn 100%. <br></span></p>
+<br></div>
+    </div>
+
+      <div class="announcementInfo">
+              <span>Posted by:&nbsp;</span>Armen Hakhoyan<br>
+              <span>Posted to:&nbsp;</span><span class="courseName">PHY 132: University Physics Lab II (2017 Fall)-71852</span> <span class="courseId">2017Fall-T-PHY132-71852</span><br>
+          </div>
+
+  </li><li class="clearfix " style="position: relative" id="announcementList:_2185937_1">
+
+      <div class="item clearfix">
+    <h3 id="anonymous_element_10">
+
+      <span class="reorder editmode"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span>
+        <span style="color:#000000">Access to Course Information</span>
+
+
+<span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="" bb:navitem="" bb:contextparameters="" bb:menuorder="modify_item_d31a65689f0a402fa17c611bc781db57,*separator*,remove_item_d31a65689f0a402fa17c611bc781db57," bb:overwritenavitems="" bb:beforeshowfunc="">
+
+  <a id="cmlink_d31a65689f0a402fa17c611bc781db57" onfocus="page.ContextMenu.LI(event, 'cmdiv_d31a65689f0a402fa17c611bc781db57',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_d31a65689f0a402fa17c611bc781db57',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Click for more options"> <img src="/images/ci/icons/cmlink_generic.gif" alt="Click for more options"></a>
+
+</span>
+
+
+      </h3>
+    </div>
+
+      <div class="details tab-group-label">
+      <i>Item is not available.</i><br>
+				     <br>
+	  	     <p><span>Posted on: Sunday, August 13, 2017 8:36:00 PM MST</span></p>
+             <div class="vtbegenerated"><p><span style="font-family: 'Times New Roman','serif'; font-size: 12pt;">Dear Students!</span></p>
+<p><span style="font-family: 'Times New Roman','serif'; font-size: 12pt;">Please be informed that the course information for PHY 132 will be introduced on two sites:&nbsp;<strong>Labs Master Course Site</strong>&nbsp;and your&nbsp;<strong>Individual&nbsp;section site</strong>.</span></p>
+<p><span style="font-family: 'Times New Roman','serif'; font-size: 12pt;">The general information about the course (e.g. the syllabus, course schedules, lab reschedule form, lab write-ups, general announcements,&nbsp;etc) will be provided on the Master Site, while specific information regarding your section (e.g.&nbsp;&nbsp;Prelabs, your grades, your TA’s contact info, etc) will be on the section site.</span></p>
+<p><strong><span style="font-family: 'Times New Roman','serif'; font-size: 12pt;">Make sure you visit both sites regularly to have complete and up-to-date information about your course.</span></strong></p>
+<p><span style="font-family: 'Times New Roman','serif'; font-size: 12pt;">The Master Site can be accessed using the link on the Blackboard Home as well as from the link on your section site which will open a new window for the Master Site.</span></p>
+<br></div>
+    </div>
+
+      <div class="announcementInfo">
+              <span>Posted by:&nbsp;</span>Armen Hakhoyan<br>
+              <span>Posted to:&nbsp;</span><span class="courseName">PHY 132: University Physics Lab II (2017 Fall)-71852</span> <span class="courseId">2017Fall-T-PHY132-71852</span><br>
+          </div>
+
+  </li><li class="clearfix " style="position: relative" id="announcementList:_2185938_1">
+
+      <div class="item clearfix">
+    <h3 id="anonymous_element_11">
+
+      <span class="reorder editmode"><span><img src="/images/ci/icons/generic_updown.gif" alt=""></span></span>
+        <span style="color:#000000">LAB REPORT FOR FIRST EXPERIMENT</span>
+
+
+<span class="contextMenuContainer" style=" display: inline;" bb:menugeneratorurl="" bb:navitem="" bb:contextparameters="" bb:menuorder="modify_item_91f4ae3284f444a9a4d9fcbe7a08a720,*separator*,remove_item_91f4ae3284f444a9a4d9fcbe7a08a720," bb:overwritenavitems="" bb:beforeshowfunc="">
+
+  <a id="cmlink_91f4ae3284f444a9a4d9fcbe7a08a720" onfocus="page.ContextMenu.LI(event, 'cmdiv_91f4ae3284f444a9a4d9fcbe7a08a720',false);" onmouseover="page.ContextMenu.LI(event, 'cmdiv_91f4ae3284f444a9a4d9fcbe7a08a720',false);" class="cmimg editmode jsInit " href="#contextMenu" title="Click for more options"> <img src="/images/ci/icons/cmlink_generic.gif" alt="Click for more options"></a>
+
+</span>
+
+
+      </h3>
+    </div>
+
+      <div class="details tab-group-label">
+      <i>Item is not available.</i><br>
+				     <br>
+	  	     <p><span>Posted on: Sunday, August 13, 2017 8:41:00 PM MST</span></p>
+             <div class="vtbegenerated"><p><span style="font-size: medium;">Dear Students,</span><br><br><span style="font-size: medium;">The lab report for the first experiment <span style="color: #0000ff;">(<strong>ONLY</strong>)</span> could be a <span style="color: #0000ff;">GROUP</span> lab report.</span><br><span style="font-size: medium;"><span style="color: #0000ff;">Each student should submit his or her lab report,</span> which may be exactly the same as the other partners’ lab reports.</span><br><span style="font-size: medium;">Please work together as a group and share you experience writing lab reports with your partners.</span><br><span style="font-size: medium; color: #0000ff;">Starting from the next lab experiment you should submit <strong><span style="text-decoration: underline;">INDIVIDUAL</span></strong> lab reports.</span><span style="font-size: medium;"><br></span></p>
+<br></div>
+    </div>
+
+      <div class="announcementInfo">
+              <span>Posted by:&nbsp;</span>Armen Hakhoyan<br>
+              <span>Posted to:&nbsp;</span><span class="courseName">PHY 132: University Physics Lab II (2017 Fall)-71852</span> <span class="courseId">2017Fall-T-PHY132-71852</span><br>
+          </div>
+
+  </li></ul>
+
+
+<!-- Begin bottom list action bar. -->
+<!-- End bottom list action bar. -->
+
+</div></form>
+   </div>
+
+     </div>
+   </div>
+   </div>
+     <div id="copyright" class="clearfix">
+  <script type="text/javascript">
+      function showCopyrightDetail(){
+        if(document.getElementById('copyrightDetail').style.display=="none" || document.getElementById('copyrightDetail').style.display=="")    {        document.getElementById('copyrightDetail').style.display="block";    }
+        else    {        document.getElementById('copyrightDetail').style.display="none";    }}
+  </script>
+  <div class="newCopyright">
+      	  <div class="logo">
+  	    <img src="/images/ci/logos/Powered_Bb_050.png" alt="Blackboard Learn">
+  	  </div>
+  	  	<div class="legal">
+  		© 1997-2017 Blackboard Inc. All Rights Reserved. U.S. Patent No. 7,493,396 and 7,558,853. Additional Patents Pending.
+  	</div>
+  	      <div class="additionalInfo">
+        <p><a href="http://access.blackboard.com" id="accessibilityLink">Accessibility information</a></p>
+        <p><a href="Javascript:showCopyrightDetail()">Installation details</a></p>
+      </div>
+  	  </div>
+
+      <div class="copyrightDetailContents clearfix" id="copyrightDetail">
+      <a class="closeCopyright" href="#" onclick="showCopyrightDetail()"><img alt="Close" src="/images/ci/ng/close_mini.gif"></a>
+      <img src="/images/ci/logos/branding_Bb_learn_140.png" class="productImg" alt="Blackboard Learn">
+  	  <ul>
+  	    <li><i>Blackboard Learn ™</i> </li>
+  	      	      <li>Course Delivery (3100.0.1-rel.117+6ef1843)</li>
+  	      	      <li> Community Engagement (3100.0.1-rel.117+6ef1843)</li>
+  	      	    <li><span>Theme: ASU White Theme v3.31 (March 2017)</span></li>
+  	  </ul>
+  	</div>
+  </div>
+   </div>
+</div></div>
+
+
+
+
+  <script type="text/javascript">page.bundle.addKey('inlineconfirmation.close','Close');page.bundle.addKey('inlineconfirmation.refresh','Refresh');page.bundle.addKey('hidden.link.close.menu','End of menu. Click to return to associated item.');page.bundle.addKey('hidden.link.close.form','End of form. Click to return to associated item.');page.bundle.addKey('lightbox.loading','Loading...');page.bundle.addKey('yt.stopped','Stopped:');page.bundle.addKey('yt.playing','Playing:');page.bundle.addKey('yt.cued','Cued:');page.bundle.addKey('yt.buffering','Buffering:');page.bundle.addKey('yt.paused','Paused:');page.bundle.addKey('yt.ended','Ended:');page.bundle.addKey('yt.play','Play');page.bundle.addKey('yt.pause','Pause');page.bundle.addKey('yt.mute','Mute');page.bundle.addKey('yt.unmute','Unmute');page.bundle.addKey('lightbox.overlay','{0} has been opened as a lightbox overlaying the current page.');page.bundle.addKey('display.playerControls','Player Controls');page.bundle.addKey('display.videoPlayerControls','Video Player Controls');page.bundle.addKey('display.play','Play');page.bundle.addKey('display.stop','Stop');page.bundle.addKey('display.volumeUp','Volume Up');page.bundle.addKey('display.volumeDown','Volume Down');page.bundle.addKey('display.mute','Mute');page.bundle.addKey('display.videoStatus','Video Status');page.bundle.addKey('display.closePlayerControls','Close Player Controls');page.bundle.addKey('display.embeddedVideoPlayer','Embedded Video Player');page.bundle.addKey('display.of','of');page.bundle.addKey('display.view.on.flickr','View Photo on Flickr');page.bundle.addKey('mashups.content.data.msg','We are unable to display the mashup content. This happens if the system detects an invalid URL. Remove the mashup item and try again to resolve this issue.');page.bundle.addKey('contextmenu.frame.title','Menu frame');page.bundle.addKey('frameset.contentframe.title','Content');page.bundle.addKey('common.pair.paren','{0} ({1})');page.bundle.addKey('announcement.delete.announcement.warning','The action is final and cannot be undone. Delete this item?');page.bundle.addKey('dragdrop.accessible.error.chooseOption','Select an item first.');page.bundle.addKey('dragdrop.accessible.empty','No items available to reposition.');page.bundle.addKey('dragdrop.accessible.complete','Items have been reordered.');page.bundle.addKey('dragdrop.accessible.complete.nochange','No ordering changes made.');page.bundle.addKey('cm.design.save.successful.course','Success: Course Style updated.');page.bundle.addKey('cm.design.save.course.theme.success','The <em>{0}</em> theme has been applied. Click the theme icon to choose a new theme for the course.');page.bundle.addKey('coursemenu.show','Show Course Menu');page.bundle.addKey('coursemenu.hide','Hide Course Menu');page.bundle.addKey('dynamictree.expand','Expand');page.bundle.addKey('dynamictree.collapse','Collapse');page.bundle.addKey('dynamictree.expand.folder','Expand {0} tree folder');page.bundle.addKey('dynamictree.collapse.folder','Collapse {0} tree folder');page.bundle.addKey('closeStr','Close');page.bundle.addKey('moreOptionsStr','Click to see options');page.bundle.addKey('hiddenStr','This link is hidden from students');page.bundle.addKey('emptyStr','This link has no content');page.bundle.addKey('entryPointChangeConfirmStr','The entry point will changed to the next available Content');page.bundle.addKey('subheaderColonStr','Subheader: {0}');page.bundle.addKey('confirmQuickEnrollStr','You will be given the role: {0}. Proceed?');page.bundle.addKey('enterSearchKeyStr','Enter Search Criteria.');page.bundle.addKey('courseWelcomePageLbTitle','Quick Setup Guide');page.bundle.addKey('expandCollapse.expand.section.nocolon','Expand');page.bundle.addKey('expandCollapse.collapse.section.nocolon','Collapse');page.bundle.addKey('expandCollapse.expand.section.param','Expand {0}');page.bundle.addKey('expandCollapse.collapse.section.param','Collapse {0}');page.bundle.addKey('tool.activity.description','activity updates');page.bundle.addKey('accessDeniedMsg','Access Denied');page.bundle.addKey('breadcrumbs.expand','Click to expand the breadcrumbs');</script>
+  <script type="text/javascript">
+    FastInit.addOnLoad( function()
+    {
+
+        new page.ListInsertionMarker('announcementList',0,'insertionMarker.announcementList','New announcements appear below this line');
+
+    });
+
+</script>
+
+  <script type="text/javascript">
+   var course_id = "_356996_1";
+   var courseTitle = "PHY 132: University Physics Lab II (2017 Fall)-71852 (2017Fall-T-PHY132-71852)";
+   var confirmDeleteMenuItemMsg = "Are you sure you want to delete this item?";
+   var confirmQuickUnenrollMsg = "Any user data created while quick enrolled in this course will be deleted. Proceed?";
+   var confirmQuickEnrollMsg = "You will be given the role: Instructor. Proceed?";
+   var inNewWindow = false;
+   var theCourseMenu;
+ </script>
+
+  <script type="text/javascript">globalNavigation.init(); Event.observe(window, 'resize', globalNavigation.onResize);</script>
+  <script type="text/javascript">
+    page.bundle.addKey('globalnav.menu.expand','Expand\x20Global\x20Nav');
+    page.bundle.addKey('globalnav.menu.collapse','Collapse\x20Global\x20Nav');
+  </script>
+
+  <script type="text/javascript">
+    page.bundle.addKey('quick_links.link.title','Navigate\x20to\x20element\x20\x7B1\x7D\x20of\x20type\x20\x7B2\x7D\x20in\x20\x7B0\x7D\x20frame');
+    page.bundle.addKey('quick_links.lightbox_title','Quick\x20Links');
+    page.bundle.addKey('quick_links.link_title','Open\x20Quick\x20Links');
+    page.bundle.addKey('quick_links.hotkey.shift','Shift');
+    page.bundle.addKey('quick_links.hotkey.control','Ctrl');
+    page.bundle.addKey('quick_links.hotkey.alt','Alt');
+    page.bundle.addKey('quick_links.hotkey.combination_divider','\x2B');
+  </script>
+
+  <script type="text/javascript">quickLinks.initialize( [ '' ] );</script>
+  <script type="text/javascript">
+  		            globalNavMenu.init( true );
+  		          </script>
+
+  <script type="text/javascript"> social.Profile.MY_PROFILE_TOOL_ID='BB-CORE_____myProfile'; social.Profile.MY_PROFILE_TOOL_URI='/webapps/bb-social-learning-bb_bb60/execute/mybb?cmd=display&toolId=BB-CORE_____myProfile&location='; </script>
+
+   <script type="text/javascript">
+   FastInit.addOnLoad( function()
+   {
+            if ( window.DWREngine )
+       {
+        try {DWREngine.beginBatch();} catch(ignore) {}
+       }
+                page.decoratePageBanner();
+                                                             page.ContextMenu.hideMenuDiv('0b8decb975274d72b4b2527c6cbbf8bf');
+                                                             page.ContextMenu.hideMenuDiv('d31a65689f0a402fa17c611bc781db57');
+                                                             page.ContextMenu.hideMenuDiv('91f4ae3284f444a9a4d9fcbe7a08a720');
+                                                             var announcementListReorderHandler = new dragdrop.ListReordering('announcementList', 'reorderControlsannouncementList', true, 'li', 'item', 'h3', '/webapps/blackboard/execute/repositionAnnouncement', 'course_id=_356996_1', 1500694497925);
+                                                             new genericList.CheckboxRadioController("announcementList");
+                                                             page.ContextMenu.hideMenuDiv('c974c22aeb5f43f7aae3968b074c26f0');
+                                                             new page.PageHelpToggler(true, 'Help is On: Click to hide page help.', 'Help is Off: Click to show page help.', false );
+                                                             breadcrumbs.rightMostNavItem = 'cp_announcements';
+                                                             breadcrumbs.rightMostParentURL = '/webapps/blackboard/execute/courseMain?course_id=_356996_1';
+                                                             courseTheme.nonceKey = 'blackboard.platform.security.NonceUtil.nonce.ajax';
+                                                             courseTheme.nonceValue = 'a5883a12-7147-43ad-a28f-9f75a2229c48';
+                                                             new page.PageMenuToggler(false,'courseMenuToggle_356996_1', true);
+                                                             courseMenu.nonceKey = 'blackboard.platform.security.NonceUtil.nonce.ajax';
+                                                             courseMenu.nonceValue = 'a5883a12-7147-43ad-a28f-9f75a2229c48';
+                                                             page.ContextMenu.hideMenuDiv('9cca075be318484e902efec654513c4b');
+                                                             page.ContextMenu.hideMenuDiv('dbcecc9076654a8186097f980ddf9462');
+                                                             page.ContextMenu.hideMenuDiv('f8664f82f7ae4c99ad9c85623ea4a0b5');
+                                                             page.ContextMenu.hideMenuDiv('a7e96b235c50421b8e4c73d172ba65d2');
+                                                             page.ContextMenu.hideMenuDiv('a7588999231d494b95f6b9b155cfd342');
+                                                             page.ContextMenu.hideMenuDiv('918bbb34b92a4c60ad0144b859c1ea04');
+                                                             page.ContextMenu.hideMenuDiv('09d18c7c48fa4ef9ad6e8f64e7c34bb4');
+                                                             page.ContextMenu.hideMenuDiv('8f141431e05540cc9357a52eca139026');
+                                                             page.ContextMenu.hideMenuDiv('5d4021332e80479bbb981e0f52e7a79e');
+                                                             page.ContextMenu.hideMenuDiv('a3414a0a17e94cd1a2f4133a98ecbc0b');
+                                                             new dragdrop.ListReordering('courseMenuPalette_contents', 'courseMenuPalette_reorderControls', true, 'li', 'reorder', 'span', '/webapps/blackboard/execute/course/coursemenu/repositionaction', 'course_id=_356996_1&newWindow=false&openInParentWindow=false', 1500694428009);
+                                                             new page.PaletteController('courseMenuPalette', 'courseMenu_link', false, false);
+                                                             new page.ItemExpander('controlpanel.course.files_groupExpanderLink', 'controlpanel.course.files_groupContents', 'Expand', 'Collapse', true, '/webapps/blackboard/execute/course/getCourseFileItems', 'course_id=_356996_1&navItemSubGroup=null&newWindow=false&openInParentWindow=false', 'Expand Files','Collapse Files');
+                                                             new page.ItemExpander('controlpanel.course.tools_groupExpanderLink', 'controlpanel.course.tools_groupContents', 'Expand', 'Collapse', true, '/webapps/blackboard/execute/course/getCPGroupItems', 'course_id=_356996_1&navItemSubGroup=course_tools&newWindow=false&openInParentWindow=false', 'Expand Course Tools','Collapse Course Tools');
+                                                             new page.ItemExpander('controlpanel.evaluation_groupExpanderLink', 'controlpanel.evaluation_groupContents', 'Expand', 'Collapse', true, '/webapps/blackboard/execute/course/getCPGroupItems', 'course_id=_356996_1&navItemSubGroup=assessment&newWindow=false&openInParentWindow=false', 'Expand Evaluation','Collapse Evaluation');
+                                                             new page.ItemExpander('controlpanel.grade.center_groupExpanderLink', 'controlpanel.grade.center_groupContents', 'Expand', 'Collapse', true, '/webapps/blackboard/execute/course/getCPGradeCenterGroupItems', 'course_id=_356996_1&navItemSubGroup=grade_center&newWindow=false&openInParentWindow=false', 'Expand Grade Center','Collapse Grade Center');
+                                                             new page.ItemExpander('controlpanel.users.and.groups_groupExpanderLink', 'controlpanel.users.and.groups_groupContents', 'Expand', 'Collapse', true, '/webapps/blackboard/execute/course/getCPGroupItems', 'course_id=_356996_1&navItemSubGroup=users_group&newWindow=false&openInParentWindow=false', 'Expand Users and Groups','Collapse Users and Groups');
+                                                             new page.ItemExpander('controlpanel.customization_groupExpanderLink', 'controlpanel.customization_groupContents', 'Expand', 'Collapse', true, '/webapps/blackboard/execute/course/getCPGroupItems', 'course_id=_356996_1&navItemSubGroup=course_customization&newWindow=false&openInParentWindow=false', 'Expand Customization','Collapse Customization');
+                                                             new page.ItemExpander('controlpanel.packages.and.utilities_groupExpanderLink', 'controlpanel.packages.and.utilities_groupContents', 'Expand', 'Collapse', true, '/webapps/blackboard/execute/course/getCPGroupItems', 'course_id=_356996_1&navItemSubGroup=package_utilities&newWindow=false&openInParentWindow=false', 'Expand Packages and Utilities','Collapse Packages and Utilities');
+                                                             new page.PaletteController('controlPanelPalette', 'controlPanelPalette_link', false, false);
+                                                             theCourseMenu = new courseMenu.CourseMenu('/webapps/blackboard/execute/doCourseMenuAction', '/webapps/blackboard/execute/getCourseMenuContextMenu');
+                                                             welcomeOverlay.initOverlay();
+                                                             tool_service.init ('300000', 'Suppress-Session-Timestamp-Update' );
+                                                             if (typeof(initEditors) == 'function') { initEditors(); };
+                                                             if (window['org'] && window['org']['owasp']) { org.owasp.esapi.ESAPI.initialize(); };
+                                                        if ( window.DWREngine )
+           {
+             try {DWREngine.endBatch();} catch(ignore) {}
+             try {DWREngine.beginBatch();} catch(ignore) {}
+           }
+                         quickLinks.createHelper();
+                                                                  if ( window.DWREngine )
+       {
+         try {DWREngine.endBatch();} catch(ignore) {}
+       }
+                          BrowserSpecific.registerListeners();
+               });
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['asu._setAccount', 'UA-2392647-1'], ['asu._setDomainName', '.asu.edu']);
+_gaq.push(['asu._trackPageview']);
+_gaq.push(['_setAccount', 'UA-20247130-7'], ['_setDomainName', '.asu.edu']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_setAccount', 'UA-45694102-3'], ['_setDomainName', '.asu.edu']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+if (location.pathname.toLowerCase().indexOf('topframe') > -1) {
+	document.observe("dom:loaded", function() {
+		// we want a little less space in the top frame, bb does not let us set this so cheat with javascript
+		parent.document.getElementById('bbFrameset').setAttribute('rows', '63,*', 0);
+
+		// try to parse out the username from SSONAME cookie
+		var cookies = document.cookie.split(";");
+		for(var i = 0; i < cookies.length; i++) {
+			if (cookies[i].indexOf('SSONAME') > 0) {
+				document.getElementById('username').innerHTML = "<b>"+cookies[i].substring(9)+"</b>";
+				document.getElementById('username').style.display = 'inline';
+				break;
+			}
+		}
+	});
+}
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"e99ceaa32b","agent":"","beacon":"bam.nr-data.net","applicationTime":156,"applicationID":"10313994","transactionName":"YlUEYhdYCkUAWhdfX1sfNUIXTBBFIFoXX19bHwRaBFoPVA5YEVIeQlUEVxVJFxgDVQJVW1dfB0QBFwVYD1YWWFNQXQNYERcXQhNMF0UedF4IWRBXB1MMXA1CcVZED1kL","queueTime":0}</script>
+
+
+<div class="renameCourseToc" id="renameSubHeaderForm" style="display:none ; position:absolute; top:0px; left:0px"><input type="hidden" name="course_id" id="course_id" value="_356996_1"><div class="flyout_message"></div><div class="hideoff"><label for="renameSubHeaderInputBox">Rename Link</label></div><input class="required" id="renameSubHeaderInputBox" type="text" name="name"><a title="Cancel" onclick="javascript:theCourseMenu.cancelRename()" class="microControl cancel" href="#"><img src="/images/spacer.gif" alt="Cancel"></a><a title="Save" onclick="javascript:theCourseMenu.saveRenamedSubHeaderItem()" class="microControl save" href="#"><img src="/images/spacer.gif" alt="Save"></a></div></body>
