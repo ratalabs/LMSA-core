@@ -18,7 +18,8 @@ setup(name = "LMSA",
           "Operating System :: UNIX",
           "Programming Language :: Python 2.7",
       ],
-      packages=find_packages(),
+      packages=find_packages('src'),
+      package_dir={'':'src'},
       install_requires=['selenium',
                         'pandas']
 )
