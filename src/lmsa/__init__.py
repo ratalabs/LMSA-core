@@ -16,3 +16,5 @@ from .forms import assignment_options
 from .forms.test_options import EditTests
 from .navigation.course.sidebar import SideBar
 from .navigation.home.section_selector import SectionSelector
+
+from .manipulator import Manipulator
