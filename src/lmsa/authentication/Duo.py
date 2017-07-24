@@ -17,7 +17,11 @@ class Duo(Authenticator):
         self.driver.find_element_by_xpath(Duo.AUTH_XPATH).click()
 
     def authenticate(self):
+        import time
+        stall_title = self.driver.title
         if self.__switch_frame__():
             self.__send_push__()
+            while stall_title == self.driver.title:
+                time.sleep(1)
         else:
             print('Error finding DUO iframe')
