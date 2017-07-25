@@ -1,20 +1,26 @@
 from lmsa.lms import LMS
 from bs4 import BeautifulSoup
+from lmsa.lms.blackboard import Course
+from urlparse import urljoin
 import time
 
 class BlackBoard(LMS):
 
-    URLS = {'COURSE_LIST':r'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_2_1'}
-    XPATHS = {'':''}
+    XPATHS = dict()
+
+    def __init__(self, driver, institute):
+        super(BlackBoard, self).__init__(driver)
+        self.institute = institute
+        self.courses = dict()
 
     def nav_courses(self):
         """Navigate to course list.
         """
-        self.driver.get(BlackBoard.URLS['COURSE_LIST'])
+        self.driver.get(self.institute.URLS['COURSE_LIST'])
         time.sleep(2)
         self.driver.find_element_by_id('anonymous_element_14')
 
-    def parse_course_info(self, anchor, current_url):
+    def parse_course_info(self, anchor):
         """Reads in an anchor containing an href to course page
         and returns a tuple of that courses information.
 
@@ -37,10 +43,11 @@ class BlackBoard(LMS):
 
         """
         href = anchor['href']
-        new_url = current_url.split('webapps')[0][:-1] + href.strip()
+        new_url = urljoin(self.institute.URLS['COURSE_LIST'], href.strip())
+        #new_url = current_url.split('webapps')[0][:-1] + href.strip()
         options = href.split('?')[1]
         sep_options = options.split('&')[1]
-        return anchor.text.strip(), new_url, sep_options.split('=')[1]
+        return anchor.text.strip(), new_url, sep_options.split('=')[1], self.institute
 
     def get_instructor_course_list(self):
         """When used while on a page containing the course list, this function
@@ -56,10 +63,12 @@ class BlackBoard(LMS):
         courses = soup.find_all('ul', {'class':['portletList-img',
                                                 'courseListing',
                                                 'coursefakeclass']})
-        results = []
-        current_url = self.driver.current_url
         for x in courses[0].find_all('li'):
             anchor = x.find('a')
-            results.append(self.parse_course_info(anchor, current_url))
-        self.course_list = results
-        return results
+            parsed = self.parse_course_info(anchor)
+            self.courses[parsed[2]] = Course.Course(*parsed)
+        for c in self.courses.keys():
+            course = self.courses[c]
+            self.driver.get(course.url)
+            self.driver.find_element_by_id('courseMenuPalette_contents')
+            course.gather_sections(self.driver.page_source)

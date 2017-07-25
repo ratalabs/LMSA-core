@@ -7,14 +7,18 @@ import getpass
 
 class ASU_manipulator(Manipulator):
 
-    LOGIN_PAGE = r'https://weblogin.asu.edu/cas/login?service=https%3A%2F%2Fweblogin.asu.edu%2Fcgi-bin%2Fcas-login%3Fcallapp%3Dhttps%253A%252F%252Fwebapp4.asu.edu%252Fmyasu%252F%253Finit%253Dfalse'
+    URLS = {'LOGIN':r'https://my.asu.edu',
+            'COURSE_LIST':r'https://myasucourses.asu.edu',
+            'WEBAPPS':r'https://myasucourses.asu.edu/webapps/'}
+
     AUTHENTICATION_CLASS = Duo
     LMS_CLASS = lmsa.lms.blackboard.BlackBoard
+
 
     def __init__(self, driver):
         self.driver = driver
         self.authenticator = ASU_manipulator.AUTHENTICATION_CLASS(self.driver)
-        self.lms = ASU_manipulator.LMS_CLASS(self.driver)
+        self.lms = ASU_manipulator.LMS_CLASS(self.driver, ASU_manipulator)
 
     def __gather_login_raw__(self):
         uname = raw_input("Enter ASURITE username: ")
@@ -24,7 +28,7 @@ class ASU_manipulator(Manipulator):
         self.driver.find_element_by_class_name('submit').click()
 
     def login(self):
-        self.driver.get(ASU_manipulator.LOGIN_PAGE)
+        self.driver.get(ASU_manipulator.URLS['LOGIN'])
         self.__gather_login_raw__()
         self.authenticator.authenticate()
 
