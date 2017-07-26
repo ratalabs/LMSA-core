@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 *.egg*
+
+_build
+_static
+_templates

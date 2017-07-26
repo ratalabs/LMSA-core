@@ -9,8 +9,7 @@ __email__ = "samccaff@asu.edu"
 __status__ = "Production"
 
 
-from . import authorization
-from . import version
+
 from .editor import Editor
 from .forms import assignment_options
 from .forms.test_options import EditTests
