@@ -3,7 +3,7 @@ from urlparse import urljoin
 import time
 
 
-from lmsa.lms import LMS
+from lmsa.lms.LMS import LMS
 from .Course import Course
 
 class BlackBoard(LMS):
