@@ -1,8 +1,10 @@
-from lmsa.lms import LMS
 from bs4 import BeautifulSoup
-from lmsa.lms.blackboard import Course
 from urlparse import urljoin
 import time
+
+
+from lmsa.lms import LMS
+from .Course import Course
 
 class BlackBoard(LMS):
 
@@ -66,7 +68,7 @@ class BlackBoard(LMS):
         for x in courses[0].find_all('li'):
             anchor = x.find('a')
             parsed = self.parse_course_info(anchor)
-            self.courses[parsed[2]] = Course.Course(*parsed)
+            self.courses[parsed[2]] = Course(*parsed)
         for c in self.courses.keys():
             course = self.courses[c]
             self.driver.get(course.url)
