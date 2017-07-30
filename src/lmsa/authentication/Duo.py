@@ -24,6 +24,6 @@ class Duo(Authenticator):
                 self.__send_push__()
                 while stall_title == self.driver.title:
                     time.sleep(1)
-        else:
-            print('Error finding DUO iframe')
-            time.sleep(1)
+            else:
+                print('Error finding DUO iframe')
+                time.sleep(1)
