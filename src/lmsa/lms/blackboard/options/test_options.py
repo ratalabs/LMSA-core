@@ -2,7 +2,7 @@
 Stores all full XPATHS relating to edit test options.
 """
 
-XPATHS' : {
+XPATHS = {
     'OPEN_TEST_IN_NEW_WINDOW_YES' : '//*[@id="yesRadio"]',
     'OPEN_TEST_IN_NEW_WINDOW_NO' : '//*[@id="noRadio"]',
     'MAKE_LINK_AVAILABLE_YES' : '//*[@id="fIsLinkVisible1"]',

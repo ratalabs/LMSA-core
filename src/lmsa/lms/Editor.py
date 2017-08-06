@@ -43,7 +43,7 @@ class LMS_Editor(object):
             self.edit_text(element, val)
         elif type == 'radio':
             self.edit_radio()
-        elif type == 'checkbox'
+        elif type == 'checkbox':
             self.edit_checkbox()
 
     def edit_text(self, element, val):
