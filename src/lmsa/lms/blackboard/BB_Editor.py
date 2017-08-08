@@ -14,4 +14,5 @@ class BB_Editor(object):
 
     def select_form(self, element, wait=None):
         self.driver.find_element_by_xpath('//a[@title=' + "\"" + element + " item options" + "\"" ']').click()
-        time.sleep(wait)
+        if wait is not None:
+            time.sleep(wait)
