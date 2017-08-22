@@ -8,9 +8,10 @@ from selenium import webdriver
 
 filename = '/Users/smccaffrey/Downloads/LMSA-core-ce8d77a2dcc81854e0502902fdde6a175acfe800/PHY122_Fall2017/duedates_Fall2017.csv'
 p = 'PHY 122: University Physics Lab I (2017 Fall)-'
+q = '2017Fall-T-PHY122-71848: PHY 122: University Physics Lab I (2017 Fall)'
 df1 = pd.read_csv(filename, dtype=str, delimiter=',', header=None)
-driver = webdriver.Chrome('/Users/smccaffrey/Desktop/chromedriver')
-
+driver = webdriver.Chrome('/Users/smccaffrey/Projects/drivers/chromedriver')
+BB_HOME = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 """Change when ready to save changes"""
 DRYRUN = True
 
@@ -21,10 +22,13 @@ form = BB_Editor(driver)
 """Login"""
 institution.login()
 
+driver.get(BB_HOME)
+time.sleep(4)
+
 """Bulk Edit"""
 i = 1
 for i in range(1, len(df1[0])):
-    driver.find_element_by_link_text(p + str(df1[0][i])).click()
+    driver.find_element_by_link_text('2017Fall-T-PHY122-' + str(df1[0][i]) + ': PHY 122: University Physics Lab I (2017 Fall)').click()
 
     """Prelabs"""
     driver.find_element_by_link_text('Submit PreLab').click()
@@ -51,4 +55,5 @@ for i in range(1, len(df1[0])):
         form.cancel(wait=2)
 
     """Navigate Home"""
-    driver.get('https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_2_1')
+    driver.get(BB_HOME)
+    time.sleep(3)
