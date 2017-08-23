@@ -91,6 +91,23 @@ class BB_Editor(object):
         return
 
     def end_restrict(self, state, date, time):
+        """Performs all operations related to the 'End Restrict Date'. Order matters when invoking multiple
+        'send_key' functions.
+
+        Parameters
+        ----------
+        state : bool
+            The desired state of the checkbox element (True/False)
+
+        date : str
+            The literal date value in the format mm/dd/yyyy
+
+        time : str
+            The literal time value in the format hh:mm AM/PM
+
+        Returns
+        -------
+        """
         current_state = self.check_state(folder_options.END_RESTRICT_CHECK)
         if current_state != state:
             self.set_state(xpath=folder_options.END_RESTRICT_CHECK, dstate=state)
@@ -105,10 +122,18 @@ class BB_Editor(object):
 
     def due_date(self, state, date, time):
         """Performs all operations related to Due Dates. Order matters when invoking multiple
-        'send_key functions'
+        'send_key' functions.
 
         Parameters
         ----------
+        state : bool
+            The desired state of the checkbox element (True/False)
+
+        date : str
+            The literal date value in the format mm/dd/yyyy
+
+        time : str
+            The literal time value in the format hh:mm AM/PM
 
         Returns
         -------
@@ -130,6 +155,8 @@ class BB_Editor(object):
         return
 
     def cancel(self, wait=None):
+        """Click cancel
+        """
         try:
             self.driver.find_element_by_xpath(BB_Editor.CANCEL).click()
             if wait is not None:
@@ -138,6 +165,8 @@ class BB_Editor(object):
             return False
 
     def submit(self, wait=None):
+        """Click submit
+        """
         try:
             self.driver.find_element_by_xpath(BB_Editor.SUBMIT).click()
             if wait is not None:
