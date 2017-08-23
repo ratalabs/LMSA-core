@@ -12,8 +12,9 @@ q = '2017Fall-T-PHY122-71848: PHY 122: University Physics Lab I (2017 Fall)'
 df1 = pd.read_csv(filename, dtype=str, delimiter=',', header=None)
 driver = webdriver.Chrome('/Users/smccaffrey/Projects/drivers/chromedriver')
 BB_HOME = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
+
 """Change when ready to save changes"""
-DRYRUN = True
+DRYRUN = False
 
 """Declare objects"""
 institution = ASU_manipulator(driver)
