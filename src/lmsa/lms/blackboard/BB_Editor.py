@@ -31,6 +31,7 @@ class BB_Editor(object):
         -------
         """
         self.driver.find_element_by_xpath('//a[@title=' + "\"" + element + " item options" + "\"" ']').click()
+        print('     Editing: ' + element)
         if wait is not None:
             time.sleep(wait)
 
@@ -96,21 +97,30 @@ class BB_Editor(object):
         if state:
             self.driver.find_element_by_xpath(folder_options.END_RESTRICT_DATE).clear()
             self.driver.find_element_by_xpath(folder_options.END_RESTRICT_TIME).clear()
-            self.driver.find_element_by_xpath(folder_options.END_RESTRICT_DATE).send_keys(date)
             self.driver.find_element_by_xpath(folder_options.END_RESTRICT_TIME).send_keys(time)
+            self.driver.find_element_by_xpath(folder_options.END_RESTRICT_DATE).send_keys(date)
 
     def late_submission(self):
         return
 
     def due_date(self, state, date, time):
+        """Performs all operations related to Due Dates. Order matters when invoking multiple
+        'send_key functions'
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        """
         current_state = self.check_state(assignment_options.DUE_DATE_CHECK)
         if current_state != state:
             self.set_state(xpath=assignment_options.DUE_DATE_CHECK, dstate=state)
         if state:
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_VALUE).clear()
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_TIME).clear()
-            self.driver.find_element_by_xpath(assignment_options.DUE_DATE_VALUE).send_keys(date)
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_TIME).send_keys(time)
+            self.driver.find_element_by_xpath(assignment_options.DUE_DATE_VALUE).send_keys(date)
 
 
     def multiple_attempts(self):
