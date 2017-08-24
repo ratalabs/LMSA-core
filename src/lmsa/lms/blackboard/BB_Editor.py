@@ -15,6 +15,11 @@ class BB_Editor(object):
     def __init__(self, driver):
         self.driver = driver
 
+    def home(self, wait=None):
+        self.driver.get('https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1')
+        if wait is not None:
+            time.sleep(wait)
+
     def select_form(self, element, wait=None):
         """Selects the options dropdown menu for blackboard
         form items.
