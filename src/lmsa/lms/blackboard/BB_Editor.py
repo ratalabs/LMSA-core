@@ -79,18 +79,74 @@ class BB_Editor(object):
             self.driver.find_element_by_xpath(xpath).click()
 
     def open_test_new_windows(self):
+        """Open test in a new (pop-up) windows (YES/NO)
+        """
         return
 
     def make_link_available(self):
+        """Toggle if the content link is available to users/students
+        """
         return
 
     def create_announcement(self):
+        """Toggle the creation of an announcement upon editing content
+        """
         return
 
-    def start_restrict(self):
+    def late_submission(self):
+        """Choose whether to allow late submissions
+        """
         return
 
-    def end_restrict(self, state, date, time):
+    def test_start_restrict_date(self):
+        """Edit starting restrict date and time for test content
+        """
+        return
+
+    def test_end_restrict_date(self):
+        """Edit ending restrict date and time for test content
+        """
+        return
+
+    def assignment_start_limit_availability(self):
+        """Editing starting availablilty date and time for assignment content
+        """
+        return
+
+    def assignment_end_limit_availability(self):
+        """Editing ending availablilty date and time for assignment content
+        """
+        return
+
+    def folder_start_restrict_date(self, state, date, time):
+        """Performs all operations related to the 'Start Restrict Date'. Order matters when invoking multiple
+        'send_key' functions.
+
+        Parameters
+        ----------
+        state : bool
+            The desired state of the checkbox element (True/False)
+
+        date : str
+            The literal date value in the format mm/dd/yyyy
+
+        time : str
+            The literal time value in the format hh:mm AM/PM
+
+        Returns
+        -------
+        """
+        current_state = self.check_state(folder_options.START_RESTRICT_CHECK)
+        if current_state != state:
+            self.set_state(xpath=folder_options.START_RESTRICT_CHECK, dstate=state)
+        if state:
+            self.driver.find_element_by_xpath(folder_options.START_RESTRICT_DATE).clear()
+            self.driver.find_element_by_xpath(folder_options.START_RESTRICT_TIME).clear()
+            self.driver.find_element_by_xpath(folder_options.START_RESTRICT_TIME).send_keys(time)
+            self.driver.find_element_by_xpath(folder_options.START_RESTRICT_DATE).send_keys(date)
+        return
+
+    def folder_end_restrict_date(self, state, date, time):
         """Performs all operations related to the 'End Restrict Date'. Order matters when invoking multiple
         'send_key' functions.
 
@@ -117,10 +173,8 @@ class BB_Editor(object):
             self.driver.find_element_by_xpath(folder_options.END_RESTRICT_TIME).send_keys(time)
             self.driver.find_element_by_xpath(folder_options.END_RESTRICT_DATE).send_keys(date)
 
-    def late_submission(self):
-        return
 
-    def due_date(self, state, date, time):
+    def assignment_due_date(self, state, date, time):
         """Performs all operations related to Due Dates. Order matters when invoking multiple
         'send_key' functions.
 
@@ -149,9 +203,14 @@ class BB_Editor(object):
 
 
     def multiple_attempts(self):
+        """Edit multiple attempt field. Toggle YES/NO button, allow infinite submissions,
+        and/or specify number of attempts
+        """
         return
 
     def force_completion(self):
+        """Force test completion if due date and time passed while student is taking test
+        """
         return
 
     def cancel(self, wait=None):
@@ -215,6 +274,16 @@ class assignment_options:
 
 class folder_options:
 
+    CONTENT_VIEW_ICON_ONLY = '//*[@id="iconOnlyView"]'
+    CONTENT_VIEW_TEXT_ONLY = '//*[@id="textOnlyView"]'
+    CONTENT_VIEW_ICON_AND_TEXT = '//*[@id="iconAndTextView"]'
+    PERMIT_USERS_TO_VIEW_THIS_CONTENT_YES = '//*[@id="availableYes"]'
+    PERMIT_USERS_TO_VIEW_THIS_CONTENT_NO = '//*[@id="availableNo"]'
+    TRACK_NUMBER_OF_VIEWS_YES = '//*[@id="trackYes"]'
+    TRACK_NUMBER_OF_VIEWS_NO = '//*[@id="trackNo"]'
+    START_RESTRICT_CHECK = '//*[@id="start_bbDateTimePicker"]'
+    START_RESTRICT_DATE = '//*[@id="dp_bbDateTimePicker_start_date"]'
+    START_RESTRICT_TIME = '//*[@id="tp_bbDateTimePicker_start_time"]'
     END_RESTRICT_CHECK = '//input[@id="end_bbDateTimePicker"]'
     END_RESTRICT_DATE = '//*[@id="dp_bbDateTimePicker_end_date"]'
     END_RESTRICT_TIME = '//*[@id="tp_bbDateTimePicker_end_time"]'
