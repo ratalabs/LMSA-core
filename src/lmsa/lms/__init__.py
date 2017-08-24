@@ -1,1 +1,1 @@
-from Editor  import LMS_Editor
+from Editor import LMS_Editor
