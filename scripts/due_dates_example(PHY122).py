@@ -38,7 +38,7 @@ for i in range(1, len(df1[0])):
     for j in range(1, 11):
         form.select_form(df1[j+4][0], wait=1)
         form.edit(wait=4)
-        form.due_date(state=True, date=df1[j+4][i], time=df1[3][i])
+        form.assignment_due_date(state=True, date=df1[j+4][i], time=df1[3][i])
         if not DRYRUN:
             form.submit(wait=2)
         form.cancel(wait=2)
@@ -51,7 +51,7 @@ for i in range(1, len(df1[0])):
         form.edit(wait=5)
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") #quick fix for elementNotFound
         time.sleep(2)
-        form.end_restrict(state=True, date=df1[k+14][i], time=df1[4][i])
+        form.folder_end_restrict_date(state=True, date=df1[k+14][i], time=df1[4][i])
         if not DRYRUN:
             form.submit(wait=2)
         form.cancel(wait=2)
