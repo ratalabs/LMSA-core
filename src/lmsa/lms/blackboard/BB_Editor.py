@@ -20,6 +20,20 @@ class BB_Editor(object):
         if wait is not None:
             time.sleep(wait)
 
+    def scroll_page_bottom(self, y):
+        #self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        self.driver.execute_script("window.scrollTo(0, %i)" % y)
+
+    def scroll_into_view(self):
+        #item = self.driver.find_element_by_xpath
+        #self.driver.execute_script("%s.scrollIntoView(true);" % document.getElementById("due_date_in_use"))
+        elementID = 'due_date_in_use'
+        #//*[@id="newFile_chooseLocalFile"]
+        self.driver.execute_script("document.getElementById('newFile_chooseLocalFile').scrollIntoView(true);")
+
+    def maximize_window(self):
+        self.driver.maximize_window()
+
     def select_form(self, element, wait=None):
         """Selects the options dropdown menu for blackboard
         form items.
