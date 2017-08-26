@@ -7,7 +7,7 @@ Handles any editing operations/logic unique to the Blackboard LMS
 
 import time
 
-class BB_Editor(object):
+class Editor(object):
 
     CANCEL = '//*[@id="bottom_submitButtonRow"]/input[1]'
     SUBMIT = '//*[@id="bottom_submitButtonRow"]/input[2]'
@@ -20,9 +20,9 @@ class BB_Editor(object):
         if wait is not None:
             time.sleep(wait)
 
-    def scroll_page_bottom(self, y):
-        #self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        self.driver.execute_script("window.scrollTo(0, %i)" % y)
+    def scroll_page_bottom(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
 
     def scroll_into_view(self):
         #item = self.driver.find_element_by_xpath
