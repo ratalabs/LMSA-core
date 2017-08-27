@@ -15,24 +15,24 @@ class Editor(object):
     def __init__(self, driver):
         self.driver = driver
 
-    def home(self, wait=None):
-        self.driver.get('https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1')
-        if wait is not None:
-            time.sleep(wait)
+    #def home(self, wait=None):
+    #    self.driver.get('https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1')
+    #    if wait is not None:
+    #        time.sleep(wait)
 
-    def scroll_page_bottom(self):
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    #def scroll_page_bottom(self):
+    #    self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
 
-    def scroll_into_view(self):
-        #item = self.driver.find_element_by_xpath
-        #self.driver.execute_script("%s.scrollIntoView(true);" % document.getElementById("due_date_in_use"))
-        elementID = 'due_date_in_use'
-        #//*[@id="newFile_chooseLocalFile"]
-        self.driver.execute_script("document.getElementById('newFile_chooseLocalFile').scrollIntoView(true);")
+    #def scroll_into_view(self):
+    #    #item = self.driver.find_element_by_xpath
+    #    #self.driver.execute_script("%s.scrollIntoView(true);" % document.getElementById("due_date_in_use"))
+    #    elementID = 'due_date_in_use'
+    #    #//*[@id="newFile_chooseLocalFile"]
+    #    self.driver.execute_script("document.getElementById('newFile_chooseLocalFile').scrollIntoView(true);")
 
-    def maximize_window(self):
-        self.driver.maximize_window()
+    #def maximize_window(self):
+    #    self.driver.maximize_window()
 
     def select_form(self, element, wait=None):
         """Selects the options dropdown menu for blackboard
@@ -53,6 +53,8 @@ class Editor(object):
         print('     Editing: ' + element)
         if wait is not None:
             time.sleep(wait)
+
+
 
     def edit(self, wait=None):
         self.driver.find_element_by_xpath('//a[@title="Edit"]').click()
