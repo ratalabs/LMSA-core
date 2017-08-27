@@ -6,8 +6,6 @@ It can currently handle all content management and information editing tasks.
 
 ### Current LMS Services Mapped
 
-What things you need to install the software and how to install them
-
 * [BlackBoard Learn](http://www.blackboard.com/learning-management-system/blackboard-learn.aspx)
 
 
@@ -27,11 +25,12 @@ Currently under private development
 
 ## Authors
 
-* **Sam McCaffrey** - *title/role* - [smccaffrey](https://github.com/smccaffrey)
-* **Ian Kenney**    - *title/role* - [ianmkenney](https://github.com/ianmkenney)
-* **Andrew Adams**  - *title/role* - [Faux53](https://github.com/Faux53)
+* **Sam McCaffrey** - *Core Developer, Project Lead* - [smccaffrey](https://github.com/smccaffrey)
+* **Ian Kenney**    - *Core Developer, Architect* - [ianmkenney](https://github.com/ianmkenney)
+* **Andrew Adams**  - *UX Developer* - [Faux53](https://github.com/Faux53)
 
-See also the list of [contributors](https://github.com/smccaffrey/blackboard_automation/graphs/contributors) who participated in this project.
+See also the list of [contributors-core](https://github.com/smccaffrey/LMSA-core/graphs/contributors) who participated in this project.
+See also the list of [contributors-webgui](https://github.com/smccaffrey/LMSA-webgui/graphs/contributors) who participated in this project.
 
 ## License
 
@@ -39,6 +38,4 @@ This project is licensed under the Apache-2.0 License - see the [LICENSE.md](LIC
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
 * selenium-python
-* etc
