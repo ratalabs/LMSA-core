@@ -19,9 +19,11 @@ class Duo(Authenticator):
     def authenticate(self):
         import time
         stall_title = self.driver.title
-        if self.__switch_frame__():
-            self.__send_push__()
-            while stall_title == self.driver.title:
-                time.sleep(1)
-        else:
+        try:
+            if self.__switch_frame__():
+                self.__send_push__()
+                while stall_title == self.driver.title:
+                    time.sleep(1)
+        except Exception as e:
             print('Error finding DUO iframe')
+            time.sleep(1)
