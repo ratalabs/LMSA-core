@@ -1,8 +1,9 @@
-from lmsa.authentication.Duo import Duo
-from lmsa.manipulator import Manipulator
-import lmsa.lms.blackboard
-import time
+from lmsa.manipulation.Manipulator import Manipulator
 
+from lmsa.lms.blackboard.BlackBoard import BlackBoard
+from lmsa.authentication.duo.Duo import Duo
+
+import time
 import getpass
 
 class ASU_manipulator(Manipulator):
@@ -12,8 +13,7 @@ class ASU_manipulator(Manipulator):
             'WEBAPPS':r'https://myasucourses.asu.edu/webapps/'}
 
     AUTHENTICATION_CLASS = Duo
-    LMS_CLASS = lmsa.lms.blackboard.BlackBoard
-
+    LMS_CLASS = BlackBoard
 
     def __init__(self, driver):
         self.driver = driver

@@ -1,4 +1,4 @@
-from lmsa.lms.blackboard.Section import Section
+from .Section import Section
 import bs4
 from urlparse import urljoin
 

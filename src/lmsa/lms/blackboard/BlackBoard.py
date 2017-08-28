@@ -1,8 +1,13 @@
-from lmsa.lms import LMS
 from bs4 import BeautifulSoup
-from lmsa.lms.blackboard import Course
 from urlparse import urljoin
 import time
+
+
+from lmsa.lms.LMS import LMS
+from .Course import Course
+from .content.tests import Tests
+from .content.assignments import Assignments
+from .content.folders import Folders
 
 class BlackBoard(LMS):
 
@@ -66,9 +71,42 @@ class BlackBoard(LMS):
         for x in courses[0].find_all('li'):
             anchor = x.find('a')
             parsed = self.parse_course_info(anchor)
-            self.courses[parsed[2]] = Course.Course(*parsed)
+            self.courses[parsed[2]] = Course(*parsed)
         for c in self.courses.keys():
             course = self.courses[c]
             self.driver.get(course.url)
             self.driver.find_element_by_id('courseMenuPalette_contents')
             course.gather_sections(self.driver.page_source)
+
+class Editor(Tests, Assignments, Folders):
+
+    def __init__ (self, driver):
+        seld.driver = driver
+
+    CANCEL = '//*[@id="bottom_submitButtonRow"]/input[1]'
+    SUBMIT = '//*[@id="bottom_submitButtonRow"]/input[2]'
+
+    def select_form(self, element, wait=None):
+        """Selects the options dropdown menu for blackboard
+        form items.
+
+        Parameters
+        ----------
+        element : str
+            User inputed title of form name
+
+        wait : int
+            Time to pause for page load to complete. Default is None
+
+        Returns
+        -------
+        """
+        self.driver.find_element_by_xpath('//a[@title=' + "\"" + element + " item options" + "\"" ']').click()
+        print('     Editing: ' + element)
+        if wait is not None:
+            time.sleep(wait)
+
+    def edit(self, wait=None):
+        self.driver.find_element_by_xpath('//a[@title="Edit"]').click()
+        if wait is not None:
+            time.sleep(wait)
