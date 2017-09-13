@@ -30,9 +30,9 @@ class Assignments(object):
         Returns
         -------
         """
-        current_state = self.check_state(assignment_options.DUE_DATE_CHECK)
+        current_state = Logic(self.driver).check_state(assignment_options.DUE_DATE_CHECK)
         if current_state != state:
-            self.set_state(xpath=assignment_options.DUE_DATE_CHECK, dstate=state)
+            Logic(self.driver).set_state(xpath=assignment_options.DUE_DATE_CHECK, dstate=state)
         if state:
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_VALUE).clear()
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_TIME).clear()
