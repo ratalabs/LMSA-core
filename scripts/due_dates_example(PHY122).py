@@ -14,7 +14,7 @@ driver = webdriver.Chrome('/Users/smccaffrey/Projects/drivers/chromedriver')
 BB_HOME = 'https://myasucourses.asu.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1'
 
 """Change when ready to save changes"""
-DRYRUN = False
+DRYRUN = True
 
 """Declare objects"""
 institution = ASU_manipulator(driver)
