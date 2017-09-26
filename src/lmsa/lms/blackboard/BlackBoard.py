@@ -81,7 +81,7 @@ class BlackBoard(LMS):
 class Editor(Tests, Assignments, Folders):
 
     def __init__ (self, driver):
-        seld.driver = driver
+        self.driver = driver
 
     CANCEL = '//*[@id="bottom_submitButtonRow"]/input[1]'
     SUBMIT = '//*[@id="bottom_submitButtonRow"]/input[2]'
