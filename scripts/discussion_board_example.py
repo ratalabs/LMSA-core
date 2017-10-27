@@ -5,7 +5,6 @@ import pandas as pd
 from selenium import webdriver
 
 from lmsa.manipulation.ASU.ASU_manipulator import ASU_manipulator
-from lmsa.manipulation.ASU.ASU_manipulator import ASU_manipulator
 from lmsa.lms.blackboard.BlackBoard import Editor
 from lmsa.lms.blackboard.content.tests import Tests
 from lmsa.lms.blackboard.content.assignments import Assignments
