@@ -1,6 +1,9 @@
 __pycache__/
+.pynb_checkpoints/
 *.pyc
 *.egg*
+*.ipynb
+
 
 _build
 _static
