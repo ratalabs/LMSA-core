@@ -12,7 +12,7 @@ class Assignments(object):
     def __init__ (self, driver):
         self.driver = driver
 
-    def due_date(self):
+    def due_date(self, state, date, time):
         """Performs all operations related to Due Dates. Order matters when invoking multiple
         'send_key' functions.
 

@@ -2,6 +2,8 @@
 Contains functionality not currently bound to any specific operations
 """
 
+import time
+
 class Logic(object):
 
     def __init__ (self, driver):
