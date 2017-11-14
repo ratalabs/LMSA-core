@@ -1,0 +1,35 @@
+by: Sam McCaffrey
+09-25-2017
+
+Current Capabilities
+
+1.  Can harvest initial (top-level) message in 'thread'
+
+2.  Can successfully capture and cycle through thread names (click and enter element link), and capture those names.
+      Limitation: Length of thread list must be manually specified
+
+3.  Able to return length of forums and cycle through independent of Forum Names
+
+
+
+Present Issues
+
+1.  Cannot harvest replies of a message.
+      Reason: XPATH locations are not unique, and are heavily controlled by javascript
+              Also the 'id' tag that identifies each message/reply is uniquely generated
+
+2.  Can capture Images, but cannot associate them with a specific reply upon processing
+
+3.  Cannot Return Forum Names, only a useless webdriver identification number is returned
+
+
+
+CONCLUSION FOR CURRENT STATE/DEPLOYABILITY
+
+  Currently I would deem this process possible but requires A LOT more work. There are too many early issues
+to quickly generate scripts based on current source code functionality.
+
+TIME LINE FEASIBILITY (0 to 10: 0 is Very non feasible timeline, 10 is very feasible)
+
+  Navigating All elements:                    5
+  Ability to capture date within elements:    3
