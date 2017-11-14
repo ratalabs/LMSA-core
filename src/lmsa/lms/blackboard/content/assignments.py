@@ -2,6 +2,7 @@
 Handles any functionality related to editing 'Assignment' content items in
 Blackboard
 """
+import time
 
 from .options import assignment_options
 from ..Library import Logic
@@ -38,7 +39,6 @@ class Assignments(object):
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_TIME).clear()
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_TIME).send_keys(time)
             self.driver.find_element_by_xpath(assignment_options.DUE_DATE_VALUE).send_keys(date)
-
 
     def points_possible(self):
         return
