@@ -1,5 +1,8 @@
 """Import python functionality"""
 import sys
+"""Append Local file locations to to PYTHONPATH"""
+sys.path.append('/Users/smccaffrey/Desktop/LMSA-core/src/')
+
 import time
 import pandas as pd
 from selenium import webdriver
@@ -12,8 +15,8 @@ from lmsa.manipulation.ASU.ASU_manipulator import ASU_manipulator
 from lmsa.lms.blackboard.BlackBoard import Editor
 from lmsa.lms.blackboard.content.tests import Tests
 from lmsa.lms.blackboard.content.assignments import Assignments
-from lmsa.lms.blackboard.content.folders import Folders
-from lmsa.lms.blackboard.Library import Logic
+#from lmsa.lms.blackboard.content.folders import Folders
+#from lmsa.lms.blackboard.Library import Logic
 from lmsa.lms.blackboard.Library import Window
 
 """Global Variables"""
@@ -23,7 +26,7 @@ prefix2 = 'PHY 114: General Physics Laboratory (2017 Fall)-'
 data = pd.read_csv(filename, dtype=str, delimiter=',', header=None)
 
 """Initialize WebDriver object"""
-driver = webdriver.Chrome('/Users/smccaffrey/Desktop/LMSA-core/scripts/drivers/chromedriver_233')
+driver = webdriver.Chrome('/Users/smccaffrey/Desktop/LMSA-core/scripts/chromedriver_233')
 
 """Change to FALSE when ready to save changes"""
 DRYRUN = True
@@ -46,7 +49,7 @@ i = 1
 for i in range(1, len(data[0])):
 
     """This pause is a quick fix for elementNotFound error"""
-    pause = raw_input('Scroll until desired section is in view\n\nOnce in view press: <ENTER>')
+    #pause = raw_input('Scroll until desired section is in view\n\nOnce in view press: <ENTER>')
 
     """This is the code that finds each section number on the BlackBoard homepage"""
     driver.find_element_by_link_text(prefix1 + str(data[0][i])).click()
@@ -58,7 +61,7 @@ for i in range(1, len(data[0])):
     for j in range(1, 11):
         FORM.select_form(data[j+4][0], wait=1)
         driver.find_element_by_xpath('//a[@title="Edit the Test Options"]').click()
-        Tests(driver).due_date(state=True, date=data[j+4][i], time=data[3][i])
+        LAB_REPORTS.due_date(state=True, date=data[j+4][i], time=data[3][i])
         #form.assignment_due_date(state=True, date=df1[j+4][i], time=df1[3][i])
         if not DRYRUN:
             FORM.submit(wait=2)
